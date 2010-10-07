@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D09CAA6125D757200DB4FBC /* FFTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */; };
+		0D09CAA7125D757200DB4FBC /* FFTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */; };
 		AA747D9F0F9514B9006C5449 /* FringeTools_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		B7AAAC50124EFDD2002D3030 /* FFTBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */; };
+		B7AAAC50124EFDD2002D3030 /* FFTBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */; settings = {ATTRIBUTES = (); }; };
 		B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4D124EFDD2002D3030 /* FFTBaseOperation.m */; };
-		B7AAAC52124EFDD2002D3030 /* FFTDownloadOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4E124EFDD2002D3030 /* FFTDownloadOperation.h */; };
+		B7AAAC52124EFDD2002D3030 /* FFTDownloadOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4E124EFDD2002D3030 /* FFTDownloadOperation.h */; settings = {ATTRIBUTES = (); }; };
 		B7AAAC53124EFDD2002D3030 /* FFTDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4F124EFDD2002D3030 /* FFTDownloadOperation.m */; };
-		B7AAAC55124EFE3B002D3030 /* FFTAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC54124EFE3B002D3030 /* FFTAnalytics.h */; };
-		B7AAAC6C124F0587002D3030 /* FFTGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC6B124F0587002D3030 /* FFTGlobal.h */; };
+		B7AAAC55124EFE3B002D3030 /* FFTAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC54124EFE3B002D3030 /* FFTAnalytics.h */; settings = {ATTRIBUTES = (); }; };
+		B7AAAC6C124F0587002D3030 /* FFTGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC6B124F0587002D3030 /* FFTGlobal.h */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTAppDelegate.h; sourceTree = "<group>"; };
+		0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTAppDelegate.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FringeTools_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBaseOperation.h; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */,
+				0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */,
 				B7AAAC6B124F0587002D3030 /* FFTGlobal.h */,
 				B7AAAC54124EFE3B002D3030 /* FFTAnalytics.h */,
 				B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */,
@@ -109,6 +115,7 @@
 				B7AAAC52124EFDD2002D3030 /* FFTDownloadOperation.h in Headers */,
 				B7AAAC55124EFE3B002D3030 /* FFTAnalytics.h in Headers */,
 				B7AAAC6C124F0587002D3030 /* FFTGlobal.h in Headers */,
+				0D09CAA6125D757200DB4FBC /* FFTAppDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +174,7 @@
 			files = (
 				B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */,
 				B7AAAC53124EFDD2002D3030 /* FFTDownloadOperation.m in Sources */,
+				0D09CAA7125D757200DB4FBC /* FFTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
