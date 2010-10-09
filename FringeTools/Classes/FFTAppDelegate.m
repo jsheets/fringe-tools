@@ -11,8 +11,6 @@
 
 @implementation FFTAppDelegate
 
-@synthesize window = _window;
-
 - (BOOL)isIPad
 {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;

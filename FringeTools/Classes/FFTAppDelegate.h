@@ -10,13 +10,10 @@
 
 @interface FFTAppDelegate : NSObject <UIApplicationDelegate>
 {
-    UIWindow *_window;
 }
 
 @property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 @property (nonatomic, readonly) BOOL isIPad;
-
-@property (nonatomic, assign) IBOutlet UIWindow *window;
 
 - (CGSize)appScreenSize:(BOOL)isPortrait;
 
