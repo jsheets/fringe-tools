@@ -1,9 +1,9 @@
 //
-//  FFTDownloadOperation.h
+//  FFTDownloadDelegate.h
 //  FringeTools
 //
-//  Created by John Sheets on 9/25/10.
-//  Copyright 2010 FourFringe. All rights reserved.
+//  Created by John Sheets on 12/18/10.
+//  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,26 +23,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseOperation.h"
+@protocol FFTDownloadDelegate
+- (void)downloadSucceeded:(NSData *)downloadData;
+- (void)downloadFailedWithError:(NSError *)downloadError;
 
-// Operation to download a a single file.
-@interface FFTDownloadOperation : FFTBaseOperation
-{
-    NSURL *_url;
-    NSMutableData *_responseData;
-    
-    id _target;
-    SEL _didFailSelector;
-    SEL _didLoadSelector;
-}
-
-@property (nonatomic, copy) NSURL *url;
-@property (nonatomic, retain) NSMutableData *responseData;
-@property (nonatomic, retain) id target;
-@property (nonatomic) SEL didFailSelector;
-@property (nonatomic) SEL didLoadSelector;
-
-- (id)initWithURL:(NSURL *)url;
-- (BOOL)checkCancel:(NSURLConnection *)connection;
-
+@optional
+- (void)foundUrls:(NSArray *)urls;
 @end

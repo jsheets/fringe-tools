@@ -1,9 +1,9 @@
 //
-//  WebCacheOperation.m
+//  FFTDownloadURLOperation.m
 //  FringeTools
 //
 //  Created by John Sheets on 9/25/10.
-//  Copyright 2010 FourFringe. All rights reserved.
+//  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTDownloadOperation.h"
+#import "FFTDownloadURLOperation.h"
 #import "FFTGlobal.h"
 
-@implementation FFTDownloadOperation
+@implementation FFTDownloadURLOperation
 
+@synthesize delegate = _delegate;
 @synthesize url = _url;
 @synthesize responseData = _responseData;
-@synthesize target = _target;
-@synthesize didFailSelector = _didFailSelector;
-@synthesize didLoadSelector = _didLoadSelector;
 
 - (id)initWithURL:(NSURL *)url
 {	
@@ -48,9 +46,9 @@
 
 - (void)dealloc
 {
+    _delegate = nil;
     [_url release], _url = nil;
     [_responseData release], _responseData = nil;
-    [_target release], _target = nil;
     
     [super dealloc];
 }
@@ -104,10 +102,8 @@
 {
     if ([self checkCancel:connection]) { return; }
     
-    if (self.didFailSelector && [self.target respondsToSelector:self.didFailSelector])
-    {
-        [self.target performSelector:self.didFailSelector withObject:error];
-    }
+    // Notify the delegate of our failure.
+    [self.delegate downloadFailedWithError:error];
     
     self.responseData = nil;
     [self completeOperation];
@@ -117,10 +113,8 @@
 {
     if ([self checkCancel:connection]) { return; }
     
-    if (self.didLoadSelector && [self.target respondsToSelector:self.didLoadSelector])
-    {
-        [self.target performSelector:self.didLoadSelector withObject:self.responseData];
-    }
+    // Notify the delegate of our success!
+    [self.delegate downloadSucceeded:self.responseData];
     
     self.responseData = nil;
     [self completeOperation];
