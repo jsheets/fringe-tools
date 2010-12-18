@@ -31,6 +31,7 @@
 
 @property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 @property (nonatomic, readonly) BOOL isIPad;
+@property (nonatomic, readonly) BOOL isRetinaDisplay;
 
 - (CGSize)appScreenSize:(BOOL)isPortrait;
 

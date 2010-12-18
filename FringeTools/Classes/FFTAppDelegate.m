@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "FFTAppDelegate.h"
-
+#import "FFTGlobal.h"
 
 @implementation FFTAppDelegate
 
@@ -43,6 +43,24 @@
         size = CGSizeMake(size.height, size.width);
     }
     return size;
+}
+
+- (BOOL)isRetinaDisplay
+{
+    BOOL hasRetinaScreen = NO;
+    
+    // Safe on older versions of iOS.
+    UIScreen *screen = [UIScreen mainScreen];
+    if ([screen respondsToSelector:@selector(currentMode)])
+    {
+        CGSize size = [[screen currentMode] size];
+        FFTDebug(@"Screen size: %@", NSStringFromCGSize(size));
+        
+        // This is really fragile. Need a better test.
+        hasRetinaScreen = size.width == 640;
+    }
+    
+    return hasRetinaScreen;
 }
 
 
