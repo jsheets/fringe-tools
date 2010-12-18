@@ -3,7 +3,7 @@
  *  FringeTools
  *
  *  Created by John Sheets on 9/25/10.
- *  Copyright 2010 FourFringe. All rights reserved.
+ *  Copyright 2010 MobileMethod, LLC. All rights reserved.
  *
  */
 
