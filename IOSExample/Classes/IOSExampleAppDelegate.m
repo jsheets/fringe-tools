@@ -7,7 +7,7 @@
 //
 
 #import "IOSExampleAppDelegate.h"
-
+#import "FFTGlobal.h"
 
 @implementation IOSExampleAppDelegate
 
@@ -26,6 +26,8 @@
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
 
+    FFTInfo(@"Launching application");
+    
     return YES;
 }
 
