@@ -7,7 +7,6 @@
 //
 
 #import "IOSExampleAppDelegate.h"
-#import "FFTGlobal.h"
 
 @implementation IOSExampleAppDelegate
 

@@ -6,9 +6,10 @@
 //  Copyright 2010 $@. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FringeTools.h"
 
-@interface IOSExampleAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface IOSExampleAppDelegate : FFTAppDelegate <UIApplicationDelegate, UITabBarControllerDelegate>
+{
     UIWindow *window;
     UITabBarController *tabBarController;
 }
