@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "FFTHtmlSearchOperation.h"
-#import "FFTGlobal.h"
+#import "FFTLogging.h"
 
 //#define MIN_IMAGE_COUNT 200
 #define MIN_IMAGE_COUNT 50

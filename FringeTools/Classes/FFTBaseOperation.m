@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "FFTBaseOperation.h"
-#import "FFTGlobal.h"
+#import "FFTLogging.h"
 
 @implementation FFTBaseOperation
 

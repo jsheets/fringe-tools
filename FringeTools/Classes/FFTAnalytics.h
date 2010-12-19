@@ -7,7 +7,7 @@
  *
  */
 
-#import "FFTGlobal.h"
+#import "FFTLogging.h"
 
 // Require API_KEY if any analytics are enabled.
 #if defined(USE_PINCH_MEDIA) || defined(USE_FLURRY) || defined(USE_LOCALYTICS)

@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "FFTFlickrSearchOperation.h"
-#import "FFTGlobal.h"
+#import "FFTLogging.h"
 
 @implementation FFTFlickrSearchOperation
 

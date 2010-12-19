@@ -1,5 +1,5 @@
 /*
- *  FFTGlobal.h
+ *  FFTLogging.h
  *  FringeTools
  *
  *  Created by John Sheets on 9/25/10.

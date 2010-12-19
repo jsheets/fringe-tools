@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "FFTDownloadURLOperation.h"
-#import "FFTGlobal.h"
+#import "FFTLogging.h"
 
 @implementation FFTDownloadURLOperation
 

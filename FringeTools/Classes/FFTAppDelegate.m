@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "FFTAppDelegate.h"
-#import "FFTGlobal.h"
+#import "FFTLogging.h"
 
 @implementation FFTAppDelegate
 
