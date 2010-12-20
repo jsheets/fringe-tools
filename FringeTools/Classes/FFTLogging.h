@@ -15,43 +15,43 @@
     [NSString stringWithFormat:__VA_ARGS__]])
 #endif
 
-#ifdef FFT_ALL
-#define FFT_ERROR
-#define FFT_CRITICAL
-#define FFT_INFO
-#define FFT_DEBUG
+#ifdef FFT_LOG_ALL
+#define FFT_LOG_ERROR
+#define FFT_LOG_CRITICAL
+#define FFT_LOG_INFO
+#define FFT_LOG_DEBUG
 #endif
 
-#ifdef FFT_DEFAULT
-#define FFT_ERROR
-#define FFT_CRITICAL
+#ifdef FFT_LOG_DEFAULT
+#define FFT_LOG_ERROR
+#define FFT_LOG_CRITICAL
 #endif
 
-#ifdef FFT_ERROR
+#ifdef FFT_LOG_ERROR
 #define FFTError(...) _FFT_LOG(@"ERROR", __VA_ARGS__)
 #else
 #define FFTError(...)
 #endif
 
-#ifdef FFT_CRITICAL
+#ifdef FFT_LOG_CRITICAL
 #define FFTCritical(...) _FFT_LOG(@"CRITICAL", __VA_ARGS__)
 #else
 #define FFTCritical(...)
 #endif
 
-#ifdef FFT_INFO
+#ifdef FFT_LOG_INFO
 #define FFTInfo(...) _FFT_LOG(@"INFO", __VA_ARGS__)
 #else
 #define FFTInfo(...)
 #endif
 
-#ifdef FFT_DEBUG
+#ifdef FFT_LOG_DEBUG
 #define FFTDebug(...) _FFT_LOG(@"DEBUG", __VA_ARGS__)
 #else
 #define FFTDebug(...)
 #endif
 
-#ifdef FFT_TRACE
+#ifdef FFT_LOG_TRACE
 #define FFTTrace(...) _FFT_LOG(@"TRACE", __VA_ARGS__)
 #else
 #define FFTTrace(...)

@@ -513,6 +513,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FringeTools_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = FFT_LOG_ALL;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"$(SRCROOT)/../objectiveflickr/Source",
