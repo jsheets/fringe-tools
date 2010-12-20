@@ -299,7 +299,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
         }
         
         pageCount++;
-        FFTCritical(@"Total %i urls after page %i", [images count], pageCount);
+        FFTCritical(@"Total %i urls after page %i", [urls count], pageCount);
         
         if (nextUrl == [NSNull null])
         {

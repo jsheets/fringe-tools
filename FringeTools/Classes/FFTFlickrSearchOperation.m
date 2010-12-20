@@ -176,6 +176,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         // Have something in username field; might also have keyword.
         [self flickrLookupUser];
     }
+    FFTDebug(@"Completed Flickr search operation.");
 }
 
 
