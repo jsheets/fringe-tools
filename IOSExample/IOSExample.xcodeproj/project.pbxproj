@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0DD2AAF012BE7A6800D3F1B5 /* libFringeTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2AA2312BE7A4400D3F1B5 /* libFringeTools.a */; };
+		0DD2AB0912BE928200D3F1B5 /* FlickrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2AB0712BE928200D3F1B5 /* FlickrViewController.m */; };
+		0DD2AB0A12BE928200D3F1B5 /* FlickrView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD2AB0812BE928200D3F1B5 /* FlickrView.xib */; };
+		0DD2ABA012BEA94E00D3F1B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2AB9F12BEA94E00D3F1B5 /* CFNetwork.framework */; };
 		1D3623260D0F684500981E51 /* IOSExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* IOSExampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
@@ -45,13 +47,15 @@
 
 /* Begin PBXFileReference section */
 		0DD2AA1612BE7A4400D3F1B5 /* FringeTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FringeTools.xcodeproj; path = ../FringeTools/FringeTools.xcodeproj; sourceTree = SOURCE_ROOT; };
+		0DD2AB0612BE928200D3F1B5 /* FlickrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrViewController.h; sourceTree = "<group>"; };
+		0DD2AB0712BE928200D3F1B5 /* FlickrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrViewController.m; sourceTree = "<group>"; };
+		0DD2AB0812BE928200D3F1B5 /* FlickrView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FlickrView.xib; path = Classes/FlickrView.xib; sourceTree = "<group>"; };
+		0DD2AB9F12BEA94E00D3F1B5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* IOSExampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSExampleAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* IOSExampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSExampleAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* IOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		2840D7CD1179279E00D7F93C /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,6 +73,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				0DD2ABA012BEA94E00D3F1B5 /* CFNetwork.framework in Frameworks */,
 				0DD2AAF012BE7A6800D3F1B5 /* libFringeTools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,8 +86,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* IOSExampleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* IOSExampleAppDelegate.m */,
-				28216C950DB411BC00E5133A /* FirstViewController.h */,
-				28216C960DB411BC00E5133A /* FirstViewController.m */,
+				0DD2AB0612BE928200D3F1B5 /* FlickrViewController.h */,
+				0DD2AB0712BE928200D3F1B5 /* FlickrViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -129,9 +134,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				0DD2AB0812BE928200D3F1B5 /* FlickrView.xib */,
 				2840D7CD1179279E00D7F93C /* FirstView.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
-				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* IOSExample-Info.plist */,
 			);
 			name = Resources;
@@ -143,6 +149,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				0DD2AB9F12BEA94E00D3F1B5 /* CFNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +180,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "MobileMethod, LLC";
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "IOSExample" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -223,6 +233,7 @@
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 				2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */,
+				0DD2AB0A12BE928200D3F1B5 /* FlickrView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +246,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* IOSExampleAppDelegate.m in Sources */,
-				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
+				0DD2AB0912BE928200D3F1B5 /* FlickrViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +270,15 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IOSExample_Prefix.pch;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../FringeTools/Classes";
+				GCC_PREPROCESSOR_DEFINITIONS = FFT_LOG_ALL;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../FringeTools/Classes",
+					/usr/include/libxml2,
+					"$(SRCROOT)/../objectiveflickr/Source",
+					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
+				);
 				INFOPLIST_FILE = "IOSExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = IOSExample;
 			};
 			name = Debug;
@@ -272,7 +290,13 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IOSExample_Prefix.pch;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../FringeTools/Classes";
+				GCC_PREPROCESSOR_DEFINITIONS = FFT_LOG_ALL;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../FringeTools/Classes",
+					/usr/include/libxml2,
+					"$(SRCROOT)/../objectiveflickr/Source",
+					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
+				);
 				INFOPLIST_FILE = "IOSExample-Info.plist";
 				PRODUCT_NAME = IOSExample;
 				VALIDATE_PRODUCT = YES;

@@ -3,26 +3,46 @@
 //  IOSExample
 //
 //  Created by John Sheets on 12/19/10.
-//  Copyright 2010 $@. All rights reserved.
+//  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 
 #import "IOSExampleAppDelegate.h"
 
 @implementation IOSExampleAppDelegate
 
-@synthesize window;
-@synthesize tabBarController;
+@synthesize window = _window;
+@synthesize tabBarController = _tabBarController;
+@synthesize queue = _queue;
+
+- (id)init
+{	
+    if ((self = [super init]))
+    {
+        // Initialization.
+        _queue = [[NSOperationQueue alloc] init];
+    }
+    
+    return self;
+}
+
+- (void)dealloc
+{
+    [_queue release], _queue = nil;
+    
+    [super dealloc];
+}
 
 
 #pragma mark -
 #pragma mark Application lifecycle
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
 
     // Add the tab bar controller's view to the window and display.
-    [self.window addSubview:tabBarController.view];
+    [self.window addSubview:self.tabBarController.view];
     [self.window makeKeyAndVisible];
 
     FFTInfo(@"Launching application");
@@ -94,12 +114,6 @@
      */
 }
 
-
-- (void)dealloc {
-    [tabBarController release];
-    [window release];
-    [super dealloc];
-}
 
 @end
 

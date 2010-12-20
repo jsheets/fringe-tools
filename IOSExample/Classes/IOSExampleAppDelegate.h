@@ -3,18 +3,20 @@
 //  IOSExample
 //
 //  Created by John Sheets on 12/19/10.
-//  Copyright 2010 $@. All rights reserved.
+//  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 
 #import "FringeTools.h"
 
 @interface IOSExampleAppDelegate : FFTAppDelegate <UIApplicationDelegate, UITabBarControllerDelegate>
 {
-    UIWindow *window;
-    UITabBarController *tabBarController;
+    UIWindow *_window;
+    UITabBarController *_tabBarController;
+    NSOperationQueue *_queue;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, assign) IBOutlet UIWindow *window;
+@property (nonatomic, assign) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) NSOperationQueue *queue;
 
 @end
