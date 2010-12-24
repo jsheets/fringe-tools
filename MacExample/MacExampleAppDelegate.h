@@ -6,13 +6,15 @@
 //  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "FlickrViewController.h"
 
 @interface MacExampleAppDelegate : NSObject <NSApplicationDelegate>
 {
-    NSWindow *window;
+    NSWindow *_window;
+    FlickrViewController *_flickrViewController;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, retain) IBOutlet FlickrViewController *flickrViewController;
 
 @end

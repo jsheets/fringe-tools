@@ -10,12 +10,14 @@
 
 @implementation MacExampleAppDelegate
 
-@synthesize window;
+@synthesize window = _window;
+@synthesize flickrViewController = _flickrViewController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// Insert code here to initialize your application
     FFTInfo(@"Application starting");
+    NSView *contentView = [self.window contentView];
+    [contentView addSubview:[self.flickrViewController view]];
 }
 
 @end

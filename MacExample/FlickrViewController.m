@@ -17,6 +17,7 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
         // Initialization code here.
+        FFTInfo(@"Initializing FlickrViewController.");
     }
     
     return self;
@@ -27,6 +28,13 @@
     // Clean-up code here.
     
     [super dealloc];
+}
+
+- (void)loadView
+{
+    [super loadView];
+    
+    FFTInfo(@"Loading view.");
 }
 
 @end
