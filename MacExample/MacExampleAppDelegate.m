@@ -7,13 +7,16 @@
 //
 
 #import "MacExampleAppDelegate.h"
+#import "FringeTools.h"
 
 @implementation MacExampleAppDelegate
 
 @synthesize window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+	// Insert code here to initialize your application
+    FFTInfo(@"Application starting");
 }
 
 @end
