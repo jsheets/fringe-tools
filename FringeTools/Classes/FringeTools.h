@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "FFTOs.h"
 #import "FFTLogging.h"
 #import "FFTAnalytics.h"
 #import "FFTBaseOperation.h"
