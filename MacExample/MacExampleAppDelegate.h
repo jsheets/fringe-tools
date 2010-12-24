@@ -3,12 +3,13 @@
 //  MacExample
 //
 //  Created by John Sheets on 12/19/10.
-//  Copyright 2010 $@. All rights reserved.
+//  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-@interface MacExampleAppDelegate : NSObject <NSApplicationDelegate> {
+@interface MacExampleAppDelegate : NSObject <NSApplicationDelegate>
+{
     NSWindow *window;
 }
 
