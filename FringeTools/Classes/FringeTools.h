@@ -23,7 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTAppDelegate.h"
 #import "FFTLogging.h"
 #import "FFTAnalytics.h"
 #import "FFTBaseOperation.h"
@@ -31,3 +30,7 @@
 #import "FFTDownloadURLOperation.h"
 #import "FFTFlickrSearchOperation.h"
 #import "FFTHtmlSearchOperation.h"
+
+#ifdef FFT_IOS
+#import "FFTAppDelegate.h"
+#endif
