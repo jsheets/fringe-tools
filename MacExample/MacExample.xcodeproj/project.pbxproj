@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DB9B73F12C536A70078F0B3 /* FlickrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B73D12C536A70078F0B3 /* FlickrViewController.m */; };
+		0DB9B74012C536A70078F0B3 /* FlickrView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B73E12C536A70078F0B3 /* FlickrView.xib */; };
 		0DD2AC5112BEF53300D3F1B5 /* libFringeTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2AC4C12BEF4F200D3F1B5 /* libFringeTools.a */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* MacExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* MacExampleAppDelegate.m */; };
@@ -41,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DB9B73C12C536A70078F0B3 /* FlickrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrViewController.h; sourceTree = "<group>"; };
+		0DB9B73D12C536A70078F0B3 /* FlickrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrViewController.m; sourceTree = "<group>"; };
+		0DB9B73E12C536A70078F0B3 /* FlickrView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickrView.xib; sourceTree = "<group>"; };
 		0DD2AC4612BEF4F200D3F1B5 /* FringeTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FringeTools.xcodeproj; path = ../FringeTools/FringeTools.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -73,6 +78,8 @@
 			children = (
 				256AC3D80F4B6AC300CF3369 /* MacExampleAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* MacExampleAppDelegate.m */,
+				0DB9B73C12C536A70078F0B3 /* FlickrViewController.h */,
+				0DB9B73D12C536A70078F0B3 /* FlickrViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				8D1107310486CEB800E47090 /* MacExample-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				0DB9B73E12C536A70078F0B3 /* FlickrView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -180,6 +188,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "MobileMethod, LLC";
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MacExample" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -229,6 +240,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				0DB9B74012C536A70078F0B3 /* FlickrView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +253,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* MacExampleAppDelegate.m in Sources */,
+				0DB9B73F12C536A70078F0B3 /* FlickrViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
