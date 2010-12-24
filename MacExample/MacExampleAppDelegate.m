@@ -7,7 +7,6 @@
 //
 
 #import "MacExampleAppDelegate.h"
-#import "FringeTools.h"
 
 @implementation MacExampleAppDelegate
 
