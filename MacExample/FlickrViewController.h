@@ -6,11 +6,13 @@
 //  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 
-@interface FlickrViewController : NSViewController
+@interface FlickrViewController : NSViewController <FFTDownloadDelegate>
 {
     NSTextView *_textView;
+    NSOperationQueue *_queue;
 }
 
 @property (nonatomic, assign) IBOutlet NSTextView *textView;
+@property (nonatomic, retain) NSOperationQueue *queue;
 
 @end
