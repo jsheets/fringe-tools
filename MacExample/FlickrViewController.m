@@ -7,6 +7,7 @@
 //
 
 #import "FlickrViewController.h"
+#import "SampleAPIKey.h"
 
 @implementation FlickrViewController
 
@@ -27,24 +28,27 @@
 
 - (void)dealloc
 {
+    FFTDebug(@"Closing down operation queue.");
     [_queue release], _queue = nil;
     
     [super dealloc];
 }
 
-#define OBJECTIVE_FLICKR_API_KEY             @"59e46f94de1d538c5d3a0eea8191e797"
-#define OBJECTIVE_FLICKR_API_SHARED_SECRET   @"77e733718d0215a9"
-
 - (void)loadView
 {
     [super loadView];
     
-    FFTInfo(@"Loading view.");
+    FFTInfo(@"Loading view");
     
-    FFTFlickrSearchOperation *flickrOp = [[FFTFlickrSearchOperation alloc] initWithUsername:nil keyword:nil apiKey:OBJECTIVE_FLICKR_API_KEY sharedSecret:OBJECTIVE_FLICKR_API_SHARED_SECRET];
-    flickrOp.delegate = self;
+    FFTFlickrSearchOperation *op = [[FFTFlickrSearchOperation alloc] initWithUsername:@"" keyword:@"" apiKey:OBJECTIVE_FLICKR_SAMPLE_API_KEY sharedSecret:OBJECTIVE_FLICKR_SAMPLE_API_SHARED_SECRET];
+    op.resultsPerPage = 5;
     
-    [self.queue addOperation:flickrOp];
+    op.delegate = self;
+    [self.queue addOperation:op];
+//    [self.queue addOperations:[NSArray arrayWithObject:op] waitUntilFinished:YES];
+//    [op main];
+    
+    FFTDebug(@"Done loading view");
 }
 
 
