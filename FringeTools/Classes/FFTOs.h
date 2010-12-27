@@ -28,8 +28,9 @@
 //   FFT_MAC_OSX_10_6
 //   FFT_MAC_OSX_10_5
 //   FFT_MAC_OSX_10_4
-#ifdef MAC_OS_X_VERSION_MIN_REQUIRED
+#ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
 #  define FFT_MAC_OSX          1
+#  define FFT_OS_NAME @"Mac OS X"
 
 // All FFT_MAC_OSX_* macros default to 0.
 #  if MAC_OS_X_VERSION_MIN_REQUIRED >= 1060
@@ -73,26 +74,27 @@
 //   FFT_IOS_3_2
 //   FFT_IOS_3_1
 //   FFT_IOS_3_0
-#ifdef IPHONE_OS_VERSION_MIN_REQUIRED
+#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
 #  define FFT_IOS         1
+#  define FFT_OS_NAME @"iOS"
 
 // All FFT_IOS_* macros default to 0.
-#  if IPHONE_OS_VERSION_MIN_REQUIRED >= 40200
+#  if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40200
 #    define FFT_IOS_4_2   1
 #  endif
-#  if IPHONE_OS_VERSION_MIN_REQUIRED >= 40100
+#  if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40100
 #    define FFT_IOS_4_1   1
 #  endif
-#  if IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
+#  if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
 #    define FFT_IOS_4_0   1
 #  endif
-#  if IPHONE_OS_VERSION_MIN_REQUIRED >= 30200
+#  if __IPHONE_OS_VERSION_MIN_REQUIRED >= 30200
 #    define FFT_IOS_3_2   1
 #  endif
-#  if IPHONE_OS_VERSION_MIN_REQUIRED >= 30100
+#  if __IPHONE_OS_VERSION_MIN_REQUIRED >= 30100
 #    define FFT_IOS_3_1   1
 #  endif
-#  if IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
+#  if __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
 #    define FFT_IOS_3_0   1
 #  else
 // We shouldn't be doing this, should we?
@@ -106,6 +108,37 @@
 
 #endif
 
+// Enable to show compile-time warnings for the current architecture
+#ifdef FFT_ARCH_CHECK
+#  ifdef FFT_MAC_OSX
+#    ifdef FFT_MAC_OSX_10_6
+#      warning Mac OS X 10.6
+#    elif FFT_MAC_OSX_10_5
+#      warning Mac OS X 10.5
+#    elif FFT_MAC_OSX_10_4
+#      warning Mac OS X 10.4
+#    else
+#      warning Unknown Architecture
+#    endif
+#  endif
+#  ifdef FFT_IOS
+#    ifdef FFT_IOS_4_2
+#      warning iOS 4.2
+#    elif FFT_IOS_4_1
+#      warning iOS 4.1
+#    elif FFT_IOS_4_0
+#      warning iOS 4.0
+#    elif FFT_IOS_3_2
+#      warning iOS 3.2
+#    elif FFT_IOS_3_1
+#      warning iOS 3.1
+#    elif FFT_IOS_3_0
+#      warning iOS 3.0
+#    else
+#      warning Unknown Architecture
+#    endif
+#  endif
+#endif
 
 //
 // Functionality detection macros.
