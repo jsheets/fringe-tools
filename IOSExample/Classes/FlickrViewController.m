@@ -7,9 +7,7 @@
 //
 
 #import "FlickrViewController.h"
-
-#define FLICKR_KEY      @"59e46f94de1d538c5d3a0eea8191e797"
-#define FLICKR_SECRET   @"77e733718d0215a9"
+#import "SampleAPIKey.h"
 
 @implementation FlickrViewController
 
@@ -41,7 +39,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // Start the Flickr search.
-    self.op = [[FFTFlickrSearchOperation alloc] initWithUsername:nil keyword:nil apiKey:FLICKR_KEY sharedSecret:FLICKR_SECRET];
+    self.op = [[FFTFlickrSearchOperation alloc] initWithUsername:nil keyword:nil apiKey:OBJECTIVE_FLICKR_SAMPLE_API_KEY sharedSecret:OBJECTIVE_FLICKR_SAMPLE_API_SHARED_SECRET];
     self.op.delegate = self;
     
     [self.appDelegate.queue addOperation:self.op];
