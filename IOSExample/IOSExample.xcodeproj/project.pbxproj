@@ -27,21 +27,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D58A6E212C82C03001A2243 /* ObjectiveFlickr.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6A8666490F9593B200325E1C /* ObjectiveFlickr.framework */;
+			remoteGlobalIDString = 6A8666490F9593B200325E1C;
 			remoteInfo = "ObjectiveFlickr (framework)";
 		};
 		0D58A6ED12C82C03001A2243 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D58A6E212C82C03001A2243 /* ObjectiveFlickr.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6ABF72E60F939BE600B9179E /* libObjectiveFlickr.a */;
+			remoteGlobalIDString = 6ABF72E60F939BE600B9179E;
 			remoteInfo = "ObjectiveFlickr (library)";
 		};
 		0D58A6F612C82D4C001A2243 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D58A6E212C82C03001A2243 /* ObjectiveFlickr.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 6ABF72E50F939BE600B9179E /* ObjectiveFlickr (library) */;
+			remoteGlobalIDString = 6ABF72E50F939BE600B9179E;
 			remoteInfo = "ObjectiveFlickr (library)";
 		};
 		0DD2AA2212BE7A4400D3F1B5 /* PBXContainerItemProxy */ = {
@@ -69,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		0D58A6E212C82C03001A2243 /* ObjectiveFlickr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveFlickr.xcodeproj; path = ../../objectiveflickr/ObjectiveFlickr.xcodeproj; sourceTree = SOURCE_ROOT; };
+		0D9CA17412C938D90048B501 /* SampleAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleAPIKey.h; path = ../objectiveflickr/SampleAPIKey.h; sourceTree = SOURCE_ROOT; };
 		0DD2AA1612BE7A4400D3F1B5 /* FringeTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FringeTools.xcodeproj; path = ../FringeTools/FringeTools.xcodeproj; sourceTree = SOURCE_ROOT; };
 		0DD2AB0612BE928200D3F1B5 /* FlickrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrViewController.h; sourceTree = "<group>"; };
 		0DD2AB0712BE928200D3F1B5 /* FlickrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrViewController.m; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D9CA17412C938D90048B501 /* SampleAPIKey.h */,
 				1D3623240D0F684500981E51 /* IOSExampleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* IOSExampleAppDelegate.m */,
 				0DD2AB0612BE928200D3F1B5 /* FlickrViewController.h */,
@@ -329,7 +331,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IOSExample_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = FFT_LOG_ALL;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../FringeTools/Classes",
 					/usr/include/libxml2,
@@ -337,7 +338,6 @@
 					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
 				);
 				INFOPLIST_FILE = "IOSExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = IOSExample;
 				SDKROOT = iphoneos;
@@ -370,10 +370,14 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = FFT_LOG_ALL;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -383,11 +387,15 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = FFT_LOG_ALL;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
