@@ -43,6 +43,7 @@
 - (BOOL)isConcurrent
 {
     // Let NSOperationQueue create the thread for us.
+    FFTTrace(@"Op is not concurrent.");
     return NO;
 }
 
@@ -70,16 +71,27 @@
     [self didChangeValueForKey:@"isExecuting"];
 }
 
--(void) start
+-(void)start
 {
+    if (![NSThread isMainThread])
+    {
+        [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+        return;
+    }
+    
+    FFTTrace(@"Starting operation");
     if (_finished || [self isCancelled])
     {
         [self completeOperation];
         return;
     }
     
+    FFTTrace(@"Starting execution");
     [self updateExecuting:YES];
+    FFTTrace(@"Performing Operation");
     [self performOperation];
+    [self completeOperation];
+    FFTTrace(@"Operation Completed");
 }
 
 - (void)completeOperation
@@ -90,13 +102,20 @@
 
 - (void)performOperation
 {
-    FFTError(@"ERROR: Should implement performOperation in subclass!!");
+    FFTError(@"ERROR: Should implement performOperation in subclass");
 }
 
 // Call -main to run the operation directly.  For synchronous ops.
 // Queue always calls -start.
 - (void)main
 {
+    if (![NSThread isMainThread])
+    {
+        [self performSelectorOnMainThread:@selector(main) withObject:nil waitUntilDone:NO];
+        return;
+    }
+    
+    FFTTrace(@"Operation Main");
     if (_finished || [self isCancelled]) return;
     
     @try
@@ -104,9 +123,12 @@
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
         
         // Main Loop.
+        FFTTrace(@"Starting execution");
         [self updateExecuting:YES];
+        FFTTrace(@"Performing Operation");
         [self performOperation];
         [self completeOperation];
+        FFTTrace(@"Operation Completed");
         
         [pool release];
     }
