@@ -55,9 +55,8 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         // Default to 100 photos per request.
         self.resultsPerPage = 100;
         
-        FFTInfo(@"Creating Flickr op with user '%@' and keyword '%@'", username, keyword);
-        _context = [[OFFlickrAPIContext alloc]
-                    initWithAPIKey:flickrApiKey
+        FFTInfo(@"Initializing Flickr op with user '%@' and keyword '%@'", username, keyword);
+        _context = [[OFFlickrAPIContext alloc] initWithAPIKey:flickrApiKey
                     sharedSecret:flickrSharedSecret];
         _request = [[OFFlickrAPIRequest alloc] initWithAPIContext:_context];
         [_request setDelegate:self];
@@ -68,6 +67,14 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 
 - (void)dealloc
 {
+    FFTTrace(@"Cleaning up Flickr op.");
+    
+    if ([_request isRunning])
+    {
+        FFTDebug(@"Shutting down running Flickr request");
+        [_request cancel];
+    }
+    
     _delegate = nil;
     [_context release], _context = nil;
     [_request release], _request = nil;
@@ -77,6 +84,13 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     [_searchWords release], _searchWords = nil;
 
     [super dealloc];
+}
+
+- (BOOL)isConcurrent
+{
+    // Create our own thread.
+    FFTDebug(@"Flickr is concurrent.");
+    return YES;
 }
 
 
@@ -90,6 +104,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     
     NSString *pageSize = [NSString stringWithFormat:@"%li", self.resultsPerPage];
     NSDictionary *args = [NSDictionary dictionaryWithObjectsAndKeys:pageSize, @"per_page", nil];
+    FFTDebug(@"Flickr search args: %@", args);
     [_request callAPIMethodWithGET:@"flickr.photos.getRecent" arguments:args];
 }
 
@@ -176,12 +191,11 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         // Have something in username field; might also have keyword.
         [self flickrLookupUser];
     }
-    FFTDebug(@"Completed Flickr search operation.");
+    FFTDebug(@"Completed Flickr search request.");
 }
 
 
 #pragma mark Flickr Protocol
-
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest
  didCompleteWithResponse:(NSDictionary *)inResponseDictionary
