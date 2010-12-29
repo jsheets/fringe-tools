@@ -110,7 +110,7 @@
 
 // Enable to show compile-time warnings for the current architecture
 #ifdef FFT_ARCH_CHECK
-#  ifdef FFT_MAC_OSX
+#  if defined(FFT_MAC_OSX)
 #    ifdef FFT_MAC_OSX_10_6
 #      warning Mac OS X 10.6
 #    elif FFT_MAC_OSX_10_5
@@ -118,10 +118,9 @@
 #    elif FFT_MAC_OSX_10_4
 #      warning Mac OS X 10.4
 #    else
-#      warning Unknown Architecture
+#      warning Unknown Mac Architecture
 #    endif
-#  endif
-#  ifdef FFT_IOS
+#  elif defined(FFT_IOS)
 #    ifdef FFT_IOS_4_2
 #      warning iOS 4.2
 #    elif FFT_IOS_4_1
@@ -135,8 +134,10 @@
 #    elif FFT_IOS_3_0
 #      warning iOS 3.0
 #    else
-#      warning Unknown Architecture
+#      warning Unknown iOS Architecture
 #    endif
+#  else
+#     warning Unknown Architecture not Mac or iOS
 #  endif
 #endif
 
