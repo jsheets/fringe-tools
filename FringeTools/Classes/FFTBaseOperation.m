@@ -81,7 +81,7 @@
         return;
     }
     
-    FFTTrace(@"Starting operation");
+    FFTDebug(@"Starting %@ operation", [self class]);
     if (_finished || [self isCancelled])
     {
         [self completeOperation];
@@ -98,6 +98,7 @@
 
 - (void)completeOperation
 {
+    FFTDebug(@"Completing %@ operation", [self class]);
     [self updateExecuting:NO];
     [self updateFinished:YES];
 }
@@ -117,8 +118,12 @@
         return;
     }
     
-    FFTTrace(@"Operation Main");
-    if (_finished || [self isCancelled]) return;
+    FFTDebug(@"Starting %@ operation", [self class]);
+    if (_finished || [self isCancelled])
+    {
+        [self completeOperation];
+        return;
+    }
     
     @try
     {
