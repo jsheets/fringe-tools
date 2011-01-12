@@ -25,7 +25,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTLogging.h"
+#import <FringeTools/FFTLogging.h>
 
 // Require API_KEY if any analytics are enabled.
 #if defined(USE_PINCH_MEDIA) || defined(USE_FLURRY) || defined(USE_LOCALYTICS)

@@ -1,8 +1,8 @@
 //
-//  FringeAppDelegate.h
+// FringeTools.h
 //  FringeTools
 //
-//  Created by John Sheets on 10/6/10.
+//  Created by John Sheets on 12/19/10.
 //  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,16 +25,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <FringeTools/FFTOs.h>
+#import <FringeTools/FFTLogging.h>
+#import <FringeTools/FFTAnalytics.h>
+#import <FringeToole/FFTFileCache.h>
+#import <FringeTools/FFTBaseOperation.h>
+#import <FringeTools/FFTDownloadDelegate.h>
+#import <FringeTools/FFTDownloadURLOperation.h>
+#import <FringeTools/FFTFlickrSearchOperation.h>
+#import <FringeTools/FFTHtmlSearchOperation.h>
 
-@interface FFTAppDelegate : NSObject <UIApplicationDelegate>
-{
-}
-
-@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
-@property (nonatomic, readonly) BOOL isIPad;
-@property (nonatomic, readonly) BOOL isRetinaDisplay;
-
-- (CGSize)appScreenSize:(BOOL)isPortrait;
-
-@end
+#ifdef FFT_IOS
+#import <FringeTools/FFTAppDelegate.h>
+#endif

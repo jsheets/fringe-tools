@@ -25,8 +25,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTDownloadURLOperation.h"
-#import "FFTLogging.h"
+#import <FringeTools/FFTDownloadURLOperation.h>
+#import <FringeTools/FFTLogging.h>
 
 @implementation FFTDownloadURLOperation
 

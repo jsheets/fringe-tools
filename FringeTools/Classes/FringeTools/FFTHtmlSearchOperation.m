@@ -25,8 +25,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTHtmlSearchOperation.h"
-#import "FFTLogging.h"
+#import <FringeTools/FFTHtmlSearchOperation.h>
+#import <FringeTools/FFTLogging.h>
 
 //#define MIN_IMAGE_COUNT 200
 #define MIN_IMAGE_COUNT 50

@@ -1,8 +1,8 @@
 //
-// FringeTools.h
+//  BaseOperation.h
 //  FringeTools
 //
-//  Created by John Sheets on 12/19/10.
+//  Created by John Sheets on 9/25/10.
 //  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,15 +25,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTOs.h"
-#import "FFTLogging.h"
-#import "FFTAnalytics.h"
-#import "FFTBaseOperation.h"
-#import "FFTDownloadDelegate.h"
-#import "FFTDownloadURLOperation.h"
-#import "FFTFlickrSearchOperation.h"
-#import "FFTHtmlSearchOperation.h"
+@interface FFTBaseOperation : NSOperation
+{
+    BOOL _executing;
+    BOOL _finished;
+}
 
-#ifdef FFT_IOS
-#import "FFTAppDelegate.h"
-#endif
+- (void)performOperation;
+- (void)completeOperation;
+
+@end

@@ -6,7 +6,7 @@
 //  Copyright 2010 FourFringe. All rights reserved.
 //
 
-#import "FFTFileCache.h"
+#import <FringeTools/FFTFileCache.h>
 
 @implementation FFTFileCache
 

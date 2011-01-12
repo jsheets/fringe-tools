@@ -28,8 +28,8 @@
 #import <libxml/HTMLParser.h>
 #import <libxml/xpath.h>
 
-#import "FFTBaseOperation.h"
-#import "FFTDownloadDelegate.h"
+#import <FringeTools/FFTBaseOperation.h>
+#import <FringeTools/FFTDownloadDelegate.h>
 
 @interface FFTHtmlSearchOperation : FFTBaseOperation
 {

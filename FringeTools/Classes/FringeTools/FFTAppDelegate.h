@@ -1,8 +1,8 @@
 //
-//  FFTDownloadOperation.h
+//  FringeAppDelegate.h
 //  FringeTools
 //
-//  Created by John Sheets on 9/25/10.
+//  Created by John Sheets on 10/6/10.
 //  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,22 +25,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseOperation.h"
-#import "FFTDownloadDelegate.h"
-
-// Operation to download a a single file from a URL.
-@interface FFTDownloadURLOperation : FFTBaseOperation
+@interface FFTAppDelegate : NSObject <UIApplicationDelegate>
 {
-    id<FFTDownloadDelegate> _delegate;
-    
-    NSURL *_url;
-    NSMutableData *_responseData;
 }
 
-@property (nonatomic, assign) id<FFTDownloadDelegate> delegate;
-@property (nonatomic, copy) NSURL *url;
-@property (nonatomic, retain) NSMutableData *responseData;
+@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
+@property (nonatomic, readonly) BOOL isIPad;
+@property (nonatomic, readonly) BOOL isRetinaDisplay;
 
-- (id)initWithURL:(NSURL *)url;
+- (CGSize)appScreenSize:(BOOL)isPortrait;
 
 @end

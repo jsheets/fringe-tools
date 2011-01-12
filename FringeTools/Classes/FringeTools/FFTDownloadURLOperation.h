@@ -1,5 +1,5 @@
 //
-//  BaseOperation.h
+//  FFTDownloadOperation.h
 //  FringeTools
 //
 //  Created by John Sheets on 9/25/10.
@@ -25,15 +25,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <FringeTools/FFTBaseOperation.h>
+#import <FringeTools/FFTDownloadDelegate.h>
 
-@interface FFTBaseOperation : NSOperation
+// Operation to download a a single file from a URL.
+@interface FFTDownloadURLOperation : FFTBaseOperation
 {
-    BOOL _executing;
-    BOOL _finished;
+    id<FFTDownloadDelegate> _delegate;
+    
+    NSURL *_url;
+    NSMutableData *_responseData;
 }
 
-- (void)performOperation;
-- (void)completeOperation;
+@property (nonatomic, assign) id<FFTDownloadDelegate> delegate;
+@property (nonatomic, copy) NSURL *url;
+@property (nonatomic, retain) NSMutableData *responseData;
+
+- (id)initWithURL:(NSURL *)url;
 
 @end

@@ -6,9 +6,6 @@
 //  Copyright 2010 FourFringe. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-
 @interface FFTFileCache : NSObject
 {
     NSTimeInterval _expirationSeconds;

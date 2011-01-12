@@ -27,8 +27,8 @@
 
 #import "ObjectiveFlickr.h"
 
-#import "FFTBaseOperation.h"
-#import "FFTDownloadDelegate.h"
+#import <FringeTools/FFTBaseOperation.h>
+#import <FringeTools/FFTDownloadDelegate.h>
 
 @interface FFTFlickrSearchOperation : FFTBaseOperation <OFFlickrAPIRequestDelegate>
 {

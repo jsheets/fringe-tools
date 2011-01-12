@@ -33,13 +33,10 @@
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B7AAAC50124EFDD2002D3030 /* FFTBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4D124EFDD2002D3030 /* FFTBaseOperation.m */; };
-		B7AAAC52124EFDD2002D3030 /* FFTDownloadURLOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4E124EFDD2002D3030 /* FFTDownloadURLOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7AAAC52124EFDD2002D3030 /* FFTDownloadURLOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4E124EFDD2002D3030 /* FFTDownloadURLOperation.h */; settings = {ATTRIBUTES = (); }; };
 		B7AAAC53124EFDD2002D3030 /* FFTDownloadURLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4F124EFDD2002D3030 /* FFTDownloadURLOperation.m */; };
 		B7AAAC55124EFE3B002D3030 /* FFTAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC54124EFE3B002D3030 /* FFTAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7AAAC6C124F0587002D3030 /* FFTLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC6B124F0587002D3030 /* FFTLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7AAAC52124EFDD2002D3030 /* FFTDownloadOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4E124EFDD2002D3030 /* FFTDownloadOperation.h */; settings = {ATTRIBUTES = (); }; };
-		B7AAAC53124EFDD2002D3030 /* FFTDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4F124EFDD2002D3030 /* FFTDownloadOperation.m */; };
-		B7AAAC6C124F0587002D3030 /* FFTGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC6B124F0587002D3030 /* FFTGlobal.h */; settings = {ATTRIBUTES = (); }; };
+		B7AAAC6C124F0587002D3030 /* FFTLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC6B124F0587002D3030 /* FFTLogging.h */; settings = {ATTRIBUTES = (); }; };
 		B7AAADD912516B32002D3030 /* FFTFileCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAADD712516B32002D3030 /* FFTFileCache.h */; };
 		B7AAADDA12516B32002D3030 /* FFTFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAADD812516B32002D3030 /* FFTFileCache.m */; };
 /* End PBXBuildFile section */
@@ -112,7 +109,6 @@
 		B7AAAC4F124EFDD2002D3030 /* FFTDownloadURLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTDownloadURLOperation.m; sourceTree = "<group>"; };
 		B7AAAC54124EFE3B002D3030 /* FFTAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTAnalytics.h; sourceTree = "<group>"; };
 		B7AAAC6B124F0587002D3030 /* FFTLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTLogging.h; sourceTree = "<group>"; };
-		B7AAAC6B124F0587002D3030 /* FFTGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTGlobal.h; sourceTree = "<group>"; };
 		B7AAADD712516B32002D3030 /* FFTFileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTFileCache.h; sourceTree = "<group>"; };
 		B7AAADD812516B32002D3030 /* FFTFileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTFileCache.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libFringeTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFringeTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */,
-				08FB77AEFE84172EC02AAC07 /* Classes */,
+				0D83646412DD33580015EBF3 /* Classes */,
 				B7AAAC4B124EFA88002D3030 /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -180,7 +176,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+		08FB77AEFE84172EC02AAC07 /* FringeTools */ = {
 			isa = PBXGroup;
 			children = (
 				0DD2AB0112BE7E1C00D3F1B5 /* FringeTools.h */,
@@ -195,7 +191,7 @@
 				B7AAAC4D124EFDD2002D3030 /* FFTBaseOperation.m */,
 				0DD2A91E12BD3F0A00D3F1B5 /* Download Ops */,
 			);
-			path = Classes;
+			path = FringeTools;
 			sourceTree = "<group>";
 		};
 		0D647AC5127FB46700633A57 /* iOS Test App */ = {
@@ -248,6 +244,14 @@
 				0D647AD4127FB46800633A57 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D83646412DD33580015EBF3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* FringeTools */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		0DD2A88D12BD06B500D3F1B5 /* Products */ = {
@@ -433,8 +437,7 @@
 				B7AAAC53124EFDD2002D3030 /* FFTDownloadURLOperation.m in Sources */,
 				0DD2A85612BC566500D3F1B5 /* FFTFlickrSearchOperation.m in Sources */,
 				0DD2A85812BC566500D3F1B5 /* FFTHtmlSearchOperation.m in Sources */,
-				B7AAAC53124EFDD2002D3030 /* FFTDownloadOperation.m in Sources */,
-				0D09CAA7125D757200DB4FBC /* FFTAppDelegate.m in Sources */,
+				B7AAAC53124EFDD2002D3030 /* FFTDownloadURLOperation.m in Sources */,
 				B7AAADDA12516B32002D3030 /* FFTFileCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +536,7 @@
 				GCC_PREFIX_HEADER = FringeTools_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = FFT_LOG_ALL;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Classes",
 					/usr/include/libxml2,
 					"$(SRCROOT)/../objectiveflickr/Source",
 					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
