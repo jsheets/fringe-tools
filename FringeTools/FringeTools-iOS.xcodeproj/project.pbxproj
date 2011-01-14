@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0D09CAA6125D757200DB4FBC /* FFTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D3E659E12E012AE00F9A39F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */; };
+		0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3E65AD12E012FC00F9A39F /* libGHUnitIOSSimulator.a */; };
+		0D3E65BF12E0154B00F9A39F /* FFTFileCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */; };
 		0D647AD1127FB46800633A57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D647AD0127FB46800633A57 /* UIKit.framework */; };
 		0D647AD3127FB46800633A57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D647AD2127FB46800633A57 /* Foundation.framework */; };
 		0D647AD5127FB46800633A57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D647AD4127FB46800633A57 /* CoreGraphics.framework */; };
 		0D647ADA127FB46800633A57 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D647AD8127FB46800633A57 /* InfoPlist.strings */; };
-		0D647ADC127FB46900633A57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D647ADB127FB46900633A57 /* main.m */; };
 		0D647ADF127FB46900633A57 /* iOS_Test_AppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D647ADE127FB46900633A57 /* iOS_Test_AppAppDelegate.m */; };
 		0D647AE2127FB46900633A57 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D647AE0127FB46900633A57 /* MainWindow.xib */; };
 		0D647AE5127FB46900633A57 /* iOS_Test_AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D647AE4127FB46900633A57 /* iOS_Test_AppViewController.m */; };
@@ -75,6 +77,12 @@
 /* Begin PBXFileReference section */
 		0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTAppDelegate.h; sourceTree = "<group>"; };
 		0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTAppDelegate.m; sourceTree = "<group>"; };
+		0D3E648112E00D0400F9A39F /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = "../external-lib/GHUnit.framework"; sourceTree = SOURCE_ROOT; };
+		0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = "../external-lib/GHUnit-iOS/GHUnitIOSTestMain.m"; sourceTree = SOURCE_ROOT; };
+		0D3E659F12E012C200F9A39F /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHUnitIPhoneAppDelegate.h; path = "../external-lib/GHUnit-iOS/GHUnitIPhoneAppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		0D3E65AC12E012FC00F9A39F /* libGHUnitIOSDevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGHUnitIOSDevice.a; path = "../external-lib/GHUnit-iOS/libGHUnitIOSDevice.a"; sourceTree = SOURCE_ROOT; };
+		0D3E65AD12E012FC00F9A39F /* libGHUnitIOSSimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGHUnitIOSSimulator.a; path = "../external-lib/GHUnit-iOS/libGHUnitIOSSimulator.a"; sourceTree = SOURCE_ROOT; };
+		0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTFileCacheTests.m; sourceTree = "<group>"; };
 		0D647ACE127FB46800633A57 /* iOS Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D647AD0127FB46800633A57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0D647AD2127FB46800633A57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,8 +128,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D647AD3127FB46800633A57 /* Foundation.framework in Frameworks */,
-				0D647AD5127FB46800633A57 /* CoreGraphics.framework in Frameworks */,
 				0D647AD1127FB46800633A57 /* UIKit.framework in Frameworks */,
+				0D647AD5127FB46800633A57 /* CoreGraphics.framework in Frameworks */,
+				0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,10 +216,13 @@
 		0D647AC6127FB46800633A57 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0D3E659F12E012C200F9A39F /* GHUnitIPhoneAppDelegate.h */,
+				0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */,
 				0D647ADD127FB46900633A57 /* iOS_Test_AppAppDelegate.h */,
 				0D647ADE127FB46900633A57 /* iOS_Test_AppAppDelegate.m */,
 				0D647AE3127FB46900633A57 /* iOS_Test_AppViewController.h */,
 				0D647AE4127FB46900633A57 /* iOS_Test_AppViewController.m */,
+				0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -238,9 +250,12 @@
 		0D647AC9127FB46800633A57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D647AD0127FB46800633A57 /* UIKit.framework */,
 				0D647AD2127FB46800633A57 /* Foundation.framework */,
+				0D647AD0127FB46800633A57 /* UIKit.framework */,
 				0D647AD4127FB46800633A57 /* CoreGraphics.framework */,
+				0D3E648112E00D0400F9A39F /* GHUnit.framework */,
+				0D3E65AC12E012FC00F9A39F /* libGHUnitIOSDevice.a */,
+				0D3E65AD12E012FC00F9A39F /* libGHUnitIOSSimulator.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -414,9 +429,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D647ADC127FB46900633A57 /* main.m in Sources */,
 				0D647ADF127FB46900633A57 /* iOS_Test_AppAppDelegate.m in Sources */,
 				0D647AE5127FB46900633A57 /* iOS_Test_AppViewController.m in Sources */,
+				0D3E659E12E012AE00F9A39F /* GHUnitIOSTestMain.m in Sources */,
+				0D3E65BF12E0154B00F9A39F /* FFTFileCacheTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +499,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../external-lib\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -490,6 +510,14 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				INFOPLIST_FILE = "iOS Test App/iOS_Test_App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../external-lib/GHUnit-iOS\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -501,12 +529,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../external-lib\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Test App/iOS_Test_App_Prefix.pch";
 				INFOPLIST_FILE = "iOS Test App/iOS_Test_App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../external-lib/GHUnit-iOS\"",
+				);
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
