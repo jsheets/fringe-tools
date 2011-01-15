@@ -28,7 +28,7 @@
 #import <FringeTools/FFTOs.h>
 #import <FringeTools/FFTLogging.h>
 #import <FringeTools/FFTAnalytics.h>
-#import <FringeToole/FFTFileCache.h>
+#import <FringeTools/FFTFileCache.h>
 #import <FringeTools/FFTBaseOperation.h>
 #import <FringeTools/FFTDownloadDelegate.h>
 #import <FringeTools/FFTDownloadURLOperation.h>

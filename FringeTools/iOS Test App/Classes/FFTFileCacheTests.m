@@ -19,7 +19,7 @@
 
 - (void)testSuccess
 {
-    GHAssertTrue(YES, @"Destinted for greatness!");
+    GHAssertTrue(YES, @"Destined for greatness!");
 }
 
 
