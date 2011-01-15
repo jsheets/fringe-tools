@@ -25,7 +25,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface FFTBaseTestCase : GHTestCase
+@interface FFTBaseTestCase : GHAsyncTestCase
 {
     NSOperationQueue *_queue;
 }

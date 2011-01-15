@@ -35,6 +35,10 @@
 		0DE266FD12E12CC5007A6614 /* libObjectiveFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A89812BD06B500D3F1B5 /* libObjectiveFlickr.a */; };
 		0DE2680412E131E6007A6614 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A8B412BD070000D3F1B5 /* CFNetwork.framework */; };
 		0DE2680912E131FF007A6614 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2680812E131FF007A6614 /* SystemConfiguration.framework */; };
+		0DE2688312E15524007A6614 /* FFTBaseOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE2688212E15524007A6614 /* FFTBaseOperationTests.m */; };
+		0DE268A812E15ECF007A6614 /* FFTDownloadURLOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE268A712E15ECF007A6614 /* FFTDownloadURLOperationTests.m */; };
+		0DE268AA12E15EE4007A6614 /* FFTFlickrSearchOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE268A912E15EE4007A6614 /* FFTFlickrSearchOperationTests.m */; };
+		0DE268AC12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE268AB12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m */; };
 		AA747D9F0F9514B9006C5449 /* FringeTools_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B7AAAC50124EFDD2002D3030 /* FFTBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -123,6 +127,10 @@
 		0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBaseTestCase.h; sourceTree = "<group>"; };
 		0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTBaseTestCase.m; sourceTree = "<group>"; };
 		0DE2680812E131FF007A6614 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0DE2688212E15524007A6614 /* FFTBaseOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTBaseOperationTests.m; sourceTree = "<group>"; };
+		0DE268A712E15ECF007A6614 /* FFTDownloadURLOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTDownloadURLOperationTests.m; sourceTree = "<group>"; };
+		0DE268A912E15EE4007A6614 /* FFTFlickrSearchOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTFlickrSearchOperationTests.m; sourceTree = "<group>"; };
+		0DE268AB12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHtmlSearchOperationTests.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FringeTools_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBaseOperation.h; sourceTree = "<group>"; };
@@ -315,6 +323,10 @@
 				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
 				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
 				0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */,
+				0DE2688212E15524007A6614 /* FFTBaseOperationTests.m */,
+				0DE268A712E15ECF007A6614 /* FFTDownloadURLOperationTests.m */,
+				0DE268A912E15EE4007A6614 /* FFTFlickrSearchOperationTests.m */,
+				0DE268AB12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m */,
 			);
 			name = Tests;
 			path = Classes;
@@ -464,6 +476,10 @@
 				0D3E659E12E012AE00F9A39F /* GHUnitIOSTestMain.m in Sources */,
 				0D3E65BF12E0154B00F9A39F /* FFTFileCacheTests.m in Sources */,
 				0DE266D412E114E3007A6614 /* FFTBaseTestCase.m in Sources */,
+				0DE2688312E15524007A6614 /* FFTBaseOperationTests.m in Sources */,
+				0DE268A812E15ECF007A6614 /* FFTDownloadURLOperationTests.m in Sources */,
+				0DE268AA12E15EE4007A6614 /* FFTFlickrSearchOperationTests.m in Sources */,
+				0DE268AC12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
