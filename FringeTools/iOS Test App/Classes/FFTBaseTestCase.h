@@ -8,8 +8,10 @@
 
 @interface FFTBaseTestCase : GHTestCase
 {
-
+    NSOperationQueue *_queue;
 }
+
+@property (nonatomic, readonly) NSOperationQueue *queue;
 
 - (void)assertString:(NSString *)string containsText:(NSString *)fragment description:(NSString *)description;
 - (void)assertString:(NSString *)string doesNotContainText:(NSString *)fragment description:(NSString *)description;
@@ -25,5 +27,7 @@
 - (NSURL *)urlForResource:(NSString *)resourceName extension:(NSString *)extension;
 - (NSData *)loadResource:(NSString *)resourceName extension:(NSString *)extension;
 - (NSString *)loadStringResource:(NSString *)resourceName extension:(NSString *)extension;
+
+- (void)runSynchronousOperation:(NSOperation *)op;
 
 @end

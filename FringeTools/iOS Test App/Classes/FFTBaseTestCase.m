@@ -10,6 +10,15 @@
 
 @implementation FFTBaseTestCase
 
+@synthesize queue = _queue;
+
+- (void)dealloc
+{
+    [_queue release], _queue = nil;
+    
+    [super dealloc];
+}
+
 
 #pragma mark -
 #pragma mark String Assertions
@@ -151,5 +160,25 @@
     
     return string;
 }
+
+
+#pragma mark Asynchronous Operations
+
+
+- (NSOperationQueue *)queue
+{
+    if (_queue == nil)
+    {
+        _queue = [[NSOperationQueue alloc] init];
+    }
+    
+    return _queue;
+}
+
+- (void)runSynchronousOperation:(NSOperation *)op
+{
+    [self.queue addOperations:[NSArray arrayWithObject:op] waitUntilFinished:YES];
+}
+
 
 @end
