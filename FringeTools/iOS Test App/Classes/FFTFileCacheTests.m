@@ -6,7 +6,9 @@
 //  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 
-@interface FFTFileCacheTests : GHTestCase {}
+#import "FFTBaseTestCase.h"
+
+@interface FFTFileCacheTests : FFTBaseTestCase {}
 @end
 
 

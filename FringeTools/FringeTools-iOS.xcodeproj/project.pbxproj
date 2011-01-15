@@ -31,6 +31,10 @@
 		0DD2A8B512BD070000D3F1B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A8B412BD070000D3F1B5 /* CFNetwork.framework */; };
 		0DD2A90312BD3CAF00D3F1B5 /* FFTDownloadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD2A90212BD3CAF00D3F1B5 /* FFTDownloadDelegate.h */; };
 		0DD47C951283828300B2787A /* FFTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */; };
+		0DE266D412E114E3007A6614 /* FFTBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */; };
+		0DE266FD12E12CC5007A6614 /* libObjectiveFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A89812BD06B500D3F1B5 /* libObjectiveFlickr.a */; };
+		0DE2680412E131E6007A6614 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A8B412BD070000D3F1B5 /* CFNetwork.framework */; };
+		0DE2680912E131FF007A6614 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2680812E131FF007A6614 /* SystemConfiguration.framework */; };
 		AA747D9F0F9514B9006C5449 /* FringeTools_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B7AAAC50124EFDD2002D3030 /* FFTBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +76,13 @@
 			remoteGlobalIDString = 6ABF72E50F939BE600B9179E;
 			remoteInfo = "ObjectiveFlickr (library)";
 		};
+		0DE266F712E12C53007A6614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ABF72E50F939BE600B9179E /* ObjectiveFlickr (library) */;
+			remoteInfo = "ObjectiveFlickr (library)";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +120,9 @@
 		0DD2A8B412BD070000D3F1B5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0DD2A90212BD3CAF00D3F1B5 /* FFTDownloadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTDownloadDelegate.h; sourceTree = "<group>"; };
 		0DD2AB0112BE7E1C00D3F1B5 /* FringeTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FringeTools.h; sourceTree = "<group>"; };
+		0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBaseTestCase.h; sourceTree = "<group>"; };
+		0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTBaseTestCase.m; sourceTree = "<group>"; };
+		0DE2680812E131FF007A6614 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FringeTools_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBaseOperation.h; sourceTree = "<group>"; };
@@ -127,10 +141,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE266FD12E12CC5007A6614 /* libObjectiveFlickr.a in Frameworks */,
 				0D647AD3127FB46800633A57 /* Foundation.framework in Frameworks */,
 				0D647AD1127FB46800633A57 /* UIKit.framework in Frameworks */,
 				0D647AD5127FB46800633A57 /* CoreGraphics.framework in Frameworks */,
 				0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */,
+				0DE2680412E131E6007A6614 /* CFNetwork.framework in Frameworks */,
+				0DE2680912E131FF007A6614 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +239,8 @@
 				0D647ADE127FB46900633A57 /* iOS_Test_AppAppDelegate.m */,
 				0D647AE3127FB46900633A57 /* iOS_Test_AppViewController.h */,
 				0D647AE4127FB46900633A57 /* iOS_Test_AppViewController.m */,
+				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
+				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
 				0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */,
 			);
 			path = Classes;
@@ -253,6 +272,7 @@
 				0D647AD2127FB46800633A57 /* Foundation.framework */,
 				0D647AD0127FB46800633A57 /* UIKit.framework */,
 				0D647AD4127FB46800633A57 /* CoreGraphics.framework */,
+				0DE2680812E131FF007A6614 /* SystemConfiguration.framework */,
 				0D3E648112E00D0400F9A39F /* GHUnit.framework */,
 				0D3E65AC12E012FC00F9A39F /* libGHUnitIOSDevice.a */,
 				0D3E65AD12E012FC00F9A39F /* libGHUnitIOSSimulator.a */,
@@ -335,6 +355,7 @@
 			);
 			dependencies = (
 				0DAAC3BB12837C33005AAC96 /* PBXTargetDependency */,
+				0DE266F812E12C53007A6614 /* PBXTargetDependency */,
 			);
 			name = "iOS Test App";
 			productName = "iOS Test App";
@@ -433,6 +454,7 @@
 				0D647AE5127FB46900633A57 /* iOS_Test_AppViewController.m in Sources */,
 				0D3E659E12E012AE00F9A39F /* GHUnitIOSTestMain.m in Sources */,
 				0D3E65BF12E0154B00F9A39F /* FFTFileCacheTests.m in Sources */,
+				0DE266D412E114E3007A6614 /* FFTBaseTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +484,11 @@
 			isa = PBXTargetDependency;
 			name = "ObjectiveFlickr (library)";
 			targetProxy = 0DD2A89912BD06E000D3F1B5 /* PBXContainerItemProxy */;
+		};
+		0DE266F812E12C53007A6614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectiveFlickr (library)";
+			targetProxy = 0DE266F712E12C53007A6614 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -508,8 +535,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Test App/iOS_Test_App_Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Classes",
+					"$(SRCROOT)/../objectiveflickr/Source",
+					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "iOS Test App/iOS_Test_App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../external-lib/GHUnit-iOS\"",
