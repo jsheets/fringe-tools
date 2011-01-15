@@ -223,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				0D647AC6127FB46800633A57 /* Classes */,
+				0DE2687E12E152E8007A6614 /* Tests */,
 				0D647AC7127FB46800633A57 /* Other Sources */,
 				0D647AC8127FB46800633A57 /* Resources */,
 				0D647AC9127FB46800633A57 /* Frameworks */,
@@ -239,9 +240,6 @@
 				0D647ADE127FB46900633A57 /* iOS_Test_AppAppDelegate.m */,
 				0D647AE3127FB46900633A57 /* iOS_Test_AppViewController.h */,
 				0D647AE4127FB46900633A57 /* iOS_Test_AppViewController.m */,
-				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
-				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
-				0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -309,6 +307,17 @@
 				0DD2A84E12BC566500D3F1B5 /* FFTHtmlSearchOperation.m */,
 			);
 			name = "Download Ops";
+			sourceTree = "<group>";
+		};
+		0DE2687E12E152E8007A6614 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
+				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
+				0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */,
+			);
+			name = Tests;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {

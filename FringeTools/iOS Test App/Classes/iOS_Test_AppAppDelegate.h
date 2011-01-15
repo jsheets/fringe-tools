@@ -25,8 +25,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-
 @class iOS_Test_AppViewController;
 
 @interface iOS_Test_AppAppDelegate : NSObject <UIApplicationDelegate>
