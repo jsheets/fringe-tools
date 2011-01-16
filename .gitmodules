@@ -7,3 +7,6 @@
 [submodule "external/UISpec"]
 	path = external/UISpec
 	url = git@github.com:jsheets/UISpec.git
+[submodule "external/OCMock"]
+	path = external/OCMock
+	url = git@github.com:jsheets/OCMock.git
