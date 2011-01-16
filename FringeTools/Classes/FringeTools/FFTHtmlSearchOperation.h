@@ -33,7 +33,7 @@
 
 @interface FFTHtmlSearchOperation : FFTBaseOperation
 {
-    id<FFTDownloadDelegate> _delegate;
+    id<FFTDownloadDelegate> _downloadDelegate;
     
     NSString *_nextPageXpath;
     NSString *_photoBaseXpath;
@@ -52,7 +52,7 @@
     NSMutableData *_responseData;
 }
 
-@property (nonatomic, assign) id<FFTDownloadDelegate> delegate;
+@property (nonatomic, assign) id<FFTDownloadDelegate> downloadDelegate;
 
 @property (nonatomic, copy) NSString *nextPageXpath;
 @property (nonatomic, copy) NSString *photoBaseXpath;

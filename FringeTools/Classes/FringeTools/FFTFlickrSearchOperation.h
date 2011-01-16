@@ -32,7 +32,7 @@
 
 @interface FFTFlickrSearchOperation : FFTBaseOperation <OFFlickrAPIRequestDelegate>
 {
-    id<FFTDownloadDelegate> _delegate;
+    id<FFTDownloadDelegate> _downloadDelegate;
     
     OFFlickrAPIContext *_context;
     OFFlickrAPIRequest *_request;
@@ -43,7 +43,7 @@
     NSInteger _resultsPerPage;
 }
 
-@property (nonatomic, assign) id<FFTDownloadDelegate> delegate;
+@property (nonatomic, assign) id<FFTDownloadDelegate> downloadDelegate;
 
 @property (nonatomic, retain) OFFlickrAPIContext *context;
 @property (nonatomic, retain) OFFlickrAPIRequest *request;

@@ -34,7 +34,7 @@
 static NSString *kQFlickrSearchPhotosKeyName = @"FlickrSearchPhotosKeyName";
 static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 
-@synthesize delegate = _delegate;
+@synthesize downloadDelegate = _downloadDelegate;
 @synthesize context = _context;
 @synthesize request = _request;
 @synthesize username = _username;
@@ -77,7 +77,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         [_request cancel];
     }
     
-    _delegate = nil;
+    _downloadDelegate = nil;
     [_context release], _context = nil;
     [_request release], _request = nil;
     [_username release], _username = nil;
@@ -216,8 +216,8 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     {
         // Got the result. Close out the operation.
         NSArray *flickrPhotos = [inResponseDictionary valueForKeyPath:@"photos.photo"];
-        [self.delegate downloadSucceeded:nil];
-        [self.delegate foundUrls:flickrPhotos];
+        [self.downloadDelegate downloadSucceeded:nil];
+        [self.downloadDelegate foundUrls:flickrPhotos];
         
         [self completeOperation];
     }
@@ -227,7 +227,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         didFailWithError:(NSError *)inError
 {
     FFTError(@"FLICKR ERROR: failed request %@", inError);
-    [self.delegate downloadFailedWithError:inError];
+    [self.downloadDelegate downloadFailedWithError:inError];
     
     [self completeOperation];
 }

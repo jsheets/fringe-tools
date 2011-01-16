@@ -30,7 +30,7 @@
 
 @implementation FFTDownloadURLOperation
 
-@synthesize delegate = _delegate;
+@synthesize downloadDelegate = _downloadDelegate;
 @synthesize url = _url;
 @synthesize responseData = _responseData;
 
@@ -48,7 +48,7 @@
 
 - (void)dealloc
 {
-    _delegate = nil;
+    _downloadDelegate = nil;
     [_url release], _url = nil;
     [_responseData release], _responseData = nil;
     
@@ -105,7 +105,7 @@
     if ([self checkCancel:connection]) { return; }
     
     // Notify the delegate of our failure.
-    [self.delegate downloadFailedWithError:error];
+    [self.downloadDelegate downloadFailedWithError:error];
     
     self.responseData = nil;
     [self completeOperation];
@@ -116,7 +116,7 @@
     if ([self checkCancel:connection]) { return; }
     
     // Notify the delegate of our success!
-    [self.delegate downloadSucceeded:self.responseData];
+    [self.downloadDelegate downloadSucceeded:self.responseData];
     
     self.responseData = nil;
     [self completeOperation];

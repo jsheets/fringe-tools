@@ -31,13 +31,13 @@
 // Operation to download a a single file from a URL.
 @interface FFTDownloadURLOperation : FFTBaseOperation
 {
-    id<FFTDownloadDelegate> _delegate;
+    id<FFTDownloadDelegate> _downloadDelegate;
     
     NSURL *_url;
     NSMutableData *_responseData;
 }
 
-@property (nonatomic, assign) id<FFTDownloadDelegate> delegate;
+@property (nonatomic, assign) id<FFTDownloadDelegate> downloadDelegate;
 @property (nonatomic, copy) NSURL *url;
 @property (nonatomic, retain) NSMutableData *responseData;
 
