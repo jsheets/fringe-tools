@@ -32,19 +32,20 @@
 		0DD2A90312BD3CAF00D3F1B5 /* FFTDownloadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD2A90212BD3CAF00D3F1B5 /* FFTDownloadDelegate.h */; };
 		0DD47C951283828300B2787A /* FFTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */; };
 		0DE266D412E114E3007A6614 /* FFTBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */; };
-		0DE266FD12E12CC5007A6614 /* libObjectiveFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A89812BD06B500D3F1B5 /* libObjectiveFlickr.a */; };
 		0DE2680412E131E6007A6614 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A8B412BD070000D3F1B5 /* CFNetwork.framework */; };
 		0DE2680912E131FF007A6614 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2680812E131FF007A6614 /* SystemConfiguration.framework */; };
 		0DE2688312E15524007A6614 /* FFTBaseOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE2688212E15524007A6614 /* FFTBaseOperationTests.m */; };
 		0DE268A812E15ECF007A6614 /* FFTDownloadURLOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE268A712E15ECF007A6614 /* FFTDownloadURLOperationTests.m */; };
 		0DE268AA12E15EE4007A6614 /* FFTFlickrSearchOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE268A912E15EE4007A6614 /* FFTFlickrSearchOperationTests.m */; };
 		0DE268AC12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE268AB12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m */; };
+		0DE2698812E379B8007A6614 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2698112E377D5007A6614 /* libOCMock.a */; };
+		0DE269AC12E38027007A6614 /* libFringeTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libFringeTools.a */; };
+		0DE269B112E38B5F007A6614 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A86312BC597C00D3F1B5 /* libxml2.dylib */; };
 		AA747D9F0F9514B9006C5449 /* FringeTools_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B7AAAC50124EFDD2002D3030 /* FFTBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4D124EFDD2002D3030 /* FFTBaseOperation.m */; };
 		B7AAAC52124EFDD2002D3030 /* FFTDownloadURLOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4E124EFDD2002D3030 /* FFTDownloadURLOperation.h */; settings = {ATTRIBUTES = (); }; };
-		B7AAAC53124EFDD2002D3030 /* FFTDownloadURLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4F124EFDD2002D3030 /* FFTDownloadURLOperation.m */; };
 		B7AAAC55124EFE3B002D3030 /* FFTAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC54124EFE3B002D3030 /* FFTAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7AAAC6C124F0587002D3030 /* FFTLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC6B124F0587002D3030 /* FFTLogging.h */; settings = {ATTRIBUTES = (); }; };
 		B7AAADD912516B32002D3030 /* FFTFileCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAADD712516B32002D3030 /* FFTFileCache.h */; };
@@ -84,8 +85,43 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 6ABF72E50F939BE600B9179E /* ObjectiveFlickr (library) */;
+			remoteGlobalIDString = 6ABF72E50F939BE600B9179E;
 			remoteInfo = "ObjectiveFlickr (library)";
+		};
+		0DE2697C12E377D5007A6614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OCMock.framework */;
+			remoteInfo = OCMock;
+		};
+		0DE2697E12E377D5007A6614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03BF2D3708F1C69500978C59 /* OCMockTests.octest */;
+			remoteInfo = OCMockTests;
+		};
+		0DE2698012E377D5007A6614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 033C84AF11F585CB0009B9CD /* libOCMock.a */;
+			remoteInfo = OCMockPhoneSim;
+		};
+		0DE2698212E377D5007A6614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03DAC01F11FEB771007AF17B /* libOCMock.a */;
+			remoteInfo = OCMockPhoneDevice;
+		};
+		0DE2698412E3796B007A6614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 033C84AE11F585CB0009B9CD /* OCMockPhoneSim */;
+			remoteInfo = OCMockPhoneSim;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -131,6 +167,7 @@
 		0DE268A712E15ECF007A6614 /* FFTDownloadURLOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTDownloadURLOperationTests.m; sourceTree = "<group>"; };
 		0DE268A912E15EE4007A6614 /* FFTFlickrSearchOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTFlickrSearchOperationTests.m; sourceTree = "<group>"; };
 		0DE268AB12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHtmlSearchOperationTests.m; sourceTree = "<group>"; };
+		0DE2697412E377D5007A6614 /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = ../external/OCMock/Source/OCMock.xcodeproj; sourceTree = SOURCE_ROOT; };
 		AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FringeTools_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBaseOperation.h; sourceTree = "<group>"; };
@@ -149,13 +186,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DE266FD12E12CC5007A6614 /* libObjectiveFlickr.a in Frameworks */,
 				0D647AD3127FB46800633A57 /* Foundation.framework in Frameworks */,
 				0D647AD1127FB46800633A57 /* UIKit.framework in Frameworks */,
 				0D647AD5127FB46800633A57 /* CoreGraphics.framework in Frameworks */,
-				0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */,
 				0DE2680412E131E6007A6614 /* CFNetwork.framework in Frameworks */,
 				0DE2680912E131FF007A6614 /* SystemConfiguration.framework in Frameworks */,
+				0DE269B112E38B5F007A6614 /* libxml2.dylib in Frameworks */,
+				0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */,
+				0DE2698812E379B8007A6614 /* libOCMock.a in Frameworks */,
+				0DE269AC12E38027007A6614 /* libFringeTools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */,
+				0DE2697412E377D5007A6614 /* OCMock.xcodeproj */,
 				0D83646412DD33580015EBF3 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -320,8 +360,7 @@
 		0DE2687E12E152E8007A6614 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
-				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
+				0DE2693C12E35BF6007A6614 /* Test Support */,
 				0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */,
 				0DE2688212E15524007A6614 /* FFTBaseOperationTests.m */,
 				0DE268A712E15ECF007A6614 /* FFTDownloadURLOperationTests.m */,
@@ -330,6 +369,26 @@
 			);
 			name = Tests;
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0DE2693C12E35BF6007A6614 /* Test Support */ = {
+			isa = PBXGroup;
+			children = (
+				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
+				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
+			);
+			name = "Test Support";
+			sourceTree = "<group>";
+		};
+		0DE2697512E377D5007A6614 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DE2697D12E377D5007A6614 /* OCMock.framework */,
+				0DE2697F12E377D5007A6614 /* OCMockTests.octest */,
+				0DE2698112E377D5007A6614 /* libOCMock.a */,
+				0DE2698312E377D5007A6614 /* libOCMock.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
@@ -377,6 +436,7 @@
 			dependencies = (
 				0DAAC3BB12837C33005AAC96 /* PBXTargetDependency */,
 				0DE266F812E12C53007A6614 /* PBXTargetDependency */,
+				0DE2698512E3796B007A6614 /* PBXTargetDependency */,
 			);
 			name = "iOS Test App";
 			productName = "iOS Test App";
@@ -427,6 +487,10 @@
 					ProductGroup = 0DD2A88D12BD06B500D3F1B5 /* Products */;
 					ProjectRef = 0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */;
 				},
+				{
+					ProductGroup = 0DE2697512E377D5007A6614 /* Products */;
+					ProjectRef = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -449,6 +513,34 @@
 			fileType = archive.ar;
 			path = libObjectiveFlickr.a;
 			remoteRef = 0DD2A89712BD06B500D3F1B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DE2697D12E377D5007A6614 /* OCMock.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCMock.framework;
+			remoteRef = 0DE2697C12E377D5007A6614 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DE2697F12E377D5007A6614 /* OCMockTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCMockTests.octest;
+			remoteRef = 0DE2697E12E377D5007A6614 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DE2698112E377D5007A6614 /* libOCMock.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOCMock.a;
+			remoteRef = 0DE2698012E377D5007A6614 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DE2698312E377D5007A6614 /* libOCMock.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOCMock.a;
+			remoteRef = 0DE2698212E377D5007A6614 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -488,12 +580,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD47C951283828300B2787A /* FFTAppDelegate.m in Sources */,
+				B7AAADDA12516B32002D3030 /* FFTFileCache.m in Sources */,
 				B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */,
-				B7AAAC53124EFDD2002D3030 /* FFTDownloadURLOperation.m in Sources */,
 				0DD2A85612BC566500D3F1B5 /* FFTFlickrSearchOperation.m in Sources */,
 				0DD2A85812BC566500D3F1B5 /* FFTHtmlSearchOperation.m in Sources */,
-				B7AAAC53124EFDD2002D3030 /* FFTDownloadURLOperation.m in Sources */,
-				B7AAADDA12516B32002D3030 /* FFTFileCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +604,11 @@
 			isa = PBXTargetDependency;
 			name = "ObjectiveFlickr (library)";
 			targetProxy = 0DE266F712E12C53007A6614 /* PBXContainerItemProxy */;
+		};
+		0DE2698512E3796B007A6614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCMockPhoneSim;
+			targetProxy = 0DE2698412E3796B007A6614 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
