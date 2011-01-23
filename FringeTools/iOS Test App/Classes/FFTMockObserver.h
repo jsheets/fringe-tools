@@ -29,15 +29,18 @@
 
 @interface FFTMockObserver : NSObject //OCClassMockObject
 {
+    id _target;
     NSMutableArray *_goodKeyPaths;
     NSMutableArray *_badKeyPaths;
     NSMutableArray *_foundKeyPaths;
 }
 
+@property (nonatomic, retain) id target;
 @property (nonatomic, copy) NSMutableArray *goodKeyPaths;
 @property (nonatomic, copy) NSMutableArray *badKeyPaths;
 @property (nonatomic, copy) NSMutableArray *foundKeyPaths;
 
+- (id)initWithTarget:(id)target;
 - (void)expectKeyPath:(NSString *)keyPath;
 - (void)rejectKeyPath:(NSString *)keyPath;
 - (BOOL)checkForError:(NSString **)returnErrorString;

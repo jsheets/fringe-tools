@@ -79,28 +79,21 @@
 
 - (void)setUp
 {
-    _mock = [[[FFTMockObserver alloc] init] autorelease];
+    _thing = [[FakeThing alloc] init];
+    
+    // Observe FakeThing and make sure the mock is tracking KVO access properly.
+    // We are listening on all three properties, but for success, only name
+    // and title should be called.
+    _mock = [[FFTMockObserver alloc] initWithTarget:_thing];
     [_mock expectKeyPath:@"name"];
     [_mock expectKeyPath:@"title"];
     [_mock rejectKeyPath:@"secret"];
-    id observer = _mock;
-    
-    // Observe Thing and make sure the mock is tracking KVO access properly.
-    // We are listening on all three properties, but for success, only name
-    // and title should be called.
-    _thing = [[[FakeThing alloc] init] autorelease];
-    [_thing addObserver:observer forKeyPath:@"name" options:0 context:NULL];
-    [_thing addObserver:observer forKeyPath:@"title" options:0 context:NULL];
-    [_thing addObserver:observer forKeyPath:@"secret" options:0 context:NULL];
 }
 
 - (void)tearDown
 {
-    [_thing removeObserver:_mock forKeyPath:@"name"];
-    [_thing removeObserver:_mock forKeyPath:@"title"];
-    [_thing removeObserver:_mock forKeyPath:@"secret"];
-//    [_thing release], _thing = nil;
-//    [_mock release], _mock = nil;
+    [_thing release], _thing = nil;
+    [_mock release], _mock = nil;
 }
 
 - (void)testExpect_All
@@ -125,9 +118,9 @@
     NSString *errorMessage = nil;
     BOOL hadError = [_mock checkForError:&errorMessage];
     
-    GHAssertTrue(hadError, @"Should return an error condition if title not set");
     [self assertString:errorMessage containsText:@"title" description:@"Error message should complain about missing title"];
     [self assertString:errorMessage doesNotContainText:@"name" description:@"Error message should not complain about name"];
+    GHAssertTrue(hadError, @"Should return an error condition if title not set");
 }
 
 - (void)testReject_SecretAssigned
@@ -140,8 +133,8 @@
     NSString *errorMessage = nil;
     BOOL hadError = [_mock checkForError:&errorMessage];
     
-    GHAssertTrue(hadError, @"Should return an error condition if secret is set");
     [self assertString:errorMessage containsText:@"secret" description:@"Error message should complain about missing title"];
+    GHAssertTrue(hadError, @"Should return an error condition if secret is set");
 }
 
 @end

@@ -29,15 +29,17 @@
 
 @implementation FFTMockObserver
 
+@synthesize target = _target;
 @synthesize goodKeyPaths = _goodKeyPaths;
 @synthesize badKeyPaths = _badKeyPaths;
 @synthesize foundKeyPaths = _foundKeyPaths;
 
-- (id)init
+- (id)initWithTarget:(id)target
 {
     if ((self = [super init]))
     {
         // Initialization.
+        _target = [target retain];
         _goodKeyPaths = [[NSMutableArray  alloc] init];
         _badKeyPaths = [[NSMutableArray  alloc] init];
         _foundKeyPaths = [[NSMutableArray  alloc] init];
@@ -48,6 +50,16 @@
 
 - (void)dealloc
 {
+    for (NSString *keyPath in self.goodKeyPaths)
+    {
+        [_target removeObserver:self forKeyPath:keyPath];
+    }
+    for (NSString *keyPath in self.badKeyPaths)
+    {
+        [_target removeObserver:self forKeyPath:keyPath];
+    }
+    
+    [_target release], _target = nil;
     [_goodKeyPaths release], _goodKeyPaths = nil;
     [_badKeyPaths release], _badKeyPaths = nil;
     [_foundKeyPaths release], _foundKeyPaths = nil;
@@ -59,11 +71,13 @@
 - (void)expectKeyPath:(NSString *)keyPath
 {
     [self.goodKeyPaths addObject:keyPath];
+    [_target addObserver:self forKeyPath:keyPath options:0 context:NULL];
 }
 
 - (void)rejectKeyPath:(NSString *)keyPath
 {
     [self.badKeyPaths addObject:keyPath];
+    [_target addObserver:self forKeyPath:keyPath options:0 context:NULL];
 }
 
 - (BOOL)checkForError:(NSString **)returnErrorString
