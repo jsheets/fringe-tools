@@ -33,15 +33,4 @@
 
 @implementation FFTFileCacheTests
 
-- (void)testFailure
-{
-    GHAssertTrue(NO, @"Destined to fail");
-}
-
-- (void)testSuccess
-{
-    GHAssertTrue(YES, @"Destined for greatness!");
-}
-
-
 @end
