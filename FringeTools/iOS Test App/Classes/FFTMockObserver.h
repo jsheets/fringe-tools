@@ -25,9 +25,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "OCClassMockObject.h"
-
-@interface FFTMockObserver : NSObject //OCClassMockObject
+@interface FFTMockObserver : NSObject
 {
     id _target;
     NSMutableArray *_goodKeyPaths;
@@ -43,7 +41,7 @@
 - (id)initWithTarget:(id)target;
 - (void)expectKeyPath:(NSString *)keyPath;
 - (void)rejectKeyPath:(NSString *)keyPath;
-- (BOOL)checkForError:(NSString **)returnErrorString;
+- (NSString *)checkForError;
 - (void)clearResults;
 
 @end

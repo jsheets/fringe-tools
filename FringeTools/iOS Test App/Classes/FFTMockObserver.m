@@ -80,7 +80,7 @@
     [_target addObserver:self forKeyPath:keyPath options:0 context:NULL];
 }
 
-- (BOOL)checkForError:(NSString **)returnErrorString
+- (NSString *)checkForError
 {
     NSMutableArray *errors = [NSMutableArray array];
     
@@ -102,15 +102,7 @@
         }
     }
     
-    BOOL success = ([errors count] == 0);
-    
-    if (!success && returnErrorString)
-    {
-        *returnErrorString = [errors componentsJoinedByString:@", "];
-        FFTDebug(@"Returning error string: %@", *returnErrorString);
-    }
-    
-    return !success;
+    return [errors count] == 0 ? nil : [errors componentsJoinedByString:@", "];
 }
 
 - (void)clearResults

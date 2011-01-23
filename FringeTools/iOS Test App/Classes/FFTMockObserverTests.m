@@ -102,10 +102,7 @@
     _thing.name = @"Thing One";
     _thing.title = @"Thingus Prime";
     
-    NSString *errorMessage = nil;
-    BOOL hadError = [_mock checkForError:&errorMessage];
-    
-    GHAssertFalse(hadError, @"Should not return an error condition");
+    NSString *errorMessage = [_mock checkForError];
     GHAssertNil(errorMessage, @"Error message should still be nil");
 }
 
@@ -115,12 +112,9 @@
     _thing.name = @"Thing One";
 //    _thing.title = @"Thingus Prime";
     
-    NSString *errorMessage = nil;
-    BOOL hadError = [_mock checkForError:&errorMessage];
-    
+    NSString *errorMessage = [_mock checkForError];
     [self assertString:errorMessage containsText:@"title" description:@"Error message should complain about missing title"];
     [self assertString:errorMessage doesNotContainText:@"name" description:@"Error message should not complain about name"];
-    GHAssertTrue(hadError, @"Should return an error condition if title not set");
 }
 
 - (void)testReject_SecretAssigned
@@ -130,11 +124,8 @@
     _thing.title = @"Thingus Prime";
     _thing.secret = @"Something freaky is comin'...";
     
-    NSString *errorMessage = nil;
-    BOOL hadError = [_mock checkForError:&errorMessage];
-    
+    NSString *errorMessage = [_mock checkForError];
     [self assertString:errorMessage containsText:@"secret" description:@"Error message should complain about missing title"];
-    GHAssertTrue(hadError, @"Should return an error condition if secret is set");
 }
 
 @end
