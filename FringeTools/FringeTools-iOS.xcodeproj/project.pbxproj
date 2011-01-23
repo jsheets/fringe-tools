@@ -19,6 +19,7 @@
 		0D647AE2127FB46900633A57 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D647AE0127FB46900633A57 /* MainWindow.xib */; };
 		0D647AE5127FB46900633A57 /* iOS_Test_AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D647AE4127FB46900633A57 /* iOS_Test_AppViewController.m */; };
 		0D647AE8127FB46900633A57 /* iOS_Test_AppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D647AE6127FB46900633A57 /* iOS_Test_AppViewController.xib */; };
+		0D9BD93A12EB41620021909F /* FFTMockObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9BD93912EB41620021909F /* FFTMockObserverTests.m */; };
 		0DAAC3B312837AAE005AAC96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B212837AAE005AAC96 /* CoreGraphics.framework */; };
 		0DAAC3B512837B0E005AAC96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B412837B0E005AAC96 /* UIKit.framework */; };
 		0DB9B73B12C52C4A0078F0B3 /* FFTOs.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB9B73A12C52C4A0078F0B3 /* FFTOs.h */; };
@@ -41,6 +42,7 @@
 		0DE2698812E379B8007A6614 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2698112E377D5007A6614 /* libOCMock.a */; };
 		0DE269AC12E38027007A6614 /* libFringeTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libFringeTools.a */; };
 		0DE269B112E38B5F007A6614 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A86312BC597C00D3F1B5 /* libxml2.dylib */; };
+		0DE26B0612E3EB3A007A6614 /* FFTMockObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE26B0512E3EB3A007A6614 /* FFTMockObserver.m */; };
 		AA747D9F0F9514B9006C5449 /* FringeTools_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B7AAAC50124EFDD2002D3030 /* FFTBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -92,35 +94,35 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OCMock.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = OCMock;
 		};
 		0DE2697E12E377D5007A6614 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 03BF2D3708F1C69500978C59 /* OCMockTests.octest */;
+			remoteGlobalIDString = 03BF2D3708F1C69500978C59;
 			remoteInfo = OCMockTests;
 		};
 		0DE2698012E377D5007A6614 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 033C84AF11F585CB0009B9CD /* libOCMock.a */;
+			remoteGlobalIDString = 033C84AF11F585CB0009B9CD;
 			remoteInfo = OCMockPhoneSim;
 		};
 		0DE2698212E377D5007A6614 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 03DAC01F11FEB771007AF17B /* libOCMock.a */;
+			remoteGlobalIDString = 03DAC01F11FEB771007AF17B;
 			remoteInfo = OCMockPhoneDevice;
 		};
 		0DE2698412E3796B007A6614 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DE2697412E377D5007A6614 /* OCMock.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 033C84AE11F585CB0009B9CD /* OCMockPhoneSim */;
+			remoteGlobalIDString = 033C84AE11F585CB0009B9CD;
 			remoteInfo = OCMockPhoneSim;
 		};
 /* End PBXContainerItemProxy section */
@@ -148,6 +150,7 @@
 		0D647AE3127FB46900633A57 /* iOS_Test_AppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_Test_AppViewController.h; sourceTree = "<group>"; };
 		0D647AE4127FB46900633A57 /* iOS_Test_AppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_Test_AppViewController.m; sourceTree = "<group>"; };
 		0D647AE7127FB46900633A57 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/iOS_Test_AppViewController.xib; sourceTree = "<group>"; };
+		0D9BD93912EB41620021909F /* FFTMockObserverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTMockObserverTests.m; sourceTree = "<group>"; };
 		0DAAC3B212837AAE005AAC96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0DAAC3B412837B0E005AAC96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0DB9B73A12C52C4A0078F0B3 /* FFTOs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTOs.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		0DE268A912E15EE4007A6614 /* FFTFlickrSearchOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTFlickrSearchOperationTests.m; sourceTree = "<group>"; };
 		0DE268AB12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHtmlSearchOperationTests.m; sourceTree = "<group>"; };
 		0DE2697412E377D5007A6614 /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = ../external/OCMock/Source/OCMock.xcodeproj; sourceTree = SOURCE_ROOT; };
+		0DE26B0412E3EB3A007A6614 /* FFTMockObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTMockObserver.h; sourceTree = "<group>"; };
+		0DE26B0512E3EB3A007A6614 /* FFTMockObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTMockObserver.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FringeTools_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBaseOperation.h; sourceTree = "<group>"; };
@@ -376,6 +381,9 @@
 			children = (
 				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
 				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
+				0DE26B0412E3EB3A007A6614 /* FFTMockObserver.h */,
+				0DE26B0512E3EB3A007A6614 /* FFTMockObserver.m */,
+				0D9BD93912EB41620021909F /* FFTMockObserverTests.m */,
 			);
 			name = "Test Support";
 			sourceTree = "<group>";
@@ -572,6 +580,8 @@
 				0DE268A812E15ECF007A6614 /* FFTDownloadURLOperationTests.m in Sources */,
 				0DE268AA12E15EE4007A6614 /* FFTFlickrSearchOperationTests.m in Sources */,
 				0DE268AC12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m in Sources */,
+				0DE26B0612E3EB3A007A6614 /* FFTMockObserver.m in Sources */,
+				0D9BD93A12EB41620021909F /* FFTMockObserverTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,8 +664,13 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Test App/iOS_Test_App_Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					FFT_LOG_ALL,
+				);
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../external/OCMock/Source",
+					"$(SRCROOT)/../external-lib/OCMock-iOS",
 					"$(SRCROOT)/Classes",
 					"$(SRCROOT)/../objectiveflickr/Source",
 					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
