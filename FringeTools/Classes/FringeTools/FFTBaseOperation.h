@@ -27,12 +27,12 @@
 
 @interface FFTBaseOperation : NSOperation
 {
-    BOOL _executing;
-    BOOL _finished;
+    BOOL _isExecuting;
+    BOOL _isFinished;
 }
 
-@property (nonatomic, getter=isExecuting) BOOL executing;
-@property (nonatomic, getter=isFinished) BOOL finished;
+@property (getter=isExecuting) BOOL isExecuting;
+@property (getter=isFinished) BOOL isFinished;
 
 - (void)execute;
 - (void)performOperation;

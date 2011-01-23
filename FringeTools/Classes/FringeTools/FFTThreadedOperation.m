@@ -36,13 +36,6 @@
     return YES;
 }
 
-- (void)completeOperation
-{
-    FFTDebug(@"Completing %@ operation", [self class]);
-    self.executing = NO;
-    self.finished = YES;
-}
-
 // Only for concurrent operations (explicitly create our own thread).
 -(void)start
 {

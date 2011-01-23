@@ -30,23 +30,40 @@
 
 @implementation FFTBaseOperation
 
-@synthesize executing = _executing;
-@synthesize finished = _finished;
+@synthesize isExecuting = _isExecuting;
+@synthesize isFinished = _isFinished;
 
 - (id)init
 {	
     if ((self = [super init]))
     {
         // Initialization.
-        _executing = NO;
-        _finished = NO;
+        _isExecuting = NO;
+        _isFinished = NO;
     }
     
     return self;
 }
 
+- (void)setIsExecuting:(BOOL)executing
+{
+    [self willChangeValueForKey:@"isExecuting"];
+    _isExecuting = executing;
+    [self didChangeValueForKey:@"isExecuting"];
+}
+
+- (void)setIsFinished:(BOOL)finished
+{
+    [self willChangeValueForKey:@"isFinished"];
+    _isFinished = finished;
+    [self didChangeValueForKey:@"isFinished"];
+}
+
 - (void)completeOperation
 {
+    FFTDebug(@"Completing %@ operation", [self class]);
+    self.isExecuting = NO;
+    self.isFinished = YES;
 }
 
 - (void)performOperation
@@ -66,7 +83,7 @@
             
             // Main Loop.
             FFTTrace(@"Starting execution");
-            self.executing = YES;
+            self.isExecuting = YES;
             FFTTrace(@"Performing Operation");
             [self performOperation];
             
