@@ -1,9 +1,9 @@
 //
-//  BaseOperation.h
-//  FringeTools
+//  FFTThreadedOperation.m
+//  FringeTools-iOS
 //
-//  Created by John Sheets on 9/25/10.
-//  Copyright 2010 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 1/23/11.
+//  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,17 +25,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface FFTBaseOperation : NSOperation
+#import <FringeTools/FFTThreadedOperation.h>
+#import <FringeTools/FFTLogging.h>
+
+@implementation FFTThreadedOperation
+
+- (BOOL)isConcurrent
 {
-    BOOL _executing;
-    BOOL _finished;
+    FFTTrace(@"Op is concurrent, and should create its own thread.");
+    return YES;
 }
 
-@property (nonatomic, getter=isExecuting) BOOL executing;
-@property (nonatomic, getter=isFinished) BOOL finished;
+- (void)completeOperation
+{
+    FFTDebug(@"Completing %@ operation", [self class]);
+    self.executing = NO;
+    self.finished = YES;
+}
 
-- (void)execute;
-- (void)performOperation;
-- (void)completeOperation;
+// Only for concurrent operations (explicitly create our own thread).
+-(void)start
+{
+    if (![NSThread isMainThread])
+    {
+        [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+        return;
+    }
+    
+    [self execute];
+    [self completeOperation];
+}
 
 @end

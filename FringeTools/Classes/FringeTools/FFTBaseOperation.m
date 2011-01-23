@@ -30,6 +30,9 @@
 
 @implementation FFTBaseOperation
 
+@synthesize executing = _executing;
+@synthesize finished = _finished;
+
 - (id)init
 {	
     if ((self = [super init]))
@@ -42,65 +45,8 @@
     return self;
 }
 
-- (BOOL)isConcurrent
-{
-    // Let NSOperationQueue create the thread for us.
-    FFTTrace(@"Op is not concurrent.");
-    return NO;
-}
-
-- (BOOL)isExecuting
-{
-    return _executing;
-}
-
-- (BOOL)isFinished
-{
-    return _finished;
-}
-
-- (void)updateFinished:(BOOL)finished
-{
-    [self willChangeValueForKey:@"isFinished"];
-    _finished = finished;
-    [self didChangeValueForKey:@"isFinished"];
-}
-
-- (void)updateExecuting:(BOOL)executing
-{
-    [self willChangeValueForKey:@"isExecuting"];
-    _executing = executing;
-    [self didChangeValueForKey:@"isExecuting"];
-}
-
--(void)start
-{
-    if (![NSThread isMainThread])
-    {
-        [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
-        return;
-    }
-    
-    FFTDebug(@"Starting %@ operation", [self class]);
-    if (_finished || [self isCancelled])
-    {
-        [self completeOperation];
-        return;
-    }
-    
-    FFTTrace(@"Starting execution");
-    [self updateExecuting:YES];
-    FFTTrace(@"Performing Operation");
-    [self performOperation];
-    [self completeOperation];
-    FFTTrace(@"Operation Completed");
-}
-
 - (void)completeOperation
 {
-    FFTDebug(@"Completing %@ operation", [self class]);
-    [self updateExecuting:NO];
-    [self updateFinished:YES];
 }
 
 - (void)performOperation
@@ -108,8 +54,40 @@
     FFTError(@"ERROR: Should implement performOperation in subclass");
 }
 
+- (void)execute
+{
+    FFTDebug(@"Starting %@ operation", [self class]);
+    if (![self isFinished] && ![self isCancelled])
+    {
+        @try
+        {
+            // Wrap in autorelease pool in case called from a thread.
+            NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+            
+            // Main Loop.
+            FFTTrace(@"Starting execution");
+            self.executing = YES;
+            FFTTrace(@"Performing Operation");
+            [self performOperation];
+            
+            [pool release];
+        }
+        @catch (NSException *e)
+        {
+            FFTError(@"FATAL ERROR in operation: %@", e);
+        }
+    }
+}
+
+- (BOOL)isConcurrent
+{
+    // Always let NSOperationQueue create the thread for us. Returning NO here
+    // Will keep 10.5 behavior similar to 10.6 behavior.
+    FFTTrace(@"Op is not concurrent.");
+    return NO;
+}
+
 // Call -main to run the operation directly.  For synchronous ops.
-// Queue always calls -start.
 - (void)main
 {
     if (![NSThread isMainThread])
@@ -118,31 +96,8 @@
         return;
     }
     
-    FFTDebug(@"Starting %@ operation", [self class]);
-    if (_finished || [self isCancelled])
-    {
-        [self completeOperation];
-        return;
-    }
-    
-    @try
-    {
-        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-        
-        // Main Loop.
-        FFTTrace(@"Starting execution");
-        [self updateExecuting:YES];
-        FFTTrace(@"Performing Operation");
-        [self performOperation];
-        [self completeOperation];
-        FFTTrace(@"Operation Completed");
-        
-        [pool release];
-    }
-    @catch (NSException *e)
-    {
-        FFTError(@"FATAL ERROR in operation: %@", e);
-    }
+    [self execute];
+    [self completeOperation];
 }
 
 @end

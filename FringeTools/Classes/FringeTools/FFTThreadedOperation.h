@@ -1,9 +1,9 @@
 //
-//  BaseOperation.h
-//  FringeTools
+//  FFTThreadedOperation.h
+//  FringeTools-iOS
 //
-//  Created by John Sheets on 9/25/10.
-//  Copyright 2010 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 1/23/11.
+//  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,17 +25,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface FFTBaseOperation : NSOperation
+#import <FringeTools/FFTBaseOperation.h>
+
+@interface FFTThreadedOperation : FFTBaseOperation
 {
-    BOOL _executing;
-    BOOL _finished;
 }
-
-@property (nonatomic, getter=isExecuting) BOOL executing;
-@property (nonatomic, getter=isFinished) BOOL finished;
-
-- (void)execute;
-- (void)performOperation;
-- (void)completeOperation;
 
 @end

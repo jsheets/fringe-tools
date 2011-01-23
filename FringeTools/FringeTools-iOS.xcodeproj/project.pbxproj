@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D09CAA6125D757200DB4FBC /* FFTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D177F3F12ECD0C600B1FFD2 /* FFTThreadedOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D177F3D12ECD0C600B1FFD2 /* FFTThreadedOperation.h */; };
+		0D177F4012ECD0C600B1FFD2 /* FFTThreadedOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D177F3E12ECD0C600B1FFD2 /* FFTThreadedOperation.m */; };
 		0D3E659E12E012AE00F9A39F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */; };
 		0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3E65AD12E012FC00F9A39F /* libGHUnitIOSSimulator.a */; };
 		0D3E65BF12E0154B00F9A39F /* FFTFileCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */; };
@@ -130,6 +132,8 @@
 /* Begin PBXFileReference section */
 		0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTAppDelegate.h; sourceTree = "<group>"; };
 		0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTAppDelegate.m; sourceTree = "<group>"; };
+		0D177F3D12ECD0C600B1FFD2 /* FFTThreadedOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTThreadedOperation.h; sourceTree = "<group>"; };
+		0D177F3E12ECD0C600B1FFD2 /* FFTThreadedOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTThreadedOperation.m; sourceTree = "<group>"; };
 		0D3E648112E00D0400F9A39F /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = "../external-lib/GHUnit.framework"; sourceTree = SOURCE_ROOT; };
 		0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = "../external-lib/GHUnit-iOS/GHUnitIOSTestMain.m"; sourceTree = SOURCE_ROOT; };
 		0D3E659F12E012C200F9A39F /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHUnitIPhoneAppDelegate.h; path = "../external-lib/GHUnit-iOS/GHUnitIPhoneAppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -267,6 +271,8 @@
 				B7AAADD812516B32002D3030 /* FFTFileCache.m */,
 				B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */,
 				B7AAAC4D124EFDD2002D3030 /* FFTBaseOperation.m */,
+				0D177F3D12ECD0C600B1FFD2 /* FFTThreadedOperation.h */,
+				0D177F3E12ECD0C600B1FFD2 /* FFTThreadedOperation.m */,
 				0DD2A91E12BD3F0A00D3F1B5 /* Download Ops */,
 			);
 			path = FringeTools;
@@ -425,6 +431,7 @@
 				0DD2A90312BD3CAF00D3F1B5 /* FFTDownloadDelegate.h in Headers */,
 				0DB9B73B12C52C4A0078F0B3 /* FFTOs.h in Headers */,
 				B7AAADD912516B32002D3030 /* FFTFileCache.h in Headers */,
+				0D177F3F12ECD0C600B1FFD2 /* FFTThreadedOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +601,7 @@
 				B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */,
 				0DD2A85612BC566500D3F1B5 /* FFTFlickrSearchOperation.m in Sources */,
 				0DD2A85812BC566500D3F1B5 /* FFTHtmlSearchOperation.m in Sources */,
+				0D177F4012ECD0C600B1FFD2 /* FFTThreadedOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
