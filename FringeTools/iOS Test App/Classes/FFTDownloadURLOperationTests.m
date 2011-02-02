@@ -33,9 +33,28 @@
 
 @implementation FFTDownloadURLOperationTests
 
+- (NSURL *)localFileUrl
+{
+    return [[NSBundle mainBundle] URLForResource:@"test-data" withExtension:@"txt"];
+}
+
 - (void)testDownloadLocalFile
 {
-    // <#methodbody#>
+    NSURL *url = [self localFileUrl];
+    FFTDebug(@"Downloading local file: %@", url);
+    FFTDownloadURLOperation *op = [[FFTDownloadURLOperation alloc] initWithURL:url];
+    
+    NSOperationQueue *queue = [[[NSOperationQueue alloc] init] autorelease];
+//    [queue addOperations:[NSArray array] waitUntilFinished:YES];
+    [queue addOperation:op];
+    [queue waitUntilAllOperationsAreFinished];
+    FFTDebug(@"------------- DONE ----------------");
+    
+    GHAssertNotNil(op.responseData, @"Response data should not be nil");
+    GHAssertEquals((NSInteger)[op.responseData length], (NSInteger)10, @"Response data should be the full length");
+    NSString *downloadedContent = [[NSString alloc] initWithData:op.responseData encoding:NSUTF8StringEncoding];
+    NSString *actualContent = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+    GHAssertEqualStrings(downloadedContent, actualContent, @"Downloaded content should match real content");
 }
 
 - (void)testNoFileExists
