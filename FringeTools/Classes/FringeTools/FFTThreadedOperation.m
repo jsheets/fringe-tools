@@ -39,11 +39,11 @@
 // Only for concurrent operations (explicitly create our own thread).
 -(void)start
 {
-    if (![NSThread isMainThread])
-    {
-        [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
-        return;
-    }
+//    if (![NSThread isMainThread])
+//    {
+//        [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+//        return;
+//    }
     
     [self execute];
     [self completeOperation];

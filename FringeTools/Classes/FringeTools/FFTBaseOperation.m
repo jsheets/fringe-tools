@@ -66,6 +66,7 @@
     self.isFinished = YES;
 }
 
+// Should not return from this until the operation is completed.
 - (void)performOperation
 {
     FFTError(@"ERROR: Should implement performOperation in subclass");
@@ -107,11 +108,11 @@
 // Call -main to run the operation directly.  For synchronous ops.
 - (void)main
 {
-    if (![NSThread isMainThread])
-    {
-        [self performSelectorOnMainThread:@selector(main) withObject:nil waitUntilDone:NO];
-        return;
-    }
+//    if (![NSThread isMainThread])
+//    {
+//        [self performSelectorOnMainThread:@selector(main) withObject:nil waitUntilDone:NO];
+//        return;
+//    }
     
     [self execute];
     [self completeOperation];
