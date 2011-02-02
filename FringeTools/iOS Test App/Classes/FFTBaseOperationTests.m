@@ -25,57 +25,111 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <OCMock/OCMock.h>
-
 #import "FFTBaseTestCase.h"
 #import "FFTMockObserver.h"
 
+
+#pragma mark -
+#pragma mark Fake Operation Class
+
+
+@interface FakeOperation : FFTBaseOperation
+{
+    BOOL _ranOp;
+}
+@property (nonatomic, getter=isRanOp) BOOL ranOp;
+@end
+
+@implementation FakeOperation
+
+@synthesize ranOp = _ranOp;
+
+- (void)performOperation
+{
+    self.ranOp = YES;
+}
+
+@end
+
+
+#pragma mark -
+#pragma mark Tests
+
+
 @interface FFTBaseOperationTests : FFTBaseTestCase
 {
+    FakeOperation *_op;
 }
 @end
 
 
 @implementation FFTBaseOperationTests
 
-//- (void)setUp
-//{
-//    [super setUp];
-//}
-//
-//- (void)tearDown
-//{
-//    [super tearDown];
-//}
+- (void)setUp
+{
+    [super setUp];
+    
+    _op = [[FakeOperation alloc] init];
+}
 
+- (void)tearDown
+{
+    [super tearDown];
+    
+    [_op release], _op = nil;
+}
 
 - (void)testKVO
 {
-    FFTBaseOperation *op = [[[FFTBaseOperation alloc] init] autorelease];
+    FFTMockObserver *mock = [[[FFTMockObserver alloc] initWithTarget:_op] autorelease];
+    [mock expectKeyPath:@"isFinished"];
+    [mock expectKeyPath:@"isExecuting"];
     
-    FFTMockObserver *mock = [[[FFTMockObserver alloc] init] autorelease];
-    [op addObserver:mock forKeyPath:@"isFinished" options:0 context:NULL];
-    [op addObserver:mock forKeyPath:@"isExecuting" options:0 context:NULL];
+    [_op completeOperation];
     
-    [op completeOperation];
+    NSString *errorMessage = [mock checkForError];
+    GHAssertNil(errorMessage, @"Should have received all KVO notifications: %@", errorMessage);
 }
 
-- (void)testCancel
+- (void)testExecute_Pass
 {
+    GHAssertFalse(_op.isExecuting, @"Should not set isExecuting before execute");
+    GHAssertFalse(_op.isFinished, @"Should not set isFinished before execute");
+    GHAssertFalse(_op.ranOp, @"Should not have run op before execute");
+    
+    [_op execute];
+    
+    GHAssertTrue(_op.isExecuting, @"Should set isExecuting after execute");
+    GHAssertTrue(_op.ranOp, @"Should run op after execute");
 }
 
-- (void)testPerformOperation
+- (void)testExecute_EarlyFinish
 {
+    _op.isFinished = YES;
+    [_op execute];
+    
+    GHAssertFalse(_op.isExecuting, @"Should skip setting isExecuting if finished early");
+    GHAssertFalse(_op.ranOp, @"Should skip performOperation if finished early");
 }
 
-- (void)testStart
+- (void)testExecute_EarlyCancel
 {
+    [_op cancel];
+    [_op execute];
+    
+    GHAssertFalse(_op.isExecuting, @"Should skip setting isExecuting if canceled");
+    GHAssertFalse(_op.ranOp, @"Should skip performOperation if canceled");
 }
 
-- (void)testMain
+- (void)testQueue
 {
+    NSOperationQueue *queue = [[[NSOperationQueue alloc] init] autorelease];
+    [queue addOperation:_op];
+    [queue waitUntilAllOperationsAreFinished];
+    
+    GHAssertFalse(_op.isExecuting, @"Should set isExecuting");
+    GHAssertTrue(_op.isFinished, @"Should set isFinished");
+    GHAssertTrue(_op.ranOp, @"Should run op");
 }
-
-
 
 @end
