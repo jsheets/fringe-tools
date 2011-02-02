@@ -10,6 +10,8 @@
 		0D09CAA6125D757200DB4FBC /* FFTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D09CAA4125D757200DB4FBC /* FFTAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D177F3F12ECD0C600B1FFD2 /* FFTThreadedOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D177F3D12ECD0C600B1FFD2 /* FFTThreadedOperation.h */; };
 		0D177F4012ECD0C600B1FFD2 /* FFTThreadedOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D177F3E12ECD0C600B1FFD2 /* FFTThreadedOperation.m */; };
+		0D177FE012ED394A00B1FFD2 /* test-data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D177FDF12ED394A00B1FFD2 /* test-data.txt */; };
+		0D177FEC12ED409000B1FFD2 /* FFTDownloadURLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4F124EFDD2002D3030 /* FFTDownloadURLOperation.m */; };
 		0D3E659E12E012AE00F9A39F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */; };
 		0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3E65AD12E012FC00F9A39F /* libGHUnitIOSSimulator.a */; };
 		0D3E65BF12E0154B00F9A39F /* FFTFileCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E65BE12E0154B00F9A39F /* FFTFileCacheTests.m */; };
@@ -134,6 +136,7 @@
 		0D09CAA5125D757200DB4FBC /* FFTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTAppDelegate.m; sourceTree = "<group>"; };
 		0D177F3D12ECD0C600B1FFD2 /* FFTThreadedOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTThreadedOperation.h; sourceTree = "<group>"; };
 		0D177F3E12ECD0C600B1FFD2 /* FFTThreadedOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTThreadedOperation.m; sourceTree = "<group>"; };
+		0D177FDF12ED394A00B1FFD2 /* test-data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-data.txt"; sourceTree = "<group>"; };
 		0D3E648112E00D0400F9A39F /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = "../external-lib/GHUnit.framework"; sourceTree = SOURCE_ROOT; };
 		0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = "../external-lib/GHUnit-iOS/GHUnitIOSTestMain.m"; sourceTree = SOURCE_ROOT; };
 		0D3E659F12E012C200F9A39F /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHUnitIPhoneAppDelegate.h; path = "../external-lib/GHUnit-iOS/GHUnitIPhoneAppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -293,8 +296,6 @@
 		0D647AC6127FB46800633A57 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0D3E659F12E012C200F9A39F /* GHUnitIPhoneAppDelegate.h */,
-				0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */,
 				0D647ADD127FB46900633A57 /* iOS_Test_AppAppDelegate.h */,
 				0D647ADE127FB46900633A57 /* iOS_Test_AppAppDelegate.m */,
 				0D647AE3127FB46900633A57 /* iOS_Test_AppViewController.h */,
@@ -319,6 +320,7 @@
 				0D647AD8127FB46800633A57 /* InfoPlist.strings */,
 				0D647AE0127FB46900633A57 /* MainWindow.xib */,
 				0D647AE6127FB46900633A57 /* iOS_Test_AppViewController.xib */,
+				0D177FDF12ED394A00B1FFD2 /* test-data.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -385,6 +387,8 @@
 		0DE2693C12E35BF6007A6614 /* Test Support */ = {
 			isa = PBXGroup;
 			children = (
+				0D3E659F12E012C200F9A39F /* GHUnitIPhoneAppDelegate.h */,
+				0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */,
 				0DE266D212E114E3007A6614 /* FFTBaseTestCase.h */,
 				0DE266D312E114E3007A6614 /* FFTBaseTestCase.m */,
 				0DE26B0412E3EB3A007A6614 /* FFTMockObserver.h */,
@@ -568,6 +572,7 @@
 				0D647ADA127FB46800633A57 /* InfoPlist.strings in Resources */,
 				0D647AE2127FB46900633A57 /* MainWindow.xib in Resources */,
 				0D647AE8127FB46900633A57 /* iOS_Test_AppViewController.xib in Resources */,
+				0D177FE012ED394A00B1FFD2 /* test-data.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,9 +604,10 @@
 				0DD47C951283828300B2787A /* FFTAppDelegate.m in Sources */,
 				B7AAADDA12516B32002D3030 /* FFTFileCache.m in Sources */,
 				B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */,
+				0D177F4012ECD0C600B1FFD2 /* FFTThreadedOperation.m in Sources */,
+				0D177FEC12ED409000B1FFD2 /* FFTDownloadURLOperation.m in Sources */,
 				0DD2A85612BC566500D3F1B5 /* FFTFlickrSearchOperation.m in Sources */,
 				0DD2A85812BC566500D3F1B5 /* FFTHtmlSearchOperation.m in Sources */,
-				0D177F4012ECD0C600B1FFD2 /* FFTThreadedOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +681,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
 					FFT_LOG_ALL,
+					FFT_LOG_TRACE,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../external/OCMock/Source",
@@ -685,7 +692,6 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "iOS Test App/iOS_Test_App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../external-lib/GHUnit-iOS\"",
@@ -695,6 +701,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -713,7 +720,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Test App/iOS_Test_App_Prefix.pch";
 				INFOPLIST_FILE = "iOS Test App/iOS_Test_App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../external-lib/GHUnit-iOS\"",
@@ -724,6 +730,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -782,6 +789,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
@@ -796,6 +804,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
