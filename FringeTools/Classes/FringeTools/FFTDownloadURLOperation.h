@@ -25,11 +25,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTBaseOperation.h>
+#import <FringeTools/FFTThreadedOperation.h>
 #import <FringeTools/FFTDownloadDelegate.h>
 
 // Operation to download a a single file from a URL.
-@interface FFTDownloadURLOperation : FFTBaseOperation
+@interface FFTDownloadURLOperation : FFTThreadedOperation
 {
     id<FFTDownloadDelegate> _downloadDelegate;
     
