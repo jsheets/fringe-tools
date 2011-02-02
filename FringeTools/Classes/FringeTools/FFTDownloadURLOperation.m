@@ -55,12 +55,6 @@
     [super dealloc];
 }
 
-- (BOOL)isConcurrent
-{
-    // Create our own thread, via NSURLConnection.
-    return YES;
-}
-
 // Catch for cancelled operation and bail out of download if so.
 - (BOOL)checkCancel:(NSURLConnection *)connection
 {
@@ -79,6 +73,13 @@
     FFTDebug(@"Downloading URL: %@", self.url);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+    // Wait until done.
+    while (![self isCancelled] && !self.isFinished)
+    {
+        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+        [runLoop runMode:[runLoop currentMode] beforeDate:[NSDate distantFuture]];
+    }
 }
 
 
@@ -88,21 +89,37 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    if ([self checkCancel:connection]) { return; }
+    if ([self checkCancel:connection])
+    {
+        FFTInfo(@"Canceling before any response received");
+        return;
+    }
     
+    FFTDebug(@"Received response");
     [self.responseData setLength:0];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    if ([self checkCancel:connection]) { return; }
+    if ([self checkCancel:connection])
+    {
+        FFTInfo(@"Canceling after receiving some data");
+        return;
+    }
     
+    FFTDebug(@"Received %i bytes of data", [data length]);
     [self.responseData appendData:data];
+    FFTDebug(@"Total %i bytes of data", [self.responseData length]);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    if ([self checkCancel:connection]) { return; }
+    if ([self checkCancel:connection])
+    {
+        FFTInfo(@"Canceling just before error response");
+        return;
+    }
+    FFTError(@"Error downloading URL: %@", [error localizedDescription]);
     
     // Notify the delegate of our failure.
     [self.downloadDelegate downloadFailedWithError:error];
@@ -113,7 +130,12 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    if ([self checkCancel:connection]) { return; }
+    if ([self checkCancel:connection])
+    {
+        FFTInfo(@"Canceling before response completed");
+        return;
+    }
+    FFTDebug(@"Completed download");
     
     // Notify the delegate of our success!
     [self.downloadDelegate downloadSucceeded:self.responseData];
