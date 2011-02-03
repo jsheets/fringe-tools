@@ -77,8 +77,7 @@
     // Wait until done.
     while (![self isCancelled] && !self.isFinished)
     {
-        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-        [runLoop runMode:[runLoop currentMode] beforeDate:[NSDate distantFuture]];
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
 }
 
@@ -95,7 +94,7 @@
         return;
     }
     
-    FFTDebug(@"Received response");
+    FFTDebug(@"Received response; initializing responseData");
     [self.responseData setLength:0];
 }
 
@@ -140,7 +139,7 @@
     // Notify the delegate of our success!
     [self.downloadDelegate downloadSucceeded:self.responseData];
     
-    self.responseData = nil;
+//    self.responseData = nil;
     [self completeOperation];
 }
 

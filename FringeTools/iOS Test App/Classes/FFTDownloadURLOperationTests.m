@@ -33,22 +33,24 @@
 
 @implementation FFTDownloadURLOperationTests
 
-- (NSURL *)localFileUrl
+- (NSURL *)localFileUrl:(NSString *)fileName
 {
-    return [[NSBundle mainBundle] URLForResource:@"test-data" withExtension:@"txt"];
+    return [[NSBundle mainBundle] URLForResource:fileName withExtension:@"txt"];
+}
+
+- (FFTDownloadURLOperation *)downloadUrl:(NSURL *)url
+{
+    FFTDebug(@"Downloading local file: %@", url);
+    FFTDownloadURLOperation *op = [[FFTDownloadURLOperation alloc] initWithURL:url];
+    [self runSynchronousOperation:op];
+    
+    return op;
 }
 
 - (void)testDownloadLocalFile
 {
-    NSURL *url = [self localFileUrl];
-    FFTDebug(@"Downloading local file: %@", url);
-    FFTDownloadURLOperation *op = [[FFTDownloadURLOperation alloc] initWithURL:url];
-    
-    NSOperationQueue *queue = [[[NSOperationQueue alloc] init] autorelease];
-//    [queue addOperations:[NSArray array] waitUntilFinished:YES];
-    [queue addOperation:op];
-    [queue waitUntilAllOperationsAreFinished];
-    FFTDebug(@"------------- DONE ----------------");
+    NSURL *url = [self localFileUrl:@"test-data"];
+    FFTDownloadURLOperation *op = [self downloadUrl:url];
     
     GHAssertNotNil(op.responseData, @"Response data should not be nil");
     GHAssertEquals((NSInteger)[op.responseData length], (NSInteger)10, @"Response data should be the full length");
