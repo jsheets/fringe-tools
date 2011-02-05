@@ -29,6 +29,7 @@
 {
 }
 
+@property (nonatomic, readonly) CGSize devicePixelSize;
 @property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 @property (nonatomic, readonly) BOOL isIPad;
 @property (nonatomic, readonly) BOOL isRetinaDisplay;

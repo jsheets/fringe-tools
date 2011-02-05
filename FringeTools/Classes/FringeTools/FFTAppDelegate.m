@@ -35,6 +35,19 @@
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 }
 
+- (CGSize)devicePixelSize
+{
+    UIScreen *screen = [UIScreen mainScreen];
+    CGSize size = [screen bounds].size;
+    if ([screen respondsToSelector:@selector(scale)])
+    {
+        size = CGSizeMake(size.width * screen.scale, size.height * screen.scale);
+    }
+    
+    return size;
+}
+
+// Available screen space for the application to draw in.
 - (CGSize)appScreenSize:(BOOL)isPortrait
 {
     //    CGRect frame = [[UIScreen mainScreen] applicationFrame];
