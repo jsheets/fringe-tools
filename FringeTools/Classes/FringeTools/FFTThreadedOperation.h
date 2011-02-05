@@ -31,4 +31,8 @@
 {
 }
 
+@property (nonatomic, readonly) BOOL timeExpired;
+
+- (void)startOperation;
+
 @end

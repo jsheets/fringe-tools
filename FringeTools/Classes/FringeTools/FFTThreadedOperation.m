@@ -36,6 +36,31 @@
     return YES;
 }
 
+// Kick of asynchronous operation. Runs this then waits until the operation completes
+// or times out.
+- (void)startOperation
+{
+    FFTError(@"Performing empty concurrent operation; you should overload startOperation in your subclass!");
+    [self completeOperation];
+}
+
+- (BOOL)timeExpired
+{
+    // TODO: Set a default timeout.
+    return NO;
+}
+
+- (void)performOperation
+{
+    [self startOperation];
+    
+    // Wait until done.
+    while (!self.timeExpired && ![self isCancelled] && !self.isFinished)
+    {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
+}
+
 // Only for concurrent operations (explicitly create our own thread).
 -(void)start
 {
