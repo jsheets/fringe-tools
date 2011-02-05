@@ -35,28 +35,38 @@
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 }
 
+- (CGFloat)deviceScreenScale
+{
+    // Use UIScreen scale if present; otherwise hardcode to 1.0 for backward compatibility.
+    UIScreen *screen = [UIScreen mainScreen];
+    return [screen respondsToSelector:@selector(scale)] ? screen.scale : 1.0;
+}
+
 - (CGSize)devicePixelSize
 {
-    UIScreen *screen = [UIScreen mainScreen];
-    CGSize size = [screen bounds].size;
-    if ([screen respondsToSelector:@selector(scale)])
-    {
-        size = CGSizeMake(size.width * screen.scale, size.height * screen.scale);
-    }
+    CGSize baseSize = [[UIScreen mainScreen] bounds].size;
+    CGFloat screenScale = [self deviceScreenScale];
     
-    return size;
+    return CGSizeMake(baseSize.width * screenScale, baseSize.height * screenScale);
 }
 
 // Available screen space for the application to draw in.
-- (CGSize)appScreenSize:(BOOL)isPortrait
+- (CGSize)appScreenSizeForPortrait:(BOOL)isPortrait scaled:(BOOL)scaled
 {
-    //    CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    //    CGSize size = [[UIScreen mainScreen] applicationFrame].size;
     CGSize size = [[UIScreen mainScreen] bounds].size;
-    if ((isPortrait && size.width > size.height) || (!isPortrait && size.height > size.width))
+    
+    BOOL shouldFlip = (isPortrait && size.width > size.height) || (!isPortrait && size.height > size.width);
+    if (shouldFlip)
     {
         size = CGSizeMake(size.height, size.width);
     }
+    
+    if (scaled)
+    {
+        CGFloat scale = [self deviceScreenScale];
+        size = CGSizeMake(size.width * scale, size.height * scale);
+    }
+    
     return size;
 }
 

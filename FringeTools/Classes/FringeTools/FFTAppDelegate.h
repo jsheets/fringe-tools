@@ -29,11 +29,11 @@
 {
 }
 
-@property (nonatomic, readonly) CGSize devicePixelSize;
-@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 @property (nonatomic, readonly) BOOL isIPad;
 @property (nonatomic, readonly) BOOL isRetinaDisplay;
+@property (nonatomic, readonly) CGSize devicePixelSize;
+@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 
-- (CGSize)appScreenSize:(BOOL)isPortrait;
+- (CGSize)appScreenSizeForPortrait:(BOOL)isPortrait scaled:(BOOL)scaled;
 
 @end
