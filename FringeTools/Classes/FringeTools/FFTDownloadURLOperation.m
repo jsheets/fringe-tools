@@ -68,7 +68,7 @@
     return NO;
 }
 
-- (void)performOperation
+- (void)startOperation
 {
     FFTDebug(@"Downloading URL: %@", self.url);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.url];

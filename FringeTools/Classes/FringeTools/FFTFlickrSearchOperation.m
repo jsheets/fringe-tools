@@ -48,7 +48,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
                 apiKey:(NSString *)flickrApiKey
           sharedSecret:(NSString *)flickrSharedSecret;
 {	
-    if (self = [super init])
+    if ((self = [super init]))
     {
         // Initialization.
         self.username = username;
@@ -159,7 +159,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 #pragma mark Handle Operation
 
 
-- (void)performOperation
+- (void)startOperation
 {
     // If we have any search args, use them with:
     //   flickr.photos.search
