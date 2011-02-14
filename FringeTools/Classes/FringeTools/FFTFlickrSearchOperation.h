@@ -28,11 +28,11 @@
 #import "ObjectiveFlickr.h"
 
 #import <FringeTools/FFTThreadedOperation.h>
-#import <FringeTools/FFTDownloadDelegate.h>
+#import <FringeTools/FFTURLSearchDelegate.h>
 
 @interface FFTFlickrSearchOperation : FFTThreadedOperation <OFFlickrAPIRequestDelegate>
 {
-    id<FFTDownloadDelegate> _downloadDelegate;
+    id<FFTURLSearchDelegate> _downloadDelegate;
     
     OFFlickrAPIContext *_context;
     OFFlickrAPIRequest *_request;
@@ -43,7 +43,7 @@
     NSInteger _resultsPerPage;
 }
 
-@property (nonatomic, assign) id<FFTDownloadDelegate> downloadDelegate;
+@property (nonatomic, assign) id<FFTURLSearchDelegate> downloadDelegate;
 
 @property (nonatomic, retain) OFFlickrAPIContext *context;
 @property (nonatomic, retain) OFFlickrAPIRequest *request;

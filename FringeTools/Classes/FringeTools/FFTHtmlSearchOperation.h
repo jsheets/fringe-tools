@@ -29,11 +29,11 @@
 #import <libxml/xpath.h>
 
 #import <FringeTools/FFTBaseOperation.h>
-#import <FringeTools/FFTDownloadDelegate.h>
+#import <FringeTools/FFTURLSearchDelegate.h>
 
 @interface FFTHtmlSearchOperation : FFTBaseOperation
 {
-    id<FFTDownloadDelegate> _downloadDelegate;
+    id<FFTURLSearchDelegate> _downloadDelegate;
     
     NSString *_nextPageXpath;
     NSString *_photoBaseXpath;
@@ -52,7 +52,7 @@
     NSMutableData *_responseData;
 }
 
-@property (nonatomic, assign) id<FFTDownloadDelegate> downloadDelegate;
+@property (nonatomic, assign) id<FFTURLSearchDelegate> downloadDelegate;
 
 @property (nonatomic, copy) NSString *nextPageXpath;
 @property (nonatomic, copy) NSString *photoBaseXpath;
