@@ -37,7 +37,7 @@
 
 static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 
-@synthesize downloadDelegate = _downloadDelegate;
+@synthesize searchDelegate = _searchDelegate;
 @synthesize nextPageXpath = _nextPageXpath;
 @synthesize photoBaseXpath = _photoBaseXpath;
 @synthesize urlMap = _urlMap;
@@ -69,7 +69,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 
 - (void) dealloc
 {
-    _downloadDelegate = nil;
+    _searchDelegate = nil;
     [_nextPageXpath release], _nextPageXpath = nil;
     [_photoBaseXpath release], _photoBaseXpath = nil;
     [_urlMap release], _urlMap = nil;
@@ -322,7 +322,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 - (void)performOperation
 {
     NSArray *urls = [self loadAllUrls];
-    [self.downloadDelegate foundUrls:urls];
+    [self.searchDelegate foundUrls:urls];
     
     [self completeOperation];
 }
