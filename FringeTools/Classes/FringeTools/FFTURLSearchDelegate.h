@@ -27,4 +27,5 @@
 
 @protocol FFTURLSearchDelegate
 - (void)foundUrls:(NSArray *)urls;
+- (void)searchFailedWithError:(NSError *)downloadError;
 @end

@@ -216,7 +216,6 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     {
         // Got the result. Close out the operation.
         NSArray *flickrPhotos = [inResponseDictionary valueForKeyPath:@"photos.photo"];
-        [self.searchDelegate downloadSucceeded:nil];
         [self.searchDelegate foundUrls:flickrPhotos];
         
         [self completeOperation];
@@ -227,7 +226,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         didFailWithError:(NSError *)inError
 {
     FFTError(@"FLICKR ERROR: failed request %@", inError);
-    [self.searchDelegate downloadFailedWithError:inError];
+    [self.searchDelegate searchFailedWithError:inError];
     
     [self completeOperation];
 }
