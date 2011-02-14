@@ -1,9 +1,9 @@
 //
-//  FFTDownloadDelegate.h
+//  FFTURLSearchDelegate.h
 //  FringeTools
 //
-//  Created by John Sheets on 12/18/10.
-//  Copyright 2010 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 02/13/11.
+//  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,7 +25,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@protocol FFTDownloadDelegate
-- (void)downloadSucceeded:(NSData *)downloadData;
-- (void)downloadFailedWithError:(NSError *)downloadError;
+@protocol FFTURLSearchDelegate
+- (void)foundUrls:(NSArray *)urls;
 @end
