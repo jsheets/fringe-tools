@@ -27,6 +27,7 @@
 		0D9BD93A12EB41620021909F /* FFTMockObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9BD93912EB41620021909F /* FFTMockObserverTests.m */; };
 		0DAAC3B312837AAE005AAC96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B212837AAE005AAC96 /* CoreGraphics.framework */; };
 		0DAAC3B512837B0E005AAC96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B412837B0E005AAC96 /* UIKit.framework */; };
+		0DADEDB4130F501100C067F8 /* FFTSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADEDB3130F501100C067F8 /* FFTSearchOperation.m */; };
 		0DB9B73B12C52C4A0078F0B3 /* FFTOs.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB9B73A12C52C4A0078F0B3 /* FFTOs.h */; };
 		0DD2A85512BC566500D3F1B5 /* FFTFlickrSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD2A84B12BC566500D3F1B5 /* FFTFlickrSearchOperation.h */; };
 		0DD2A85612BC566500D3F1B5 /* FFTFlickrSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84C12BC566500D3F1B5 /* FFTFlickrSearchOperation.m */; };
@@ -162,6 +163,8 @@
 		0D9BD93912EB41620021909F /* FFTMockObserverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTMockObserverTests.m; sourceTree = "<group>"; };
 		0DAAC3B212837AAE005AAC96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0DAAC3B412837B0E005AAC96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0DADEDB2130F501100C067F8 /* FFTSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTSearchOperation.h; sourceTree = "<group>"; };
+		0DADEDB3130F501100C067F8 /* FFTSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTSearchOperation.m; sourceTree = "<group>"; };
 		0DB9B73A12C52C4A0078F0B3 /* FFTOs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTOs.h; sourceTree = "<group>"; };
 		0DD2A84B12BC566500D3F1B5 /* FFTFlickrSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTFlickrSearchOperation.h; sourceTree = "<group>"; };
 		0DD2A84C12BC566500D3F1B5 /* FFTFlickrSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTFlickrSearchOperation.m; sourceTree = "<group>"; };
@@ -274,11 +277,6 @@
 				B7AAAC54124EFE3B002D3030 /* FFTAnalytics.h */,
 				B7AAADD712516B32002D3030 /* FFTFileCache.h */,
 				B7AAADD812516B32002D3030 /* FFTFileCache.m */,
-				B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */,
-				B7AAAC4D124EFDD2002D3030 /* FFTBaseOperation.m */,
-				0D177F3D12ECD0C600B1FFD2 /* FFTThreadedOperation.h */,
-				0D177F3E12ECD0C600B1FFD2 /* FFTThreadedOperation.m */,
-				0DD2A91E12BD3F0A00D3F1B5 /* Download Ops */,
 			);
 			path = FringeTools;
 			sourceTree = "<group>";
@@ -345,8 +343,37 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AEFE84172EC02AAC07 /* FringeTools */,
+				0DADEDB1130F4FD600C067F8 /* Operations */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0DADEDB0130F4FAC00C067F8 /* Search Ops */ = {
+			isa = PBXGroup;
+			children = (
+				0D1BD7491308D0DA00A2D142 /* FFTURLSearchDelegate.h */,
+				0DADEDB2130F501100C067F8 /* FFTSearchOperation.h */,
+				0DADEDB3130F501100C067F8 /* FFTSearchOperation.m */,
+				0DD2A84B12BC566500D3F1B5 /* FFTFlickrSearchOperation.h */,
+				0DD2A84C12BC566500D3F1B5 /* FFTFlickrSearchOperation.m */,
+				0DD2A84D12BC566500D3F1B5 /* FFTHtmlSearchOperation.h */,
+				0DD2A84E12BC566500D3F1B5 /* FFTHtmlSearchOperation.m */,
+			);
+			name = "Search Ops";
+			sourceTree = "<group>";
+		};
+		0DADEDB1130F4FD600C067F8 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				B7AAAC4C124EFDD2002D3030 /* FFTBaseOperation.h */,
+				B7AAAC4D124EFDD2002D3030 /* FFTBaseOperation.m */,
+				0D177F3D12ECD0C600B1FFD2 /* FFTThreadedOperation.h */,
+				0D177F3E12ECD0C600B1FFD2 /* FFTThreadedOperation.m */,
+				0DD2A91E12BD3F0A00D3F1B5 /* Download Ops */,
+				0DADEDB0130F4FAC00C067F8 /* Search Ops */,
+			);
+			name = Operations;
+			path = FringeTools;
 			sourceTree = "<group>";
 		};
 		0DD2A88D12BD06B500D3F1B5 /* Products */ = {
@@ -362,13 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				0DD2A90212BD3CAF00D3F1B5 /* FFTDownloadDelegate.h */,
-				0D1BD7491308D0DA00A2D142 /* FFTURLSearchDelegate.h */,
 				B7AAAC4E124EFDD2002D3030 /* FFTDownloadURLOperation.h */,
 				B7AAAC4F124EFDD2002D3030 /* FFTDownloadURLOperation.m */,
-				0DD2A84B12BC566500D3F1B5 /* FFTFlickrSearchOperation.h */,
-				0DD2A84C12BC566500D3F1B5 /* FFTFlickrSearchOperation.m */,
-				0DD2A84D12BC566500D3F1B5 /* FFTHtmlSearchOperation.h */,
-				0DD2A84E12BC566500D3F1B5 /* FFTHtmlSearchOperation.m */,
 			);
 			name = "Download Ops";
 			sourceTree = "<group>";
@@ -598,6 +620,7 @@
 				0DE268AC12E15EF9007A6614 /* FFTHtmlSearchOperationTests.m in Sources */,
 				0DE26B0612E3EB3A007A6614 /* FFTMockObserver.m in Sources */,
 				0D9BD93A12EB41620021909F /* FFTMockObserverTests.m in Sources */,
+				0DADEDB4130F501100C067F8 /* FFTSearchOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

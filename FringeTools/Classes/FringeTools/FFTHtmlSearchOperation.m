@@ -37,7 +37,6 @@
 
 static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 
-@synthesize searchDelegate = _searchDelegate;
 @synthesize nextPageXpath = _nextPageXpath;
 @synthesize photoBaseXpath = _photoBaseXpath;
 @synthesize urlMap = _urlMap;

@@ -26,24 +26,17 @@
 // THE SOFTWARE.
 
 #import "ObjectiveFlickr.h"
+#import <FringeTools/FFTSearchOperation.h>
 
-#import <FringeTools/FFTThreadedOperation.h>
-#import <FringeTools/FFTURLSearchDelegate.h>
-
-@interface FFTFlickrSearchOperation : FFTThreadedOperation <OFFlickrAPIRequestDelegate>
+@interface FFTFlickrSearchOperation : FFTSearchOperation <OFFlickrAPIRequestDelegate>
 {
-    id<FFTURLSearchDelegate> _searchDelegate;
-    
     OFFlickrAPIContext *_context;
     OFFlickrAPIRequest *_request;
     NSString *_username;
     NSString *_keyword;
     NSString *_searchText;
     NSArray *_searchWords;
-    NSInteger _resultsPerPage;
 }
-
-@property (nonatomic, assign) id<FFTURLSearchDelegate> searchDelegate;
 
 @property (nonatomic, retain) OFFlickrAPIContext *context;
 @property (nonatomic, retain) OFFlickrAPIRequest *request;
@@ -51,7 +44,6 @@
 @property (nonatomic, copy) NSString *keyword;
 @property (nonatomic, copy) NSString *searchText;
 @property (nonatomic, copy) NSArray *searchWords;
-@property (nonatomic) NSInteger resultsPerPage;
 
 - (id)initWithUsername:(NSString*)username
                keyword:(NSString*)keyword

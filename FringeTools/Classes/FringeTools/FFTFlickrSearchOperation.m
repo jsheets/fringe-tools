@@ -34,14 +34,12 @@
 static NSString *kQFlickrSearchPhotosKeyName = @"FlickrSearchPhotosKeyName";
 static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 
-@synthesize searchDelegate = _searchDelegate;
 @synthesize context = _context;
 @synthesize request = _request;
 @synthesize username = _username;
 @synthesize keyword = _keyword;
 @synthesize searchText = _searchText;
 @synthesize searchWords = _searchWords;
-@synthesize resultsPerPage = _resultsPerPage;
 
 - (id)initWithUsername:(NSString*)username
                keyword:(NSString*)keyword
@@ -77,7 +75,6 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         [_request cancel];
     }
     
-    _searchDelegate = nil;
     [_context release], _context = nil;
     [_request release], _request = nil;
     [_username release], _username = nil;

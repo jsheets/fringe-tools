@@ -27,14 +27,10 @@
 
 #import <libxml/HTMLParser.h>
 #import <libxml/xpath.h>
+#import <FringeTools/FFTSearchOperation.h>
 
-#import <FringeTools/FFTBaseOperation.h>
-#import <FringeTools/FFTURLSearchDelegate.h>
-
-@interface FFTHtmlSearchOperation : FFTBaseOperation
+@interface FFTHtmlSearchOperation : FFTSearchOperation
 {
-    id<FFTURLSearchDelegate> _searchDelegate;
-    
     NSString *_nextPageXpath;
     NSString *_photoBaseXpath;
     NSDictionary *_urlMap;
@@ -51,8 +47,6 @@
     // Image data for a single download at a time.
     NSMutableData *_responseData;
 }
-
-@property (nonatomic, assign) id<FFTURLSearchDelegate> searchDelegate;
 
 @property (nonatomic, copy) NSString *nextPageXpath;
 @property (nonatomic, copy) NSString *photoBaseXpath;

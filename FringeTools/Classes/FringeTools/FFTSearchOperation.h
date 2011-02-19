@@ -1,9 +1,9 @@
 //
-// FringeTools.h
-//  FringeTools
+//  FFTSearchOperation.h
+//  FringeTools-iOS
 //
-//  Created by John Sheets on 12/19/10.
-//  Copyright 2010 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 2/18/11.
+//  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,22 +25,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTOs.h>
-#import <FringeTools/FFTLogging.h>
-#import <FringeTools/FFTAnalytics.h>
-#import <FringeTools/FFTFileCache.h>
-
-#import <FringeTools/FFTBaseOperation.h>
 #import <FringeTools/FFTThreadedOperation.h>
-
-#import <FringeTools/FFTDownloadDelegate.h>
-#import <FringeTools/FFTDownloadURLOperation.h>
-
 #import <FringeTools/FFTURLSearchDelegate.h>
-#import <FringeTools/FFTSearchOperation.h>
-#import <FringeTools/FFTFlickrSearchOperation.h>
-#import <FringeTools/FFTHtmlSearchOperation.h>
 
-#ifdef FFT_IOS
-#import <FringeTools/FFTAppDelegate.h>
-#endif
+@interface FFTSearchOperation : FFTThreadedOperation
+{
+    id<FFTURLSearchDelegate> _searchDelegate;
+    NSInteger _resultsPerPage;
+}
+
+@property (nonatomic, assign) id<FFTURLSearchDelegate> searchDelegate;
+@property (nonatomic) NSInteger resultsPerPage;
+
+@end
