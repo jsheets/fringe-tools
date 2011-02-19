@@ -193,8 +193,27 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     FFTDebug(@"Completed Flickr search request.");
 }
 
+- (NSArray *)extractUrls:(NSArray *)flickrResults
+{
+    NSMutableArray *urls = [[[NSMutableArray alloc] init] autorelease];
+    
+    for (NSDictionary *flickrPhoto in flickrResults)
+    {
+        FFTTrace(@"Photo metadata: %@", flickrPhoto);
+        NSURL *photoUrl = [_context photoSourceURLFromDictionary:flickrPhoto size:OFFlickrMediumSize];
+        
+//        NSString *title = [flickrPhoto valueForKey:@"title"];
+//        NSString *urlString = [photoUrl absoluteString];
+        
+        [urls addObject:photoUrl];
+    }
+    
+    return urls;
+}
+
 
 #pragma mark Flickr Protocol
+
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest
  didCompleteWithResponse:(NSDictionary *)inResponseDictionary
@@ -213,7 +232,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     {
         // Got the result. Close out the operation.
         NSArray *flickrPhotos = [inResponseDictionary valueForKeyPath:@"photos.photo"];
-        [self.searchDelegate foundUrls:flickrPhotos];
+        [self.searchDelegate foundUrls:[self extractUrls:flickrPhotos]];
         
         [self completeOperation];
     }

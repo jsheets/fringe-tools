@@ -53,6 +53,7 @@
 - (void)performOperation
 {
     [self startOperation];
+    FFTInfo(@"Threaded %@ operation started; polling run loop until completed", [self class]);
     
     // Wait until done.
     while (!self.timeExpired && ![self isCancelled] && !self.isFinished)
@@ -64,12 +65,6 @@
 // Only for concurrent operations (explicitly create our own thread).
 -(void)start
 {
-//    if (![NSThread isMainThread])
-//    {
-//        [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
-//        return;
-//    }
-    
     [self execute];
     [self completeOperation];
 }

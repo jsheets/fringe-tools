@@ -28,6 +28,7 @@
 		0DAAC3B312837AAE005AAC96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B212837AAE005AAC96 /* CoreGraphics.framework */; };
 		0DAAC3B512837B0E005AAC96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B412837B0E005AAC96 /* UIKit.framework */; };
 		0DADEDB4130F501100C067F8 /* FFTSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADEDB3130F501100C067F8 /* FFTSearchOperation.m */; };
+		0DADEDB5131028A200C067F8 /* FFTSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADEDB3130F501100C067F8 /* FFTSearchOperation.m */; };
 		0DB9B73B12C52C4A0078F0B3 /* FFTOs.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB9B73A12C52C4A0078F0B3 /* FFTOs.h */; };
 		0DD2A85512BC566500D3F1B5 /* FFTFlickrSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD2A84B12BC566500D3F1B5 /* FFTFlickrSearchOperation.h */; };
 		0DD2A85612BC566500D3F1B5 /* FFTFlickrSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84C12BC566500D3F1B5 /* FFTFlickrSearchOperation.m */; };
@@ -628,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DADEDB5131028A200C067F8 /* FFTSearchOperation.m in Sources */,
 				0DD47C951283828300B2787A /* FFTAppDelegate.m in Sources */,
 				B7AAADDA12516B32002D3030 /* FFTFileCache.m in Sources */,
 				B7AAAC51124EFDD2002D3030 /* FFTBaseOperation.m in Sources */,
