@@ -1,9 +1,9 @@
 //
-//  FFTDownloadDelegate.h
-//  FringeTools
+//  MMFThreadedOperation.h
+//  FringeTools-iOS
 //
-//  Created by John Sheets on 12/18/10.
-//  Copyright 2010 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 1/23/11.
+//  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,7 +25,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@protocol FFTDownloadDelegate
-- (void)downloadSucceeded:(NSData *)downloadData;
-- (void)downloadFailedWithError:(NSError *)downloadError;
+#import <FringeTools/MMFBaseOperation.h>
+
+@interface MMFThreadedOperation : MMFBaseOperation
+{
+}
+
+@property (nonatomic, readonly) BOOL timeExpired;
+
+- (void)startOperation;
+
 @end

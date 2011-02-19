@@ -25,15 +25,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTHtmlSearchOperation.h>
-#import <FringeTools/FFTLogging.h>
+#import <FringeTools/MMFHtmlSearchOperation.h>
+#import <FringeTools/MMFLogging.h>
 
 //#define MIN_IMAGE_COUNT 200
 #define MIN_IMAGE_COUNT 50
 //#define MIN_IMAGE_COUNT 25
 #define MAX_PAGE_COUNT 15
 
-@implementation FFTHtmlSearchOperation
+@implementation MMFHtmlSearchOperation
 
 static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 
@@ -92,14 +92,14 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
         // of a longer search.
         if ([self.nextPage isEqualToString:kNoMorePagesFound])
         {
-            FFTInfo(@"No more search pages found; bailing out of HTML search: %@", kNoMorePagesFound);
+            MMFInfo(@"No more search pages found; bailing out of HTML search: %@", kNoMorePagesFound);
         }
         else
         {
             // FIXME
             NSString *url = nil;//(self.nextPage != nil) ? self.nextPage : nextUrl;
             _pageUrl = [[NSURL URLWithString:url] retain];
-            FFTInfo(@"Starting new HTML download operation for base URL: %@", _pageUrl);
+            MMFInfo(@"Starting new HTML download operation for base URL: %@", _pageUrl);
         }
     }
     return _pageUrl;
@@ -113,7 +113,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
     NSString *extension = [[[imageUrl path] pathExtension] lowercaseString];
     if (![self.validFileExtensions containsObject:extension])
     {
-        FFTDebug(@"Rejecting non-valid file extension: '%@'", imageUrl);
+        MMFDebug(@"Rejecting non-valid file extension: '%@'", imageUrl);
         return NO;
     }
     
@@ -133,7 +133,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
     NSString *mappedUrlString = [self.urlMap valueForKey:[url absoluteString]];
     if (mappedUrlString)
     {
-        FFTInfo(@"Overriding URL %@ with mapped URL: %@", url, mappedUrlString);
+        MMFInfo(@"Overriding URL %@ with mapped URL: %@", url, mappedUrlString);
         url = [NSURL URLWithString:mappedUrlString];
     }
     
@@ -144,7 +144,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 // Scan the HTML document and return an array of NSURLs for all matching images.
 - (NSArray*)xmlRunXPathOnDoc:(htmlDocPtr)doc withXpath:(NSString *)targetXpath withFilter:(BOOL)filtered
 {
-    FFTInfo(@"Scanning HTML document for elements at '%@'", targetXpath);
+    MMFInfo(@"Scanning HTML document for elements at '%@'", targetXpath);
     
     xmlXPathContextPtr xpathCtx;
     xmlXPathObjectPtr xpathObj;
@@ -153,7 +153,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
     xpathCtx = xmlXPathNewContext(doc);
     if(xpathCtx == NULL)
     {
-        FFTError(@"HTML ERROR: Unable to create XPath context from HTML doc.");
+        MMFError(@"HTML ERROR: Unable to create XPath context from HTML doc.");
         return nil;
     }
     
@@ -162,14 +162,14 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
     xpathObj = xmlXPathEvalExpression(xpath, xpathCtx);
     if(xpathObj == NULL)
     {
-        FFTError(@"HTML ERROR: Unable to evaluate XPath: '%@'", targetXpath);
+        MMFError(@"HTML ERROR: Unable to evaluate XPath: '%@'", targetXpath);
         return nil;
     }
     
     xmlNodeSetPtr nodes = xpathObj->nodesetval;
     if (!nodes)
     {
-        FFTError(@"HTML ERROR: Failed to find any xpath matches for '%@'", targetXpath);
+        MMFError(@"HTML ERROR: Failed to find any xpath matches for '%@'", targetXpath);
         return nil;
     }
     
@@ -194,10 +194,10 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
                 url = [NSURL URLWithString:imagePath];
             }
             
-            FFTTrace(@"Found match at path: %@", url);
+            MMFTrace(@"Found match at path: %@", url);
             if (filtered && ![self shouldDownloadURL:url])
             {
-                FFTTrace(@"Skipping rejected URL: %@", url);
+                MMFTrace(@"Skipping rejected URL: %@", url);
                 continue;
             }
 
@@ -214,11 +214,11 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 
 - (NSURL*)xmlFindNextPage:(htmlDocPtr)doc
 {
-    FFTInfo(@"Searching HTML doc for NEXT PAGES");
+    MMFInfo(@"Searching HTML doc for NEXT PAGES");
     
     NSArray *nextPages = [self xmlRunXPathOnDoc:doc withXpath:self.nextPageXpath withFilter:NO];
     
-    FFTDebug(@"Found NEXT PAGES: %@", nextPages);
+    MMFDebug(@"Found NEXT PAGES: %@", nextPages);
     return ([nextPages count] > 0) ? [nextPages objectAtIndex:0] : nil;
 }
 
@@ -228,13 +228,13 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 - (NSMutableArray*)xmlLoadUrls:(NSURL*)page
 {
     // Load HTML document with HTML-friendly libxml2 parser.
-    FFTInfo(@"Loading content from page URL: '%@'", page);
+    MMFInfo(@"Loading content from page URL: '%@'", page);
     NSData *rawData = [NSData dataWithContentsOfURL:page];
     htmlDocPtr doc = htmlReadMemory([rawData bytes], [rawData length], "", NULL,
                                     HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
     if (doc == NULL)
     {
-        FFTError(@"HTML ERROR: Unable to parse HTML document: '%@'", page);
+        MMFError(@"HTML ERROR: Unable to parse HTML document: '%@'", page);
         return [NSArray array];
     }
     
@@ -246,8 +246,8 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
     }
     
     NSArray *newUrls = [self xmlRunXPathOnDoc:doc withXpath:self.photoBaseXpath withFilter:YES];
-    FFTInfo(@"Found %i images on page %@", [newUrls count], page);
-    FFTTrace(@"%@", newUrls);
+    MMFInfo(@"Found %i images on page %@", [newUrls count], page);
+    MMFTrace(@"%@", newUrls);
     
     // Clean up.
     xmlFreeDoc(doc);
@@ -263,7 +263,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
 
 - (NSArray*)loadAllUrls
 {
-    FFTInfo(@"Loading all URLs from HTML source...");
+    MMFInfo(@"Loading all URLs from HTML source...");
     NSInteger pageCount = 0;
     NSMutableArray *urls = [NSMutableArray array];
     
@@ -271,7 +271,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
     id nextUrl = [self mapSpecialUrls:self.pageUrl];
     while ([urls count] < MIN_IMAGE_COUNT && pageCount < MAX_PAGE_COUNT)
     {
-        FFTInfo(@"Loading from next page: %@", nextUrl);
+        MMFInfo(@"Loading from next page: %@", nextUrl);
         NSMutableArray *moreUrls = [self xmlLoadUrls:nextUrl];
         if ([moreUrls count] > 0)
         {
@@ -284,27 +284,27 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
             {
                 if ([urls indexOfObject:url] == NSNotFound)
                 {
-                    FFTDebug(@"ADDING: %@", url);
+                    MMFDebug(@"ADDING: %@", url);
                     [urls addObject:url];
                 }
                 else
                 {
-                    FFTTrace(@"DUPLICATE: %@", url);
+                    MMFTrace(@"DUPLICATE: %@", url);
                 }
             }
         }
         else
         {
-            FFTInfo(@"No urls found for page %@", nextUrl);
+            MMFInfo(@"No urls found for page %@", nextUrl);
             nextUrl = [NSNull null];
         }
         
         pageCount++;
-        FFTCritical(@"Total %i urls after page %i", [urls count], pageCount);
+        MMFCritical(@"Total %i urls after page %i", [urls count], pageCount);
         
         if (nextUrl == [NSNull null])
         {
-            FFTInfo(@"No urls found in next page; bailing out");
+            MMFInfo(@"No urls found in next page; bailing out");
             break;
         }
     }

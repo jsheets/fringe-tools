@@ -1,12 +1,12 @@
 //
-//  FFTFileCache.h
+//  MMFFileCache.h
 //  FringeTools
 //
 //  Created by John Sheets on 9/27/10.
-//  Copyright 2010 FourFringe. All rights reserved.
+//  Copyright 2010 MobileMethod. All rights reserved.
 //
 
-@interface FFTFileCache : NSObject
+@interface MMFFileCache : NSObject
 {
     NSTimeInterval _expirationSeconds;
     NSString *_cacheDirectory;

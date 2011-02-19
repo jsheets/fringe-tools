@@ -1,5 +1,5 @@
 //
-//  FFTBaseOperationTests.m
+//  MMFBaseOperationTests.m
 //  FringeTools-iOS
 //
 //  Created by John Sheets on 1/14/11.
@@ -25,15 +25,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseTestCase.h"
-#import "FFTMockObserver.h"
+#import "MMFBaseTestCase.h"
+#import "MMFMockObserver.h"
 
 
 #pragma mark -
 #pragma mark Fake Operation Class
 
 
-@interface FakeOperation : FFTBaseOperation
+@interface FakeOperation : MMFBaseOperation
 {
     BOOL _ranOp;
 }
@@ -56,14 +56,14 @@
 #pragma mark Tests
 
 
-@interface FFTBaseOperationTests : FFTBaseTestCase
+@interface MMFBaseOperationTests : MMFBaseTestCase
 {
     FakeOperation *_op;
 }
 @end
 
 
-@implementation FFTBaseOperationTests
+@implementation MMFBaseOperationTests
 
 - (void)setUp
 {
@@ -81,7 +81,7 @@
 
 - (void)testKVO
 {
-    FFTMockObserver *mock = [[[FFTMockObserver alloc] initWithTarget:_op] autorelease];
+    MMFMockObserver *mock = [[[MMFMockObserver alloc] initWithTarget:_op] autorelease];
     [mock expectKeyPath:@"isFinished"];
     [mock expectKeyPath:@"isExecuting"];
     

@@ -25,22 +25,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTOs.h>
-#import <FringeTools/FFTLogging.h>
-#import <FringeTools/FFTAnalytics.h>
-#import <FringeTools/FFTFileCache.h>
+#import <FringeTools/MMFOs.h>
+#import <FringeTools/MMFLogging.h>
+#import <FringeTools/MMFAnalytics.h>
+#import <FringeTools/MMFFileCache.h>
 
-#import <FringeTools/FFTBaseOperation.h>
-#import <FringeTools/FFTThreadedOperation.h>
+#import <FringeTools/MMFBaseOperation.h>
+#import <FringeTools/MMFThreadedOperation.h>
 
-#import <FringeTools/FFTDownloadDelegate.h>
-#import <FringeTools/FFTDownloadURLOperation.h>
+#import <FringeTools/MMFDownloadDelegate.h>
+#import <FringeTools/MMFDownloadURLOperation.h>
 
-#import <FringeTools/FFTURLSearchDelegate.h>
-#import <FringeTools/FFTSearchOperation.h>
-#import <FringeTools/FFTFlickrSearchOperation.h>
-#import <FringeTools/FFTHtmlSearchOperation.h>
+#import <FringeTools/MMFURLSearchDelegate.h>
+#import <FringeTools/MMFSearchOperation.h>
+#import <FringeTools/MMFFlickrSearchOperation.h>
+#import <FringeTools/MMFHtmlSearchOperation.h>
 
-#ifdef FFT_IOS
-#import <FringeTools/FFTAppDelegate.h>
+#ifdef MMF_IOS
+#import <FringeTools/MMFAppDelegate.h>
 #endif

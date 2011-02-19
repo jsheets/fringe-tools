@@ -1,5 +1,5 @@
 //
-//  FFTLogging.h
+//  MMFLogging.h
 //  FringeTools
 //
 //  Created by John Sheets on 9/25/10.
@@ -26,51 +26,51 @@
 // THE SOFTWARE.
 
 #ifdef VERBOSE_LOG_STATEMENTS
-#define _FFT_LOG(log_type, ...) NSLog(@"[%@] %s (line:%d)\n --> %@", log_type, __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
+#define _MMF_LOG(log_type, ...) NSLog(@"[%@] %s (line:%d)\n --> %@", log_type, __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
 #else
-#define _FFT_LOG(log_type, ...) CFShow([NSString stringWithFormat: \
+#define _MMF_LOG(log_type, ...) CFShow([NSString stringWithFormat: \
   @"[%@] %s (line:%d) --> %@", log_type, __PRETTY_FUNCTION__, __LINE__, \
     [NSString stringWithFormat:__VA_ARGS__]])
 #endif
 
-#ifdef FFT_LOG_ALL
-#define FFT_LOG_ERROR
-#define FFT_LOG_CRITICAL
-#define FFT_LOG_INFO
-#define FFT_LOG_DEBUG
+#ifdef MMF_LOG_ALL
+#define MMF_LOG_ERROR
+#define MMF_LOG_CRITICAL
+#define MMF_LOG_INFO
+#define MMF_LOG_DEBUG
 #endif
 
-#ifdef FFT_LOG_DEFAULT
-#define FFT_LOG_ERROR
-#define FFT_LOG_CRITICAL
+#ifdef MMF_LOG_DEFAULT
+#define MMF_LOG_ERROR
+#define MMF_LOG_CRITICAL
 #endif
 
-#ifdef FFT_LOG_ERROR
-#define FFTError(...) _FFT_LOG(@"ERROR", __VA_ARGS__)
+#ifdef MMF_LOG_ERROR
+#define MMFError(...) _MMF_LOG(@"ERROR", __VA_ARGS__)
 #else
-#define FFTError(...)
+#define MMFError(...)
 #endif
 
-#ifdef FFT_LOG_CRITICAL
-#define FFTCritical(...) _FFT_LOG(@"CRITICAL", __VA_ARGS__)
+#ifdef MMF_LOG_CRITICAL
+#define MMFCritical(...) _MMF_LOG(@"CRITICAL", __VA_ARGS__)
 #else
-#define FFTCritical(...)
+#define MMFCritical(...)
 #endif
 
-#ifdef FFT_LOG_INFO
-#define FFTInfo(...) _FFT_LOG(@"INFO", __VA_ARGS__)
+#ifdef MMF_LOG_INFO
+#define MMFInfo(...) _MMF_LOG(@"INFO", __VA_ARGS__)
 #else
-#define FFTInfo(...)
+#define MMFInfo(...)
 #endif
 
-#ifdef FFT_LOG_DEBUG
-#define FFTDebug(...) _FFT_LOG(@"DEBUG", __VA_ARGS__)
+#ifdef MMF_LOG_DEBUG
+#define MMFDebug(...) _MMF_LOG(@"DEBUG", __VA_ARGS__)
 #else
-#define FFTDebug(...)
+#define MMFDebug(...)
 #endif
 
-#ifdef FFT_LOG_TRACE
-#define FFTTrace(...) _FFT_LOG(@"TRACE", __VA_ARGS__)
+#ifdef MMF_LOG_TRACE
+#define MMFTrace(...) _MMF_LOG(@"TRACE", __VA_ARGS__)
 #else
-#define FFTTrace(...)
+#define MMFTrace(...)
 #endif

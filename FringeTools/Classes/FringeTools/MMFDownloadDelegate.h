@@ -1,9 +1,9 @@
 //
-//  FFTSearchOperation.h
-//  FringeTools-iOS
+//  MMFDownloadDelegate.h
+//  FringeTools
 //
-//  Created by John Sheets on 2/18/11.
-//  Copyright 2011 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 12/18/10.
+//  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,16 +25,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTThreadedOperation.h>
-#import <FringeTools/FFTURLSearchDelegate.h>
-
-@interface FFTSearchOperation : FFTThreadedOperation
-{
-    id<FFTURLSearchDelegate> _searchDelegate;
-    NSInteger _resultsPerPage;
-}
-
-@property (nonatomic, assign) id<FFTURLSearchDelegate> searchDelegate;
-@property (nonatomic) NSInteger resultsPerPage;
-
+@protocol MMFDownloadDelegate
+- (void)downloadSucceeded:(NSData *)downloadData;
+- (void)downloadFailedWithError:(NSError *)downloadError;
 @end

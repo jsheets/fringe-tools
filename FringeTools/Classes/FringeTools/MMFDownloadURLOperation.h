@@ -1,5 +1,5 @@
 //
-//  FFTDownloadOperation.h
+//  MMFDownloadOperation.h
 //  FringeTools
 //
 //  Created by John Sheets on 9/25/10.
@@ -25,19 +25,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTThreadedOperation.h>
-#import <FringeTools/FFTDownloadDelegate.h>
+#import <FringeTools/MMFThreadedOperation.h>
+#import <FringeTools/MMFDownloadDelegate.h>
 
 // Operation to download a a single file from a URL.
-@interface FFTDownloadURLOperation : FFTThreadedOperation
+@interface MMFDownloadURLOperation : MMFThreadedOperation
 {
-    id<FFTDownloadDelegate> _downloadDelegate;
+    id<MMFDownloadDelegate> _downloadDelegate;
     
     NSURL *_url;
     NSMutableData *_responseData;
 }
 
-@property (nonatomic, assign) id<FFTDownloadDelegate> downloadDelegate;
+@property (nonatomic, assign) id<MMFDownloadDelegate> downloadDelegate;
 @property (nonatomic, copy) NSURL *url;
 @property (nonatomic, retain) NSMutableData *responseData;
 

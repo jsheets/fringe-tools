@@ -1,5 +1,5 @@
 //
-//  FFTBaseTestCase.h
+//  MMFBaseTestCase.h
 //  FringeTools-iOS
 //
 //  Created by John Sheets on 1/14/11.
@@ -25,7 +25,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface FFTBaseTestCase : GHAsyncTestCase
+@interface MMFBaseTestCase : GHAsyncTestCase
 {
     NSOperationQueue *_queue;
 }

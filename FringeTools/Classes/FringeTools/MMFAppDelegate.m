@@ -25,10 +25,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTAppDelegate.h>
-#import <FringeTools/FFTLogging.h>
+#import <FringeTools/MMFAppDelegate.h>
+#import <FringeTools/MMFLogging.h>
 
-@implementation FFTAppDelegate
+@implementation MMFAppDelegate
 
 - (BOOL)isIPad
 {
@@ -79,7 +79,7 @@
     if ([screen respondsToSelector:@selector(currentMode)])
     {
         CGSize size = [[screen currentMode] size];
-        FFTDebug(@"Screen size: %@", NSStringFromCGSize(size));
+        MMFDebug(@"Screen size: %@", NSStringFromCGSize(size));
         
         // This is really fragile. Need a better test.
         hasRetinaScreen = size.width == 640;

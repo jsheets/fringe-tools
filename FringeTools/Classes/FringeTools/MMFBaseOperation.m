@@ -25,10 +25,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTBaseOperation.h>
-#import <FringeTools/FFTLogging.h>
+#import <FringeTools/MMFBaseOperation.h>
+#import <FringeTools/MMFLogging.h>
 
-@implementation FFTBaseOperation
+@implementation MMFBaseOperation
 
 @synthesize isExecuting = _isExecuting;
 @synthesize isFinished = _isFinished;
@@ -61,7 +61,7 @@
 
 - (void)completeOperation
 {
-    FFTDebug(@"Completing %@ operation", [self class]);
+    MMFDebug(@"Completing %@ operation", [self class]);
     self.isExecuting = NO;
     self.isFinished = YES;
 }
@@ -69,12 +69,12 @@
 // Should not return from this until the operation is completed.
 - (void)performOperation
 {
-    FFTError(@"ERROR: Should implement performOperation in subclass");
+    MMFError(@"ERROR: Should implement performOperation in subclass");
 }
 
 - (void)execute
 {
-    FFTDebug(@"Starting %@ operation", [self class]);
+    MMFDebug(@"Starting %@ operation", [self class]);
     if (![self isFinished] && ![self isCancelled])
     {
         @try
@@ -83,16 +83,16 @@
             NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
             
             // Main Loop.
-            FFTTrace(@"Starting execution");
+            MMFTrace(@"Starting execution");
             self.isExecuting = YES;
-            FFTTrace(@"Performing Operation");
+            MMFTrace(@"Performing Operation");
             [self performOperation];
             
             [pool release];
         }
         @catch (NSException *e)
         {
-            FFTError(@"FATAL ERROR in operation: %@", e);
+            MMFError(@"FATAL ERROR in operation: %@", e);
         }
     }
 }
@@ -101,7 +101,7 @@
 {
     // Always let NSOperationQueue create the thread for us. Returning NO here
     // Will keep 10.5 behavior similar to 10.6 behavior.
-    FFTTrace(@"Op is not concurrent.");
+    MMFTrace(@"Op is not concurrent.");
     return NO;
 }
 

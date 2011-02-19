@@ -1,9 +1,9 @@
 //
-//  FringeAppDelegate.h
-//  FringeTools
+//  MMQSearchFlickr.h
+//  PhotoFrame
 //
-//  Created by John Sheets on 10/6/10.
-//  Copyright 2010 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 12/6/09.
+//  Copyright 2009 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,15 +25,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface FFTAppDelegate : NSObject <UIApplicationDelegate>
+#import "ObjectiveFlickr.h"
+#import <FringeTools/MMFSearchOperation.h>
+
+@interface MMFFlickrSearchOperation : MMFSearchOperation <OFFlickrAPIRequestDelegate>
 {
+    OFFlickrAPIContext *_context;
+    OFFlickrAPIRequest *_request;
+    NSString *_username;
+    NSString *_keyword;
+    NSString *_searchText;
+    NSArray *_searchWords;
 }
 
-@property (nonatomic, readonly) BOOL isIPad;
-@property (nonatomic, readonly) BOOL isRetinaDisplay;
-@property (nonatomic, readonly) CGSize devicePixelSize;
-@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
+@property (nonatomic, retain) OFFlickrAPIContext *context;
+@property (nonatomic, retain) OFFlickrAPIRequest *request;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *keyword;
+@property (nonatomic, copy) NSString *searchText;
+@property (nonatomic, copy) NSArray *searchWords;
 
-- (CGSize)appScreenSizeForPortrait:(BOOL)isPortrait scaled:(BOOL)scaled;
+- (id)initWithUsername:(NSString*)username
+               keyword:(NSString*)keyword
+                apiKey:(NSString *)flickrApiKey
+          sharedSecret:(NSString *)flickrSharedSecret;
 
 @end

@@ -1,8 +1,8 @@
 //
-//  FFTSearchOperation.m
-//  FringeTools-iOS
+//  MMFURLSearchDelegate.h
+//  FringeTools
 //
-//  Created by John Sheets on 2/18/11.
+//  Created by John Sheets on 02/13/11.
 //  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,31 +25,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTSearchOperation.h>
-#import <FringeTools/FFTLogging.h>
-
-@implementation FFTSearchOperation
-
-@synthesize searchDelegate = _searchDelegate;
-@synthesize resultsPerPage = _resultsPerPage;
-
-- (id)init
-{
-    if ((self = [super init]))
-    {
-        // Initialization.
-        
-    }
-    
-    return self;
-}
-
-- (void)dealloc
-{
-    _searchDelegate = nil;
-    
-    [super dealloc];
-}
-
-
+@protocol MMFURLSearchDelegate
+- (void)foundUrls:(NSArray *)urls;
+- (void)searchFailedWithError:(NSError *)downloadError;
 @end

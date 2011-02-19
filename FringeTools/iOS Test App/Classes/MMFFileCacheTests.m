@@ -1,8 +1,8 @@
 //
-//  FFTThreadedOperation.h
+//  MMFFileCacheTests.m
 //  FringeTools-iOS
 //
-//  Created by John Sheets on 1/23/11.
+//  Created by John Sheets on 1/13/11.
 //  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,14 +25,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTBaseOperation.h>
+#import "MMFBaseTestCase.h"
 
-@interface FFTThreadedOperation : FFTBaseOperation
-{
-}
+@interface MMFFileCacheTests : MMFBaseTestCase {}
+@end
 
-@property (nonatomic, readonly) BOOL timeExpired;
 
-- (void)startOperation;
+@implementation MMFFileCacheTests
 
 @end

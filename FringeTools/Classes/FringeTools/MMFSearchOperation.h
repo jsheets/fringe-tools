@@ -1,8 +1,8 @@
 //
-//  FFTURLSearchDelegate.h
-//  FringeTools
+//  MMFSearchOperation.h
+//  FringeTools-iOS
 //
-//  Created by John Sheets on 02/13/11.
+//  Created by John Sheets on 2/18/11.
 //  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,7 +25,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@protocol FFTURLSearchDelegate
-- (void)foundUrls:(NSArray *)urls;
-- (void)searchFailedWithError:(NSError *)downloadError;
+#import <FringeTools/MMFThreadedOperation.h>
+#import <FringeTools/MMFURLSearchDelegate.h>
+
+@interface MMFSearchOperation : MMFThreadedOperation
+{
+    id<MMFURLSearchDelegate> _searchDelegate;
+    NSInteger _resultsPerPage;
+}
+
+@property (nonatomic, assign) id<MMFURLSearchDelegate> searchDelegate;
+@property (nonatomic) NSInteger resultsPerPage;
+
 @end

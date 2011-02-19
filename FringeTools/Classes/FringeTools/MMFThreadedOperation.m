@@ -1,8 +1,8 @@
 //
-//  FFTHtmlSearchOperationTests.m
+//  MMFThreadedOperation.m
 //  FringeTools-iOS
 //
-//  Created by John Sheets on 1/14/11.
+//  Created by John Sheets on 1/23/11.
 //  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,12 +25,48 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseTestCase.h"
+#import <FringeTools/MMFThreadedOperation.h>
+#import <FringeTools/MMFLogging.h>
 
-@interface FFTHtmlSearchOperationTests : FFTBaseTestCase {}
-@end
+@implementation MMFThreadedOperation
 
+- (BOOL)isConcurrent
+{
+    MMFTrace(@"Op is concurrent, and should create its own thread.");
+    return YES;
+}
 
-@implementation FFTHtmlSearchOperationTests
+// Kick of asynchronous operation. Runs this then waits until the operation completes
+// or times out.
+- (void)startOperation
+{
+    MMFError(@"Performing empty concurrent operation; you should overload startOperation in your subclass!");
+    [self completeOperation];
+}
+
+- (BOOL)timeExpired
+{
+    // TODO: Set a default timeout.
+    return NO;
+}
+
+- (void)performOperation
+{
+    [self startOperation];
+    MMFInfo(@"Threaded %@ operation started; polling run loop until completed", [self class]);
+    
+    // Wait until done.
+    while (!self.timeExpired && ![self isCancelled] && !self.isFinished)
+    {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
+}
+
+// Only for concurrent operations (explicitly create our own thread).
+-(void)start
+{
+    [self execute];
+    [self completeOperation];
+}
 
 @end

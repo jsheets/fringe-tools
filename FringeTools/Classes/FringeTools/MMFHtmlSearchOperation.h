@@ -27,9 +27,9 @@
 
 #import <libxml/HTMLParser.h>
 #import <libxml/xpath.h>
-#import <FringeTools/FFTSearchOperation.h>
+#import <FringeTools/MMFSearchOperation.h>
 
-@interface FFTHtmlSearchOperation : FFTSearchOperation
+@interface MMFHtmlSearchOperation : MMFSearchOperation
 {
     NSString *_nextPageXpath;
     NSString *_photoBaseXpath;

@@ -1,5 +1,5 @@
 //
-//  FFTDownloadURLOperation.m
+//  MMFDownloadURLOperation.m
 //  FringeTools
 //
 //  Created by John Sheets on 9/25/10.
@@ -25,10 +25,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTDownloadURLOperation.h>
-#import <FringeTools/FFTLogging.h>
+#import <FringeTools/MMFDownloadURLOperation.h>
+#import <FringeTools/MMFLogging.h>
 
-@implementation FFTDownloadURLOperation
+@implementation MMFDownloadURLOperation
 
 @synthesize downloadDelegate = _downloadDelegate;
 @synthesize url = _url;
@@ -60,7 +60,7 @@
 {
     if ([self isCancelled])
     {
-        FFTDebug(@"Bailing out of cancelled download operation");
+        MMFDebug(@"Bailing out of cancelled download operation");
         [connection cancel];
         [self completeOperation];
         return YES;
@@ -70,7 +70,7 @@
 
 - (void)startOperation
 {
-    FFTDebug(@"Downloading URL: %@", self.url);
+    MMFDebug(@"Downloading URL: %@", self.url);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.url];
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
     
@@ -90,11 +90,11 @@
 {
     if ([self checkCancel:connection])
     {
-        FFTInfo(@"Canceling before any response received");
+        MMFInfo(@"Canceling before any response received");
         return;
     }
     
-    FFTDebug(@"Received response; initializing responseData");
+    MMFDebug(@"Received response; initializing responseData");
     [self.responseData setLength:0];
 }
 
@@ -102,23 +102,23 @@
 {
     if ([self checkCancel:connection])
     {
-        FFTInfo(@"Canceling after receiving some data");
+        MMFInfo(@"Canceling after receiving some data");
         return;
     }
     
-    FFTDebug(@"Received %i bytes of data", [data length]);
+    MMFDebug(@"Received %i bytes of data", [data length]);
     [self.responseData appendData:data];
-    FFTDebug(@"Total %i bytes of data", [self.responseData length]);
+    MMFDebug(@"Total %i bytes of data", [self.responseData length]);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     if ([self checkCancel:connection])
     {
-        FFTInfo(@"Canceling just before error response");
+        MMFInfo(@"Canceling just before error response");
         return;
     }
-    FFTError(@"Error downloading URL: %@", [error localizedDescription]);
+    MMFError(@"Error downloading URL: %@", [error localizedDescription]);
     
     // Notify the delegate of our failure.
     [self.downloadDelegate downloadFailedWithError:error];
@@ -131,10 +131,10 @@
 {
     if ([self checkCancel:connection])
     {
-        FFTInfo(@"Canceling before response completed");
+        MMFInfo(@"Canceling before response completed");
         return;
     }
-    FFTDebug(@"Completed download");
+    MMFDebug(@"Completed download");
     
     // Notify the delegate of our success!
     [self.downloadDelegate downloadSucceeded:self.responseData];

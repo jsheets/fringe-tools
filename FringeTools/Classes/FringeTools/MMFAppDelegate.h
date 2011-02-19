@@ -1,9 +1,9 @@
 //
-//  FFTFileCacheTests.m
-//  FringeTools-iOS
+//  FringeAppDelegate.h
+//  FringeTools
 //
-//  Created by John Sheets on 1/13/11.
-//  Copyright 2011 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 10/6/10.
+//  Copyright 2010 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,12 +25,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseTestCase.h"
+@interface MMFAppDelegate : NSObject <UIApplicationDelegate>
+{
+}
 
-@interface FFTFileCacheTests : FFTBaseTestCase {}
-@end
+@property (nonatomic, readonly) BOOL isIPad;
+@property (nonatomic, readonly) BOOL isRetinaDisplay;
+@property (nonatomic, readonly) CGSize devicePixelSize;
+@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 
-
-@implementation FFTFileCacheTests
+- (CGSize)appScreenSizeForPortrait:(BOOL)isPortrait scaled:(BOOL)scaled;
 
 @end

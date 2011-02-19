@@ -1,5 +1,5 @@
 //
-//  FFTDownloadURLOperationTests.m
+//  MMFDownloadURLOperationTests.m
 //  FringeTools-iOS
 //
 //  Created by John Sheets on 1/14/11.
@@ -25,23 +25,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseTestCase.h"
+#import "MMFBaseTestCase.h"
 
-@interface FFTDownloadURLOperationTests : FFTBaseTestCase {}
+@interface MMFDownloadURLOperationTests : MMFBaseTestCase {}
 @end
 
 
-@implementation FFTDownloadURLOperationTests
+@implementation MMFDownloadURLOperationTests
 
 - (NSURL *)localFileUrl:(NSString *)fileName
 {
     return [[NSBundle mainBundle] URLForResource:fileName withExtension:@"txt"];
 }
 
-- (FFTDownloadURLOperation *)downloadUrl:(NSURL *)url
+- (MMFDownloadURLOperation *)downloadUrl:(NSURL *)url
 {
-    FFTDebug(@"Downloading local file: %@", url);
-    FFTDownloadURLOperation *op = [[FFTDownloadURLOperation alloc] initWithURL:url];
+    MMFDebug(@"Downloading local file: %@", url);
+    MMFDownloadURLOperation *op = [[MMFDownloadURLOperation alloc] initWithURL:url];
     [self runSynchronousOperation:op];
     
     return op;
@@ -50,7 +50,7 @@
 - (void)testDownloadLocalFile
 {
     NSURL *url = [self localFileUrl:@"test-data"];
-    FFTDownloadURLOperation *op = [self downloadUrl:url];
+    MMFDownloadURLOperation *op = [self downloadUrl:url];
     
     GHAssertNotNil(op.responseData, @"Response data should not be nil");
     GHAssertEquals((NSInteger)[op.responseData length], (NSInteger)10, @"Response data should be the full length");

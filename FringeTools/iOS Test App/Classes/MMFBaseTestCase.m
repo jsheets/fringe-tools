@@ -1,5 +1,5 @@
 //
-//  FFTBaseTestCase.m
+//  MMFBaseTestCase.m
 //  FringeTools-iOS
 //
 //  Created by John Sheets on 1/14/11.
@@ -25,9 +25,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseTestCase.h"
+#import "MMFBaseTestCase.h"
 
-@implementation FFTBaseTestCase
+@implementation MMFBaseTestCase
 
 @synthesize queue = _queue;
 
@@ -111,7 +111,7 @@
                              length:strlen(tempFileNameCString)];
     free(tempFileNameCString);
     
-    FFTInfo(@"Created log file: %@", tempFileName);
+    MMFInfo(@"Created log file: %@", tempFileName);
     return tempFileName;
 }
 

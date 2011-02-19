@@ -1,9 +1,9 @@
 //
-//  MMQSearchFlickr.h
-//  PhotoFrame
+//  MMFMockObserver.h
+//  FringeTools-iOS
 //
-//  Created by John Sheets on 12/6/09.
-//  Copyright 2009 MobileMethod, LLC. All rights reserved.
+//  Created by John Sheets on 1/16/11.
+//  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
 //
@@ -25,29 +25,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ObjectiveFlickr.h"
-#import <FringeTools/FFTSearchOperation.h>
-
-@interface FFTFlickrSearchOperation : FFTSearchOperation <OFFlickrAPIRequestDelegate>
+@interface MMFMockObserver : NSObject
 {
-    OFFlickrAPIContext *_context;
-    OFFlickrAPIRequest *_request;
-    NSString *_username;
-    NSString *_keyword;
-    NSString *_searchText;
-    NSArray *_searchWords;
+    id _target;
+    NSMutableArray *_goodKeyPaths;
+    NSMutableArray *_badKeyPaths;
+    NSMutableArray *_foundKeyPaths;
 }
 
-@property (nonatomic, retain) OFFlickrAPIContext *context;
-@property (nonatomic, retain) OFFlickrAPIRequest *request;
-@property (nonatomic, copy) NSString *username;
-@property (nonatomic, copy) NSString *keyword;
-@property (nonatomic, copy) NSString *searchText;
-@property (nonatomic, copy) NSArray *searchWords;
+@property (nonatomic, retain) id target;
+@property (nonatomic, copy) NSMutableArray *goodKeyPaths;
+@property (nonatomic, copy) NSMutableArray *badKeyPaths;
+@property (nonatomic, copy) NSMutableArray *foundKeyPaths;
 
-- (id)initWithUsername:(NSString*)username
-               keyword:(NSString*)keyword
-                apiKey:(NSString *)flickrApiKey
-          sharedSecret:(NSString *)flickrSharedSecret;
+- (id)initWithTarget:(id)target;
+- (void)expectKeyPath:(NSString *)keyPath;
+- (void)rejectKeyPath:(NSString *)keyPath;
+- (NSString *)checkForError;
+- (void)clearResults;
 
 @end

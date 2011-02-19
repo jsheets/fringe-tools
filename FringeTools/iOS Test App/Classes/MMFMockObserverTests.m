@@ -1,5 +1,5 @@
 //
-//  FFTMockObserverTests.m
+//  MMFMockObserverTests.m
 //  FringeTools-iOS
 //
 //  Created by John Sheets on 1/22/11.
@@ -25,8 +25,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseTestCase.h"
-#import "FFTMockObserver.h"
+#import "MMFBaseTestCase.h"
+#import "MMFMockObserver.h"
 
 
 #pragma mark -
@@ -68,14 +68,14 @@
 #pragma mark Test implementation
 
 
-@interface FFTMockObserverTests : FFTBaseTestCase
+@interface MMFMockObserverTests : MMFBaseTestCase
 {
-    FFTMockObserver *_mock;
+    MMFMockObserver *_mock;
     FakeThing *_thing;
 }
 @end
 
-@implementation FFTMockObserverTests
+@implementation MMFMockObserverTests
 
 - (void)setUp
 {
@@ -84,7 +84,7 @@
     // Observe FakeThing and make sure the mock is tracking KVO access properly.
     // We are listening on all three properties, but for success, only name
     // and title should be called.
-    _mock = [[FFTMockObserver alloc] initWithTarget:_thing];
+    _mock = [[MMFMockObserver alloc] initWithTarget:_thing];
     [_mock expectKeyPath:@"name"];
     [_mock expectKeyPath:@"title"];
     [_mock rejectKeyPath:@"secret"];

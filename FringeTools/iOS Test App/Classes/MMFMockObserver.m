@@ -1,5 +1,5 @@
 //
-//  FFTMockObserver.m
+//  MMFMockObserver.m
 //  FringeTools-iOS
 //
 //  Created by John Sheets on 1/16/11.
@@ -25,9 +25,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTMockObserver.h"
+#import "MMFMockObserver.h"
 
-@implementation FFTMockObserver
+@implementation MMFMockObserver
 
 @synthesize target = _target;
 @synthesize goodKeyPaths = _goodKeyPaths;
@@ -115,7 +115,7 @@
                        change:(NSDictionary *)change
                       context:(void *)context
 {
-    FFTInfo(@"Observed keyPath: %@", keyPath);
+    MMFInfo(@"Observed keyPath: %@", keyPath);
     [self.foundKeyPaths addObject:keyPath];
 }
 

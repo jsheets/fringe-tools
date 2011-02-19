@@ -1,14 +1,14 @@
 //
-//  FFTFileCache.m
+//  MMFFileCache.m
 //  FringeTools
 //
 //  Created by John Sheets on 9/27/10.
-//  Copyright 2010 FourFringe. All rights reserved.
+//  Copyright 2010 MobileMethod. All rights reserved.
 //
 
-#import <FringeTools/FFTFileCache.h>
+#import <FringeTools/MMFFileCache.h>
 
-@implementation FFTFileCache
+@implementation MMFFileCache
 
 @synthesize expirationSeconds = _expirationSeconds;
 @synthesize path = _path;

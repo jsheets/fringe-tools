@@ -25,10 +25,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTFlickrSearchOperation.h>
-#import <FringeTools/FFTLogging.h>
+#import <FringeTools/MMFFlickrSearchOperation.h>
+#import <FringeTools/MMFLogging.h>
 
-@implementation FFTFlickrSearchOperation
+@implementation MMFFlickrSearchOperation
 
 // Flickr session constants.
 static NSString *kQFlickrSearchPhotosKeyName = @"FlickrSearchPhotosKeyName";
@@ -55,7 +55,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         // Default to 100 photos per request.
         self.resultsPerPage = 100;
         
-        FFTInfo(@"Initializing Flickr op with user '%@' and keyword '%@'", username, keyword);
+        MMFInfo(@"Initializing Flickr op with user '%@' and keyword '%@'", username, keyword);
         _context = [[OFFlickrAPIContext alloc] initWithAPIKey:flickrApiKey
                     sharedSecret:flickrSharedSecret];
         _request = [[OFFlickrAPIRequest alloc] initWithAPIContext:_context];
@@ -67,11 +67,11 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 
 - (void)dealloc
 {
-    FFTTrace(@"Cleaning up Flickr op.");
+    MMFTrace(@"Cleaning up Flickr op.");
     
     if ([_request isRunning])
     {
-        FFTDebug(@"Shutting down running Flickr request");
+        MMFDebug(@"Shutting down running Flickr request");
         [_request cancel];
     }
     
@@ -88,7 +88,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 - (BOOL)isConcurrent
 {
     // Create our own thread.
-    FFTDebug(@"Flickr is concurrent.");
+    MMFDebug(@"Flickr is concurrent.");
     return YES;
 }
 
@@ -98,18 +98,18 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 
 - (void)flickrGetAny
 {
-    FFTInfo(@"Running flickr.photos.getRecent");
+    MMFInfo(@"Running flickr.photos.getRecent");
     _request.sessionInfo = kQFlickrSearchPhotosKeyName;
     
     NSString *pageSize = [NSString stringWithFormat:@"%li", self.resultsPerPage];
     NSDictionary *args = [NSDictionary dictionaryWithObjectsAndKeys:pageSize, @"per_page", nil];
-    FFTDebug(@"Flickr search args: %@", args);
+    MMFDebug(@"Flickr search args: %@", args);
     [_request callAPIMethodWithGET:@"flickr.photos.getRecent" arguments:args];
 }
 
 - (void)flickrLookupUser
 {
-    FFTInfo(@"Running flickr.people.findByUsername (username=%@; tags=%@)", self.username, self.keyword);
+    MMFInfo(@"Running flickr.people.findByUsername (username=%@; tags=%@)", self.username, self.keyword);
     _request.sessionInfo = kQFlickrLookupUserKeyName;
     
     // FIXME: Include keywords in search.
@@ -121,7 +121,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 
 - (void)flickrSearch:(NSString*)userId
 {
-    FFTInfo(@"Running flickr.photos.search with user_id: %@", userId);
+    MMFInfo(@"Running flickr.photos.search with user_id: %@", userId);
     _request.sessionInfo = kQFlickrSearchPhotosKeyName;
     
     NSString *pageSize = [NSString stringWithFormat:@"%li", self.resultsPerPage];
@@ -134,7 +134,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     {
         [args setValue:self.keyword forKey:@"tags"];
     }
-    FFTInfo(@"Searching Flickr with params %@", args);
+    MMFInfo(@"Searching Flickr with params %@", args);
     [_request callAPIMethodWithGET:@"flickr.photos.search" arguments:args];
     
     self.username = nil;
@@ -149,7 +149,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     // treat all words as keywords.
     NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@" ,"];
     self.searchWords = [searchText componentsSeparatedByCharactersInSet:charSet];
-    FFTInfo(@"FLICKR SEARCH WORDS: %@", self.searchWords);
+    MMFInfo(@"FLICKR SEARCH WORDS: %@", self.searchWords);
 }
 
 
@@ -168,7 +168,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     //   flickr.photos.getInfo
     //   flickr.photos.getSizes
     
-    FFTInfo(@"Running Flickr search with searchText='%@' username='%@', keyword='%@'",
+    MMFInfo(@"Running Flickr search with searchText='%@' username='%@', keyword='%@'",
            self.searchText, self.username, self.keyword);
     if ([self.searchText length] > 0)
     {
@@ -190,7 +190,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
         // Have something in username field; might also have keyword.
         [self flickrLookupUser];
     }
-    FFTDebug(@"Completed Flickr search request.");
+    MMFDebug(@"Completed Flickr search request.");
 }
 
 - (NSArray *)extractUrls:(NSArray *)flickrResults
@@ -199,7 +199,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     
     for (NSDictionary *flickrPhoto in flickrResults)
     {
-        FFTTrace(@"Photo metadata: %@", flickrPhoto);
+        MMFTrace(@"Photo metadata: %@", flickrPhoto);
         NSURL *photoUrl = [_context photoSourceURLFromDictionary:flickrPhoto size:OFFlickrMediumSize];
         
 //        NSString *title = [flickrPhoto valueForKey:@"title"];
@@ -218,9 +218,9 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest
  didCompleteWithResponse:(NSDictionary *)inResponseDictionary
 {
-    FFTDebug(@"Completed request: %@", inRequest.sessionInfo);
-    FFTTrace(@"Completed request: %@", inResponseDictionary);
-    FFTInfo(@"Completed request");
+    MMFDebug(@"Completed request: %@", inRequest.sessionInfo);
+    MMFTrace(@"Completed request: %@", inResponseDictionary);
+    MMFInfo(@"Completed request");
     
     if (inRequest.sessionInfo == kQFlickrLookupUserKeyName)
     {
@@ -241,7 +241,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest
         didFailWithError:(NSError *)inError
 {
-    FFTError(@"FLICKR ERROR: failed request %@", inError);
+    MMFError(@"FLICKR ERROR: failed request %@", inError);
     [self.searchDelegate searchFailedWithError:inError];
     
     [self completeOperation];

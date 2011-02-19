@@ -1,5 +1,5 @@
 //
-//  FFTFlickrSearchOperationTests.m
+//  MMFFlickrSearchOperationTests.m
 //  FringeTools-iOS
 //
 //  Created by John Sheets on 1/14/11.
@@ -25,12 +25,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFTBaseTestCase.h"
+#import "MMFBaseTestCase.h"
 
-@interface FFTFlickrSearchOperationTests : FFTBaseTestCase {}
+@interface MMFFlickrSearchOperationTests : MMFBaseTestCase {}
 @end
 
 
-@implementation FFTFlickrSearchOperationTests
+@implementation MMFFlickrSearchOperationTests
 
 @end

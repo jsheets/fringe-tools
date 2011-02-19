@@ -1,8 +1,8 @@
 //
-//  FFTMockObserver.h
+//  MMFSearchOperation.m
 //  FringeTools-iOS
 //
-//  Created by John Sheets on 1/16/11.
+//  Created by John Sheets on 2/18/11.
 //  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 // MIT License
@@ -25,23 +25,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@interface FFTMockObserver : NSObject
+#import <FringeTools/MMFSearchOperation.h>
+#import <FringeTools/MMFLogging.h>
+
+@implementation MMFSearchOperation
+
+@synthesize searchDelegate = _searchDelegate;
+@synthesize resultsPerPage = _resultsPerPage;
+
+- (id)init
 {
-    id _target;
-    NSMutableArray *_goodKeyPaths;
-    NSMutableArray *_badKeyPaths;
-    NSMutableArray *_foundKeyPaths;
+    if ((self = [super init]))
+    {
+        // Initialization.
+        
+    }
+    
+    return self;
 }
 
-@property (nonatomic, retain) id target;
-@property (nonatomic, copy) NSMutableArray *goodKeyPaths;
-@property (nonatomic, copy) NSMutableArray *badKeyPaths;
-@property (nonatomic, copy) NSMutableArray *foundKeyPaths;
+- (void)dealloc
+{
+    _searchDelegate = nil;
+    
+    [super dealloc];
+}
 
-- (id)initWithTarget:(id)target;
-- (void)expectKeyPath:(NSString *)keyPath;
-- (void)rejectKeyPath:(NSString *)keyPath;
-- (NSString *)checkForError;
-- (void)clearResults;
 
 @end

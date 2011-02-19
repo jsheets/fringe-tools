@@ -1,5 +1,5 @@
 //
-//  FFTAnalytics.h
+//  MMFAnalytics.h
 //  FringeTools
 //
 //  Created by John Sheets on 9/25/10.
@@ -25,7 +25,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <FringeTools/FFTLogging.h>
+#import <FringeTools/MMFLogging.h>
 
 // Require API_KEY if any analytics are enabled.
 #if defined(USE_PINCH_MEDIA) || defined(USE_FLURRY) || defined(USE_LOCALYTICS)
@@ -58,29 +58,29 @@
 
 #define ANALYTICS_NAME @"PinchMedia"
 #define START_ANALYTICS \
-  FFTInfo(@"Initializing PinchMedia.");\
+  MMFInfo(@"Initializing PinchMedia.");\
   [Beacon initAndStartBeaconWithApplicationCode:API_KEY useCoreLocation:YES useOnlyWiFi:NO];
 
 #define END_ANALYTICS [Beacon endBeacon];
 
 #define EVENT_ANALYTICS(eventName)\
-  FFTInfo(@"PINCHMEDIA: Event '%@'.", eventName);\
+  MMFInfo(@"PINCHMEDIA: Event '%@'.", eventName);\
   [[Beacon shared] startSubBeaconWithName:eventName timeSession:NO];
 
 #define EVENT_ANALYTICS_START(eventName)\
-  FFTInfo(@"PINCHMEDIA: Timed event '%@'.", eventName);\
+  MMFInfo(@"PINCHMEDIA: Timed event '%@'.", eventName);\
   [[Beacon shared] startSubBeaconWithName:eventName timeSession:YES];
 
 #define EVENT_ANALYTICS_START_CUSTOM(eventName, params)\
-  FFTInfo(@"PINCHMEDIA: Custom event '%@' (params not supported: %@).", eventName, params);\
+  MMFInfo(@"PINCHMEDIA: Custom event '%@' (params not supported: %@).", eventName, params);\
   [[Beacon shared] startSubBeaconWithName:eventName timeSession:NO];
 
 #define EVENT_ANALYTICS_END(eventName)\
-  FFTInfo(@"PINCHMEDIA: End of timed event '%@'.", eventName);\
+  MMFInfo(@"PINCHMEDIA: End of timed event '%@'.", eventName);\
   [[Beacon shared] endSubBeaconWithName:eventName];
 
 #define REPORT_ERROR_TO_ANALYTICS(errorName, errorMessage, e)\
-  FFTInfo(@"PINCHMEDIA: Error Reporting not supported: '%@' (%@) - %@", errorName, errorMessage, e);
+  MMFInfo(@"PINCHMEDIA: Error Reporting not supported: '%@' (%@) - %@", errorName, errorMessage, e);
 
 #endif
 
@@ -93,28 +93,28 @@
 
 #define ANALYTICS_NAME @"Flurry Analytics"
 #define START_ANALYTICS \
-  FFTInfo(@"Initializing Flurry Analytics.");\
+  MMFInfo(@"Initializing Flurry Analytics.");\
   [FlurryAPI startSession: API_KEY];\
   [FlurryAPI setSessionReportsOnCloseEnabled:YES];
 
 #define END_ANALYTICS
 
 #define EVENT_ANALYTICS(eventName)\
-  FFTInfo(@"FLURRY: Event '%@'.", eventName);\
+  MMFInfo(@"FLURRY: Event '%@'.", eventName);\
   [FlurryAPI logEvent:eventName];
 
 #define EVENT_ANALYTICS_START(eventName)\
-  FFTInfo(@"FLURRY: Event '%@' (timed events not supported).", eventName);\
+  MMFInfo(@"FLURRY: Event '%@' (timed events not supported).", eventName);\
   [FlurryAPI logEvent:eventName];
 
 #define EVENT_ANALYTICS_START_CUSTOM(eventName, params)\
-  FFTInfo(@"FLURRY: Event with params '%@' %@.", eventName, params);\
+  MMFInfo(@"FLURRY: Event with params '%@' %@.", eventName, params);\
   [FlurryAPI logEvent:eventName withParameters:params];
 
 #define EVENT_ANALYTICS_END(eventName)
 
 #define REPORT_ERROR_TO_ANALYTICS(errorName, errorMessage, e)\
-  FFTInfo(@"FLURRY: Error Reported: '%@' (%@) - %@", errorName, errorMessage, e);\
+  MMFInfo(@"FLURRY: Error Reported: '%@' (%@) - %@", errorName, errorMessage, e);\
   [FlurryAPI logError:errorName message:errorMessage exception:e];
 
 #endif
@@ -128,7 +128,7 @@
 
 #define ANALYTICS_NAME @"Localytics"
 #define START_ANALYTICS \
-  FFTInfo(@"Initializing Localytics.");\
+  MMFInfo(@"Initializing Localytics.");\
   [[LocalyticsSession sharedLocalyticsSession] startSession:API_KEY];
 
 #define END_ANALYTICS \
@@ -136,21 +136,21 @@
   [[LocalyticsSession sharedLocalyticsSession] upload];
 
 #define EVENT_ANALYTICS(eventName)\
-  FFTInfo(@"LOCALYTICS: Event '%@'.", eventName);\
+  MMFInfo(@"LOCALYTICS: Event '%@'.", eventName);\
   [[LocalyticsSession sharedLocalyticsSession] tagEvent:eventName];
 
 #define EVENT_ANALYTICS_START(eventName)\
-  FFTInfo(@"LOCALYTICS: Event '%@' (timed events not supported).", eventName);\
+  MMFInfo(@"LOCALYTICS: Event '%@' (timed events not supported).", eventName);\
   [[LocalyticsSession sharedLocalyticsSession] tagEvent:eventName];
 
 #define EVENT_ANALYTICS_START_CUSTOM(eventName, params)\
-  FFTInfo(@"LOCALYTICS: Event with params '%@' %@.", eventName, params);\
+  MMFInfo(@"LOCALYTICS: Event with params '%@' %@.", eventName, params);\
   [[LocalyticsSession sharedLocalyticsSession] tagEvent:eventName attributes:params];
 
 #define EVENT_ANALYTICS_END(eventName)
 
 #define REPORT_ERROR_TO_ANALYTICS(errorName, errorMessage, e)\
-  FFTInfo(@"LOCALYTICS: Error Reporting not supported: '%@' (%@) - %@", errorName, errorMessage, e);
+  MMFInfo(@"LOCALYTICS: Error Reporting not supported: '%@' (%@) - %@", errorName, errorMessage, e);
 
 #endif
 
@@ -160,23 +160,23 @@
 // 
 #if !defined(USE_PINCH_MEDIA) && !defined(USE_FLURRY) && !defined(USE_LOCALYTICS)
 #define START_ANALYTICS\
-  FFTInfo(@"No analytics frameworks enabled.");
+  MMFInfo(@"No analytics frameworks enabled.");
 
 #define END_ANALYTICS
 
 #define EVENT_ANALYTICS(eventName)\
-  FFTInfo(@"No-op analytics for event: '%@'.", eventName);
+  MMFInfo(@"No-op analytics for event: '%@'.", eventName);
 
 #define EVENT_ANALYTICS_START(eventName)\
-  FFTInfo(@"No-op analytics for timed event: '%@'.", eventName);
+  MMFInfo(@"No-op analytics for timed event: '%@'.", eventName);
 
 #define EVENT_ANALYTICS_START_CUSTOM(eventName, params)\
-  FFTInfo(@"No-op analytics for custom event: '%@' %@.", eventName, params);
+  MMFInfo(@"No-op analytics for custom event: '%@' %@.", eventName, params);
 
 #define EVENT_ANALYTICS_END(eventName)\
-  FFTInfo(@"No-op analytics for timed event completion: '%@'.", eventName);
+  MMFInfo(@"No-op analytics for timed event completion: '%@'.", eventName);
 
 #define REPORT_ERROR_TO_ANALYTICS(errorName, errorMessage, e)\
-  FFTInfo(@"No-op analytics for Error Reporting: '%@' (%@) - %@", errorName, errorMessage, e);
+  MMFInfo(@"No-op analytics for Error Reporting: '%@' (%@) - %@", errorName, errorMessage, e);
 
 #endif
