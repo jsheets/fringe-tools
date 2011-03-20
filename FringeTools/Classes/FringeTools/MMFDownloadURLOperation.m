@@ -106,9 +106,9 @@
         return;
     }
     
-    MMFDebug(@"Received %i bytes of data", [data length]);
+    MMFTrace(@"Received %i bytes of data", [data length]);
     [self.responseData appendData:data];
-    MMFDebug(@"Total %i bytes of data", [self.responseData length]);
+    MMFTrace(@"Total %i bytes of data", [self.responseData length]);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
