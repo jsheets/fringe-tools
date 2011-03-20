@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D09CAA6125D757200DB4FBC /* MMFAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D09CAA4125D757200DB4FBC /* MMFAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D177F3F12ECD0C600B1FFD2 /* MMFThreadedOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D177F3D12ECD0C600B1FFD2 /* MMFThreadedOperation.h */; };
 		0D177F4012ECD0C600B1FFD2 /* MMFThreadedOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D177F3E12ECD0C600B1FFD2 /* MMFThreadedOperation.m */; };
 		0D177FE012ED394A00B1FFD2 /* test-data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D177FDF12ED394A00B1FFD2 /* test-data.txt */; };
 		0D177FEC12ED409000B1FFD2 /* MMFDownloadURLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4F124EFDD2002D3030 /* MMFDownloadURLOperation.m */; };
-		0D1BD74A1308D0DA00A2D142 /* MMFURLSearchDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1BD7491308D0DA00A2D142 /* MMFURLSearchDelegate.h */; };
 		0D3E659E12E012AE00F9A39F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E659D12E012AE00F9A39F /* GHUnitIOSTestMain.m */; };
 		0D3E65AF12E012FC00F9A39F /* libGHUnitIOSSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3E65AD12E012FC00F9A39F /* libGHUnitIOSSimulator.a */; };
 		0D3E65BF12E0154B00F9A39F /* MMFFileCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E65BE12E0154B00F9A39F /* MMFFileCacheTests.m */; };
@@ -27,17 +24,12 @@
 		0D9BD93A12EB41620021909F /* MMFMockObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9BD93912EB41620021909F /* MMFMockObserverTests.m */; };
 		0DAAC3B312837AAE005AAC96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B212837AAE005AAC96 /* CoreGraphics.framework */; };
 		0DAAC3B512837B0E005AAC96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B412837B0E005AAC96 /* UIKit.framework */; };
-		0DADEDB4130F501100C067F8 /* MMFSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADEDB3130F501100C067F8 /* MMFSearchOperation.m */; };
 		0DADEDB5131028A200C067F8 /* MMFSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADEDB3130F501100C067F8 /* MMFSearchOperation.m */; };
-		0DB9B73B12C52C4A0078F0B3 /* MMFOs.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB9B73A12C52C4A0078F0B3 /* MMFOs.h */; };
-		0DD2A85512BC566500D3F1B5 /* MMFFlickrSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD2A84B12BC566500D3F1B5 /* MMFFlickrSearchOperation.h */; };
 		0DD2A85612BC566500D3F1B5 /* MMFFlickrSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84C12BC566500D3F1B5 /* MMFFlickrSearchOperation.m */; };
-		0DD2A85712BC566500D3F1B5 /* MMFHtmlSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD2A84D12BC566500D3F1B5 /* MMFHtmlSearchOperation.h */; };
 		0DD2A85812BC566500D3F1B5 /* MMFHtmlSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84E12BC566500D3F1B5 /* MMFHtmlSearchOperation.m */; };
 		0DD2A86412BC597C00D3F1B5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A86312BC597C00D3F1B5 /* libxml2.dylib */; };
 		0DD2A89B12BD06E900D3F1B5 /* libObjectiveFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A89812BD06B500D3F1B5 /* libObjectiveFlickr.a */; };
 		0DD2A8B512BD070000D3F1B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A8B412BD070000D3F1B5 /* CFNetwork.framework */; };
-		0DD2A90312BD3CAF00D3F1B5 /* MMFDownloadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD2A90212BD3CAF00D3F1B5 /* MMFDownloadDelegate.h */; };
 		0DD47C951283828300B2787A /* MMFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D09CAA5125D757200DB4FBC /* MMFAppDelegate.m */; };
 		0DE266D412E114E3007A6614 /* MMFBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE266D312E114E3007A6614 /* MMFBaseTestCase.m */; };
 		0DE2680412E131E6007A6614 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A8B412BD070000D3F1B5 /* CFNetwork.framework */; };
@@ -50,14 +42,8 @@
 		0DE269AC12E38027007A6614 /* libFringeTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libFringeTools.a */; };
 		0DE269B112E38B5F007A6614 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A86312BC597C00D3F1B5 /* libxml2.dylib */; };
 		0DE26B0612E3EB3A007A6614 /* MMFMockObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE26B0512E3EB3A007A6614 /* MMFMockObserver.m */; };
-		AA747D9F0F9514B9006C5449 /* FringeTools_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		B7AAAC50124EFDD2002D3030 /* MMFBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4C124EFDD2002D3030 /* MMFBaseOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7AAAC51124EFDD2002D3030 /* MMFBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4D124EFDD2002D3030 /* MMFBaseOperation.m */; };
-		B7AAAC52124EFDD2002D3030 /* MMFDownloadURLOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC4E124EFDD2002D3030 /* MMFDownloadURLOperation.h */; settings = {ATTRIBUTES = (); }; };
-		B7AAAC55124EFE3B002D3030 /* MMFAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC54124EFE3B002D3030 /* MMFAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7AAAC6C124F0587002D3030 /* MMFLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAAC6B124F0587002D3030 /* MMFLogging.h */; settings = {ATTRIBUTES = (); }; };
-		B7AAADD912516B32002D3030 /* MMFFileCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AAADD712516B32002D3030 /* MMFFileCache.h */; };
 		B7AAADDA12516B32002D3030 /* MMFFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAADD812516B32002D3030 /* MMFFileCache.m */; };
 /* End PBXBuildFile section */
 
@@ -370,8 +356,8 @@
 				B7AAAC4D124EFDD2002D3030 /* MMFBaseOperation.m */,
 				0D177F3D12ECD0C600B1FFD2 /* MMFThreadedOperation.h */,
 				0D177F3E12ECD0C600B1FFD2 /* MMFThreadedOperation.m */,
-				0DD2A91E12BD3F0A00D3F1B5 /* Download Ops */,
 				0DADEDB0130F4FAC00C067F8 /* Search Ops */,
+				0DD2A91E12BD3F0A00D3F1B5 /* Download Ops */,
 			);
 			name = Operations;
 			path = FringeTools;
@@ -450,19 +436,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7AAAC50124EFDD2002D3030 /* MMFBaseOperation.h in Headers */,
-				B7AAAC52124EFDD2002D3030 /* MMFDownloadURLOperation.h in Headers */,
-				B7AAAC55124EFE3B002D3030 /* MMFAnalytics.h in Headers */,
-				B7AAAC6C124F0587002D3030 /* MMFLogging.h in Headers */,
-				0D09CAA6125D757200DB4FBC /* MMFAppDelegate.h in Headers */,
-				AA747D9F0F9514B9006C5449 /* FringeTools_Prefix.pch in Headers */,
-				0DD2A85512BC566500D3F1B5 /* MMFFlickrSearchOperation.h in Headers */,
-				0DD2A85712BC566500D3F1B5 /* MMFHtmlSearchOperation.h in Headers */,
-				0DD2A90312BD3CAF00D3F1B5 /* MMFDownloadDelegate.h in Headers */,
-				0DB9B73B12C52C4A0078F0B3 /* MMFOs.h in Headers */,
-				B7AAADD912516B32002D3030 /* MMFFileCache.h in Headers */,
-				0D177F3F12ECD0C600B1FFD2 /* MMFThreadedOperation.h in Headers */,
-				0D1BD74A1308D0DA00A2D142 /* MMFURLSearchDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +594,6 @@
 				0DE268AC12E15EF9007A6614 /* MMFHtmlSearchOperationTests.m in Sources */,
 				0DE26B0612E3EB3A007A6614 /* MMFMockObserver.m in Sources */,
 				0D9BD93A12EB41620021909F /* MMFMockObserverTests.m in Sources */,
-				0DADEDB4130F501100C067F8 /* MMFSearchOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +731,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -778,14 +751,17 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FringeTools_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = MMF_LOG_ALL;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					MMF_LOG_DEFAULT,
+					MMF_LOG_DEBUGx,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Classes",
 					/usr/include/libxml2,
 					"$(SRCROOT)/../objectiveflickr/Source",
 					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
 				);
-				INSTALL_PATH = /usr/local/lib;
+				INSTALL_PATH = "";
 				PRODUCT_NAME = FringeTools;
 			};
 			name = Debug;
@@ -800,11 +776,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FringeTools_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Classes",
 					/usr/include/libxml2,
 					"$(SRCROOT)/../objectiveflickr/Source",
 					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
 				);
-				INSTALL_PATH = /usr/local/lib;
+				INSTALL_PATH = "";
 				PRODUCT_NAME = FringeTools;
 			};
 			name = Release;
