@@ -152,7 +152,6 @@
 		0DAAC3B412837B0E005AAC96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0DADEDB2130F501100C067F8 /* MMFSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFSearchOperation.h; sourceTree = "<group>"; };
 		0DADEDB3130F501100C067F8 /* MMFSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFSearchOperation.m; sourceTree = "<group>"; };
-		0DB5022D133653CE008AD34B /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../external/three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		0DB9B73A12C52C4A0078F0B3 /* MMFOs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFOs.h; sourceTree = "<group>"; };
 		0DD2A84B12BC566500D3F1B5 /* MMFFlickrSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFFlickrSearchOperation.h; sourceTree = "<group>"; };
 		0DD2A84C12BC566500D3F1B5 /* MMFFlickrSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFFlickrSearchOperation.m; sourceTree = "<group>"; };
@@ -232,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */,
-				0DB5022D133653CE008AD34B /* Three20.xcodeproj */,
 				0DE2697412E377D5007A6614 /* OCMock.xcodeproj */,
 				0D83646412DD33580015EBF3 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
