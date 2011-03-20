@@ -10,3 +10,6 @@
 [submodule "external/OCMock"]
 	path = external/OCMock
 	url = git@github.com:jsheets/OCMock.git
+[submodule "external/three20"]
+	path = external/three20
+	url = https://github.com/facebook/three20.git
