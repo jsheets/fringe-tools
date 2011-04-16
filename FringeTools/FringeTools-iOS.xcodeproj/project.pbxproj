@@ -42,6 +42,7 @@
 		0DE269AC12E38027007A6614 /* libFringeTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libFringeTools.a */; };
 		0DE269B112E38B5F007A6614 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A86312BC597C00D3F1B5 /* libxml2.dylib */; };
 		0DE26B0612E3EB3A007A6614 /* MMFMockObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE26B0512E3EB3A007A6614 /* MMFMockObserver.m */; };
+		0DF3B34E135265BC00799C44 /* MMFFlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3B34613525A3700799C44 /* MMFFlickrPhoto.m */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		B7AAAC51124EFDD2002D3030 /* MMFBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAAC4D124EFDD2002D3030 /* MMFBaseOperation.m */; };
 		B7AAADDA12516B32002D3030 /* MMFFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AAADD812516B32002D3030 /* MMFFileCache.m */; };
@@ -172,6 +173,8 @@
 		0DE2697412E377D5007A6614 /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = ../external/OCMock/Source/OCMock.xcodeproj; sourceTree = SOURCE_ROOT; };
 		0DE26B0412E3EB3A007A6614 /* MMFMockObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFMockObserver.h; sourceTree = "<group>"; };
 		0DE26B0512E3EB3A007A6614 /* MMFMockObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFMockObserver.m; sourceTree = "<group>"; };
+		0DF3B34513525A3700799C44 /* MMFFlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFFlickrPhoto.h; sourceTree = "<group>"; };
+		0DF3B34613525A3700799C44 /* MMFFlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFFlickrPhoto.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* FringeTools_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FringeTools_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7AAAC4C124EFDD2002D3030 /* MMFBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFBaseOperation.h; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 				0D1BD7491308D0DA00A2D142 /* MMFURLSearchDelegate.h */,
 				0DADEDB2130F501100C067F8 /* MMFSearchOperation.h */,
 				0DADEDB3130F501100C067F8 /* MMFSearchOperation.m */,
+				0DF3B34513525A3700799C44 /* MMFFlickrPhoto.h */,
+				0DF3B34613525A3700799C44 /* MMFFlickrPhoto.m */,
 				0DD2A84B12BC566500D3F1B5 /* MMFFlickrSearchOperation.h */,
 				0DD2A84C12BC566500D3F1B5 /* MMFFlickrSearchOperation.m */,
 				0DD2A84D12BC566500D3F1B5 /* MMFHtmlSearchOperation.h */,
@@ -607,6 +612,7 @@
 				B7AAAC51124EFDD2002D3030 /* MMFBaseOperation.m in Sources */,
 				0D177F4012ECD0C600B1FFD2 /* MMFThreadedOperation.m in Sources */,
 				0D177FEC12ED409000B1FFD2 /* MMFDownloadURLOperation.m in Sources */,
+				0DF3B34E135265BC00799C44 /* MMFFlickrPhoto.m in Sources */,
 				0DD2A85612BC566500D3F1B5 /* MMFFlickrSearchOperation.m in Sources */,
 				0DD2A85812BC566500D3F1B5 /* MMFHtmlSearchOperation.m in Sources */,
 			);
@@ -762,6 +768,7 @@
 					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
 				);
 				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = FringeTools;
 			};
 			name = Debug;
@@ -782,6 +789,7 @@
 					"$(SRCROOT)/../objectiveflickr/LFWebAPIKit",
 				);
 				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = FringeTools;
 			};
 			name = Release;

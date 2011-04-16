@@ -27,6 +27,7 @@
 
 #import <FringeTools/MMFFlickrSearchOperation.h>
 #import <FringeTools/MMFLogging.h>
+#import <FringeTools/MMFFlickrPhoto.h>
 
 @implementation MMFFlickrSearchOperation
 
@@ -200,12 +201,8 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     for (NSDictionary *flickrPhoto in flickrResults)
     {
         MMFTrace(@"Photo metadata: %@", flickrPhoto);
-        NSURL *photoUrl = [_context photoSourceURLFromDictionary:flickrPhoto size:OFFlickrMediumSize];
-        
-//        NSString *title = [flickrPhoto valueForKey:@"title"];
-//        NSString *urlString = [photoUrl absoluteString];
-        
-        [urls addObject:photoUrl];
+        MMFFlickrPhoto *photo = [[MMFFlickrPhoto alloc] initWithFlickrContext:_context data:flickrPhoto];
+        [urls addObject:photo];
     }
     
     return urls;

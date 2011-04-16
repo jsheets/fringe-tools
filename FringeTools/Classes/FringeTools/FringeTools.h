@@ -38,6 +38,7 @@
 
 #import <FringeTools/MMFURLSearchDelegate.h>
 #import <FringeTools/MMFSearchOperation.h>
+#import <FringeTools/MMFFlickrPhoto.h>
 #import <FringeTools/MMFFlickrSearchOperation.h>
 #import <FringeTools/MMFHtmlSearchOperation.h>
 
