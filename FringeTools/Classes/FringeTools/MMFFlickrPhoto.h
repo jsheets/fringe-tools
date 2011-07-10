@@ -14,7 +14,10 @@
     NSDictionary *_flickrDictionary;
 }
 
+@property (nonatomic, readonly) NSDictionary *flickrDictionary;
+
 - (id)initWithFlickrContext:(OFFlickrAPIContext *)context data:(NSDictionary *)flickrDictionary;
+- (NSString *)title;
 - (NSURL *)largeURL;
 - (NSURL *)mediumURL;
 - (NSURL *)smallURL;

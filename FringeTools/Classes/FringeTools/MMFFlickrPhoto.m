@@ -10,6 +10,8 @@
 
 @implementation MMFFlickrPhoto
 
+@synthesize flickrDictionary = _flickrDictionary;
+
 - (id)initWithFlickrContext:(OFFlickrAPIContext *)context data:(NSDictionary *)flickrDictionary
 {
     if ((self = [super init]))
@@ -20,6 +22,11 @@
     }
     
     return self;
+}
+
+- (NSString *)title
+{
+    return [self.flickrDictionary objectForKey:@"title"];
 }
 
 - (NSURL *)largeURL
