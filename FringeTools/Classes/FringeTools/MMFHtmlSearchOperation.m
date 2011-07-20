@@ -29,9 +29,10 @@
 #import <FringeTools/MMFLogging.h>
 
 //#define MIN_IMAGE_COUNT 200
-#define MIN_IMAGE_COUNT 50
+#define MIN_IMAGE_COUNT 10
 //#define MIN_IMAGE_COUNT 25
-#define MAX_PAGE_COUNT 15
+//#define MAX_PAGE_COUNT 15
+#define MAX_PAGE_COUNT 1
 
 @implementation MMFHtmlSearchOperation
 
@@ -94,12 +95,15 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
         {
             MMFInfo(@"No more search pages found; bailing out of HTML search: %@", kNoMorePagesFound);
         }
-        else
+        else if (self.nextPage)
         {
             // FIXME
-            NSString *url = nil;//(self.nextPage != nil) ? self.nextPage : nextUrl;
-            _pageUrl = [[NSURL URLWithString:url] retain];
-            MMFInfo(@"Starting new HTML download operation for base URL: %@", _pageUrl);
+            self.pageUrl = [NSURL URLWithString:self.nextPage];
+            MMFInfo(@"Starting new HTML download operation for base URL: %@", self.pageUrl);
+        }
+        else
+        {
+            MMFError(@"No assigned page URL for HTML search");
         }
     }
     return _pageUrl;
@@ -194,7 +198,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
                 url = [NSURL URLWithString:imagePath];
             }
             
-            MMFTrace(@"Found match at path: %@", url);
+            MMFDebug(@"Found match at path: %@", url);
             if (filtered && ![self shouldDownloadURL:url])
             {
                 MMFTrace(@"Skipping rejected URL: %@", url);
