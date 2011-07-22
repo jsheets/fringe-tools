@@ -13,3 +13,6 @@
 [submodule "external/three20"]
 	path = external/three20
 	url = https://github.com/facebook/three20.git
+[submodule "external/asi-http-request"]
+	path = external/asi-http-request
+	url = https://github.com/pokeb/asi-http-request.git
