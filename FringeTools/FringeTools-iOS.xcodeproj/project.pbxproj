@@ -37,6 +37,12 @@
 		0DAAC3B312837AAE005AAC96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B212837AAE005AAC96 /* CoreGraphics.framework */; };
 		0DAAC3B512837B0E005AAC96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAAC3B412837B0E005AAC96 /* UIKit.framework */; };
 		0DADEDB5131028A200C067F8 /* MMFSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADEDB3130F501100C067F8 /* MMFSearchOperation.m */; };
+		0DB1810213DB5DC1002A6270 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1810013DB5DC1002A6270 /* XPathQuery.m */; };
+		0DB1810313DB5DC1002A6270 /* XPathQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB1810113DB5DC1002A6270 /* XPathQuery.h */; };
+		0DB1810413DB5DC1002A6270 /* TFHpple.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB180FC13DB5DC1002A6270 /* TFHpple.h */; };
+		0DB1810513DB5DC1002A6270 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB180FD13DB5DC1002A6270 /* TFHpple.m */; };
+		0DB1810613DB5DC1002A6270 /* TFHppleElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB180FE13DB5DC1002A6270 /* TFHppleElement.h */; };
+		0DB1810713DB5DC1002A6270 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB180FF13DB5DC1002A6270 /* TFHppleElement.m */; };
 		0DD2A85612BC566500D3F1B5 /* MMFFlickrSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84C12BC566500D3F1B5 /* MMFFlickrSearchOperation.m */; };
 		0DD2A85812BC566500D3F1B5 /* MMFHtmlSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84E12BC566500D3F1B5 /* MMFHtmlSearchOperation.m */; };
 		0DD2A86412BC597C00D3F1B5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A86312BC597C00D3F1B5 /* libxml2.dylib */; };
@@ -66,6 +72,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = FringeTools;
+		};
+		0DB180E313DB5486002A6270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB180D913DB5485002A6270 /* Hpple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = Hpple;
+		};
+		0DB180E513DB5486002A6270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB180D913DB5485002A6270 /* Hpple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75D785A30F34DFB000173CB6;
+			remoteInfo = Test;
 		};
 		0DD2A89512BD06B500D3F1B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -169,6 +189,13 @@
 		0DAAC3B412837B0E005AAC96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0DADEDB2130F501100C067F8 /* MMFSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFSearchOperation.h; sourceTree = "<group>"; };
 		0DADEDB3130F501100C067F8 /* MMFSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFSearchOperation.m; sourceTree = "<group>"; };
+		0DB180D913DB5485002A6270 /* Hpple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Hpple.xcodeproj; path = "../external/zadr-hpple/Hpple.xcodeproj"; sourceTree = "<group>"; };
+		0DB180FC13DB5DC1002A6270 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		0DB180FD13DB5DC1002A6270 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		0DB180FE13DB5DC1002A6270 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		0DB180FF13DB5DC1002A6270 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		0DB1810013DB5DC1002A6270 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		0DB1810113DB5DC1002A6270 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		0DB9B73A12C52C4A0078F0B3 /* MMFOs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFOs.h; sourceTree = "<group>"; };
 		0DD2A84B12BC566500D3F1B5 /* MMFFlickrSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFFlickrSearchOperation.h; sourceTree = "<group>"; };
 		0DD2A84C12BC566500D3F1B5 /* MMFFlickrSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFFlickrSearchOperation.m; sourceTree = "<group>"; };
@@ -249,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */,
+				0DB180D913DB5485002A6270 /* Hpple.xcodeproj */,
 				0DE2697412E377D5007A6614 /* OCMock.xcodeproj */,
 				0D83646412DD33580015EBF3 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
@@ -385,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				0D2C39A513AC44750055372F /* ObjectiveFlickr */,
+				0DB180FA13DB5DC1002A6270 /* Hpple */,
 				08FB77AEFE84172EC02AAC07 /* FringeTools */,
 				0DADEDB1130F4FD600C067F8 /* Operations */,
 			);
@@ -419,6 +448,29 @@
 			);
 			name = Operations;
 			path = FringeTools;
+			sourceTree = "<group>";
+		};
+		0DB180DA13DB5485002A6270 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DB180E413DB5486002A6270 /* Hpple.app */,
+				0DB180E613DB5486002A6270 /* Test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DB180FA13DB5DC1002A6270 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1810013DB5DC1002A6270 /* XPathQuery.m */,
+				0DB1810113DB5DC1002A6270 /* XPathQuery.h */,
+				0DB180FC13DB5DC1002A6270 /* TFHpple.h */,
+				0DB180FD13DB5DC1002A6270 /* TFHpple.m */,
+				0DB180FE13DB5DC1002A6270 /* TFHppleElement.h */,
+				0DB180FF13DB5DC1002A6270 /* TFHppleElement.m */,
+			);
+			name = Hpple;
+			path = "../../external/zadr-hpple";
 			sourceTree = "<group>";
 		};
 		0DD2A88D12BD06B500D3F1B5 /* Products */ = {
@@ -501,6 +553,9 @@
 				0D2C3A1913AC44A30055372F /* ObjectiveFlickr.h in Headers */,
 				0D2C3A1B13AC44A30055372F /* OFUtilities.h in Headers */,
 				0D2C3A1C13AC44A30055372F /* OFXMLMapper.h in Headers */,
+				0DB1810313DB5DC1002A6270 /* XPathQuery.h in Headers */,
+				0DB1810413DB5DC1002A6270 /* TFHpple.h in Headers */,
+				0DB1810613DB5DC1002A6270 /* TFHppleElement.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +623,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 0DB180DA13DB5485002A6270 /* Products */;
+					ProjectRef = 0DB180D913DB5485002A6270 /* Hpple.xcodeproj */;
+				},
+				{
 					ProductGroup = 0DD2A88D12BD06B500D3F1B5 /* Products */;
 					ProjectRef = 0DD2A88C12BD06B500D3F1B5 /* ObjectiveFlickr.xcodeproj */;
 				},
@@ -585,6 +644,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		0DB180E413DB5486002A6270 /* Hpple.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Hpple.app;
+			remoteRef = 0DB180E313DB5486002A6270 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DB180E613DB5486002A6270 /* Test.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Test.app;
+			remoteRef = 0DB180E513DB5486002A6270 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		0DD2A89612BD06B500D3F1B5 /* ObjectiveFlickr.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -680,6 +753,9 @@
 				0D2C3A0313AC44A20055372F /* NSData+LFHTTPFormExtensions.m in Sources */,
 				0D2C3A1A13AC44A30055372F /* ObjectiveFlickr.m in Sources */,
 				0D2C3A1D13AC44A30055372F /* OFXMLMapper.m in Sources */,
+				0DB1810213DB5DC1002A6270 /* XPathQuery.m in Sources */,
+				0DB1810513DB5DC1002A6270 /* TFHpple.m in Sources */,
+				0DB1810713DB5DC1002A6270 /* TFHppleElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

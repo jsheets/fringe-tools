@@ -16,3 +16,6 @@
 [submodule "external/asi-http-request"]
 	path = external/asi-http-request
 	url = https://github.com/pokeb/asi-http-request.git
+[submodule "external/zadr-hpple"]
+	path = external/zadr-hpple
+	url = https://github.com/zadr/hpple.git
