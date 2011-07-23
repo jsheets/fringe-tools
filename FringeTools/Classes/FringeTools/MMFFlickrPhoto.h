@@ -6,6 +6,7 @@
 //  Copyright 2011 MobileMethod, LLC. All rights reserved.
 //
 
+#import "MMFPhoto.h"
 #import "ObjectiveFlickr.h"
 
 @class MMFFlickrPhoto;
@@ -13,7 +14,7 @@
 typedef void (^MMFFlickrPhotoCompletionBlock)(MMFFlickrPhoto *photo);
 typedef void (^MMFFlickrPhotoFailureBlock)(MMFFlickrPhoto *photo, NSError *error);
 
-@interface MMFFlickrPhoto : NSObject <OFFlickrAPIRequestDelegate>
+@interface MMFFlickrPhoto : MMFPhoto <OFFlickrAPIRequestDelegate>
 {
     MMFFlickrPhotoCompletionBlock _completionBlock;
     MMFFlickrPhotoFailureBlock _failureBlock;
@@ -27,8 +28,6 @@ typedef void (^MMFFlickrPhotoFailureBlock)(MMFFlickrPhoto *photo, NSError *error
 
 - (id)initWithFlickrContext:(OFFlickrAPIContext *)context data:(NSDictionary *)flickrDictionary;
 
-- (NSString *)photoId;
-- (NSString *)title;
 - (NSURL *)largeURL;
 - (NSURL *)mediumURL;
 - (NSURL *)smallURL;

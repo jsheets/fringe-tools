@@ -22,6 +22,12 @@
         // Initialization.
         _context = [context retain];
         _flickrDictionary = [flickrDictionary retain];
+        
+        // Populate the default MMFPhoto properties from the Flickr metadata.
+        self.photoId = [self.flickrDictionary objectForKey:@"id"];
+        self.title = [self.flickrDictionary objectForKey:@"title"];
+        self.photoURL = [_context photoSourceURLFromDictionary:_flickrDictionary size:OFFlickrMediumSize];
+        self.thumbnailURL = [_context photoSourceURLFromDictionary:_flickrDictionary size:OFFlickrThumbnailSize];
     }
     
     return self;
@@ -37,16 +43,6 @@
     [super dealloc];
 }
 
-- (NSString *)photoId
-{
-    return [self.flickrDictionary objectForKey:@"id"];
-}
-
-- (NSString *)title
-{
-    return [self.flickrDictionary objectForKey:@"title"];
-}
-
 - (NSURL *)largeURL
 {
     return [_context photoSourceURLFromDictionary:_flickrDictionary size:OFFlickrLargeSize];
@@ -60,11 +56,6 @@
 - (NSURL *)smallURL
 {
     return [_context photoSourceURLFromDictionary:_flickrDictionary size:OFFlickrSmallSize];
-}
-
-- (NSURL *)thumbnailURL
-{
-    return [_context photoSourceURLFromDictionary:_flickrDictionary size:OFFlickrThumbnailSize];
 }
 
 - (void)fetchPhotoDetail:(MMFFlickrPhotoCompletionBlock)completionBlock failure:(MMFFlickrPhotoFailureBlock)failureBlock

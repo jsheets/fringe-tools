@@ -106,6 +106,7 @@ static NSString *kNoMorePagesFound = @"<END_OF_PAGES>";
             MMFError(@"No assigned page URL for HTML search");
         }
     }
+    
     return _pageUrl;
 }
 
