@@ -196,16 +196,26 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
 
 - (NSArray *)extractUrls:(NSArray *)flickrResults
 {
-    NSMutableArray *urls = [[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *photos = [[[NSMutableArray alloc] init] autorelease];
     
-    for (NSDictionary *flickrPhoto in flickrResults)
+    for (NSDictionary *flickrDict in flickrResults)
     {
-        MMFTrace(@"Photo metadata: %@", flickrPhoto);
-        MMFFlickrPhoto *photo = [[MMFFlickrPhoto alloc] initWithFlickrContext:_context data:flickrPhoto];
-        [urls addObject:photo];
+        MMFTrace(@"Photo metadata: %@", flickrDict);
+        MMFFlickrPhoto *flickrPhoto = [[MMFFlickrPhoto alloc] initWithFlickrContext:_context data:flickrDict];
+        
+        // Have the search results dictionary; send another query to Flickr to retrieve the photo details.
+//        MMFDebug(@"Loading Flickr photo detail...");
+//        [flickrPhoto fetchPhotoDetail: ^(MMFFlickrPhoto *photo) {
+//            photo.author = [photo.infoDictionary valueForKeyPath:@"photo.owner.username"];
+//            MMFDebug(@"Retrieved photo author = %@ (%@)", photo.author, photo.photoURL);
+//        } failure: ^(MMFFlickrPhoto *photo, NSError *error) {
+//            photo.author = @"Unknown";
+//        }];
+        
+        [photos addObject:flickrPhoto];
     }
     
-    return urls;
+    return photos;
 }
 
 

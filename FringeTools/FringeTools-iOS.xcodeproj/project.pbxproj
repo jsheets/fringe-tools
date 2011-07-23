@@ -40,11 +40,11 @@
 		0DB1810213DB5DC1002A6270 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1810013DB5DC1002A6270 /* XPathQuery.m */; };
 		0DB1810313DB5DC1002A6270 /* XPathQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB1810113DB5DC1002A6270 /* XPathQuery.h */; };
 		0DB1810413DB5DC1002A6270 /* TFHpple.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB180FC13DB5DC1002A6270 /* TFHpple.h */; };
-		0DB1810513DB5DC1002A6270 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB180FD13DB5DC1002A6270 /* TFHpple.m */; };
 		0DB1810613DB5DC1002A6270 /* TFHppleElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB180FE13DB5DC1002A6270 /* TFHppleElement.h */; };
-		0DB1810713DB5DC1002A6270 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB180FF13DB5DC1002A6270 /* TFHppleElement.m */; };
 		0DB1810A13DB5FC4002A6270 /* MMFPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB1810813DB5FC4002A6270 /* MMFPhoto.h */; };
 		0DB1810B13DB5FC4002A6270 /* MMFPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1810913DB5FC4002A6270 /* MMFPhoto.m */; };
+		0DB1810E13DB66BA002A6270 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB180FD13DB5DC1002A6270 /* TFHpple.m */; };
+		0DB1810F13DB66BF002A6270 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB180FF13DB5DC1002A6270 /* TFHppleElement.m */; };
 		0DD2A85612BC566500D3F1B5 /* MMFFlickrSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84C12BC566500D3F1B5 /* MMFFlickrSearchOperation.m */; };
 		0DD2A85812BC566500D3F1B5 /* MMFHtmlSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2A84E12BC566500D3F1B5 /* MMFHtmlSearchOperation.m */; };
 		0DD2A86412BC597C00D3F1B5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD2A86312BC597C00D3F1B5 /* libxml2.dylib */; };
@@ -752,6 +752,7 @@
 				B7AAAC51124EFDD2002D3030 /* MMFBaseOperation.m in Sources */,
 				0D177F4012ECD0C600B1FFD2 /* MMFThreadedOperation.m in Sources */,
 				0D177FEC12ED409000B1FFD2 /* MMFDownloadURLOperation.m in Sources */,
+				0DB1810B13DB5FC4002A6270 /* MMFPhoto.m in Sources */,
 				0DF3B34E135265BC00799C44 /* MMFFlickrPhoto.m in Sources */,
 				0DD2A85612BC566500D3F1B5 /* MMFFlickrSearchOperation.m in Sources */,
 				0DD2A85812BC566500D3F1B5 /* MMFHtmlSearchOperation.m in Sources */,
@@ -761,9 +762,8 @@
 				0D2C3A1A13AC44A30055372F /* ObjectiveFlickr.m in Sources */,
 				0D2C3A1D13AC44A30055372F /* OFXMLMapper.m in Sources */,
 				0DB1810213DB5DC1002A6270 /* XPathQuery.m in Sources */,
-				0DB1810513DB5DC1002A6270 /* TFHpple.m in Sources */,
-				0DB1810713DB5DC1002A6270 /* TFHppleElement.m in Sources */,
-				0DB1810B13DB5FC4002A6270 /* MMFPhoto.m in Sources */,
+				0DB1810E13DB66BA002A6270 /* TFHpple.m in Sources */,
+				0DB1810F13DB66BF002A6270 /* TFHppleElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +902,7 @@
 				GCC_PREFIX_HEADER = FringeTools_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					MMF_LOG_DEFAULT,
-					MMF_LOG_DEBUGx,
+					MMF_LOG_DEBUG,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Classes",

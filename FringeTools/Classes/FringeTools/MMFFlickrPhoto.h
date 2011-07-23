@@ -31,7 +31,6 @@ typedef void (^MMFFlickrPhotoFailureBlock)(MMFFlickrPhoto *photo, NSError *error
 - (NSURL *)largeURL;
 - (NSURL *)mediumURL;
 - (NSURL *)smallURL;
-- (NSURL *)thumbnailURL;
 
 // Look up photo metadata with block.
 - (void)fetchPhotoDetail:(MMFFlickrPhotoCompletionBlock)completionBlock failure:(MMFFlickrPhotoFailureBlock)failureBlock;
