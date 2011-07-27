@@ -60,6 +60,12 @@
 
 - (void)fetchPhotoDetail:(MMFFlickrPhotoCompletionBlock)completionBlock failure:(MMFFlickrPhotoFailureBlock)failureBlock
 {
+    if (_completionBlock)
+    {
+        MMFDebug(@"Photo detail fetch already in progress, skipping...");
+        return;
+    }
+    
     // Send async request to fetch full metadata for this Flickr photo, then call completion
     // block when done.
     _completionBlock = [completionBlock copy];
@@ -82,9 +88,8 @@
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest
  didCompleteWithResponse:(NSDictionary *)inResponseDictionary
 {
-    MMFDebug(@"Completed request: %@", inRequest.sessionInfo);
-    MMFTrace(@"Completed request: %@", inResponseDictionary);
-    MMFInfo(@"Completed request");
+    MMFTrace(@"Photo detail response dictionary: %@", inResponseDictionary);
+    MMFInfo(@"Completed photo detail request");
     self.infoDictionary = inResponseDictionary;
     
     // Fire completion block on main thread.

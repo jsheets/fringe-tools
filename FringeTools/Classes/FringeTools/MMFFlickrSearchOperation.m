@@ -201,7 +201,7 @@ static NSString *kQFlickrLookupUserKeyName = @"FlickrLookupUserKeyName";
     for (NSDictionary *flickrDict in flickrResults)
     {
         MMFTrace(@"Photo metadata: %@", flickrDict);
-        MMFFlickrPhoto *flickrPhoto = [[MMFFlickrPhoto alloc] initWithFlickrContext:_context data:flickrDict];
+        MMFFlickrPhoto *flickrPhoto = [[[MMFFlickrPhoto alloc] initWithFlickrContext:_context data:flickrDict] autorelease];
         
         // Have the search results dictionary; send another query to Flickr to retrieve the photo details.
 //        MMFDebug(@"Loading Flickr photo detail...");
