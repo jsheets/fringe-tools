@@ -13,7 +13,7 @@
 @synthesize photoId = _photoId;
 @synthesize title = _title;
 @synthesize author = _author;
-@synthesize description = _description;
+@synthesize story = _story;
 @synthesize photoURL = _photoURL;
 @synthesize thumbnailURL = _thumbnailURL;
 
@@ -33,7 +33,7 @@
     [_photoId release], _photoId = nil;
     [_title release], _title = nil;
     [_author release], _author = nil;
-    [_description release], _description = nil;
+    [_story release], _story = nil;
     [_photoURL release], _photoURL = nil;
     [_thumbnailURL release], _thumbnailURL = nil;
     

@@ -13,7 +13,7 @@
     NSString *_photoId;
     NSString *_title;
     NSString *_author;
-    NSString *_description;
+    NSString *_story;
     
     NSURL *_photoURL;
     NSURL *_thumbnailURL;
@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *photoId;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *author;
-@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *story;
 @property (nonatomic, copy) NSURL *photoURL;
 @property (nonatomic, copy) NSURL *thumbnailURL;
 
